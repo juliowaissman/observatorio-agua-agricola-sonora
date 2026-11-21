@@ -1,0 +1,116 @@
+{
+  "fecha": "2026-11-21",
+  "fallas": 0,
+  "chequeos": [
+    {
+      "chequeo": "SIAP: número de registros",
+      "ok": true,
+      "detalle": "7990 fuente, 7990 web"
+    },
+    {
+      "chequeo": "SIAP: totales por año idénticos a la fuente",
+      "ok": true,
+      "detalle": "39 combinaciones comparadas; 0 diferencias"
+    },
+    {
+      "chequeo": "SIAP: totales por municipio-año idénticos a la fuente",
+      "ok": true,
+      "detalle": "2481 combinaciones comparadas; 0 diferencias"
+    },
+    {
+      "chequeo": "SIAP: totales por cultivo-ciclo-modalidad-año idénticos a la fuente",
+      "ok": true,
+      "detalle": "3945 combinaciones comparadas; 0 diferencias"
+    },
+    {
+      "chequeo": "SIAP: resumen estatal coincide con la fuente",
+      "ok": true,
+      "detalle": "2019: 603470 ha, 48119.1 mdp; 2020: 513115 ha, 46077.0 mdp; 2021: 521238 ha, 48814.1 mdp; 2022: 558064 ha, 62594.9 mdp; 2023: 562795 ha, 68167.9 mdp; 2024: 489721 ha, 53862.1 mdp; 2025: 284607 ha, 43981.9 mdp"
+    },
+    {
+      "chequeo": "SIAP: CSV de datos abiertos = JSON del sitio",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "chequeo": "SIAP: todos los cultivos están en el catálogo",
+      "ok": true,
+      "detalle": "100 cultivos"
+    },
+    {
+      "chequeo": "SIAP: cultivos con unidad distinta de tonelada (aviso)",
+      "ok": true,
+      "detalle": "Mano de león (Manojo), Mano de león (manojo) (Manojo)"
+    },
+    {
+      "chequeo": "CONAGUA: volúmenes, superficie y usuarios por año × DR iguales a la fuente",
+      "ok": true,
+      "detalle": "992 registros; 588 combinaciones; 0 diferencias"
+    },
+    {
+      "chequeo": "CONAGUA: volumen bruto total de los 7 DR (aviso)",
+      "ok": true,
+      "detalle": "2023: 6220 hm³; 2024: 5451 hm³; 2025: 3560 hm³"
+    },
+    {
+      "chequeo": "CONAGUA: cultivos por año × DR iguales a la fuente",
+      "ok": true,
+      "detalle": "6570 registros; 0 diferencias"
+    },
+    {
+      "chequeo": "Geo: 72 municipios",
+      "ok": true,
+      "detalle": "72"
+    },
+    {
+      "chequeo": "Geo: todo municipio del SIAP tiene polígono",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "chequeo": "Geo: municipios sin registro SIAP 2019-2025 (aviso)",
+      "ok": true,
+      "detalle": "Nacozari de García"
+    },
+    {
+      "chequeo": "Geo: anillos cerrados con ≥4 vértices",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "chequeo": "Geo: área simplificada difiere <3 % de la original en cada municipio",
+      "ok": true,
+      "detalle": "máxima: Bácum 0.87 %"
+    },
+    {
+      "chequeo": "Geo: área total del estado difiere <0.5 %",
+      "ok": true,
+      "detalle": "0.017 %"
+    },
+    {
+      "chequeo": "Geo: fronteras compartidas sin huecos (aristas sin vecino ≈ contorno del estado)",
+      "ok": true,
+      "detalle": "contorno simplificado / original = 0.905"
+    },
+    {
+      "chequeo": "Geo: caja dentro de Sonora",
+      "ok": true,
+      "detalle": "-115.053, 26.297, -108.424, 32.494"
+    },
+    {
+      "chequeo": "Geo: polígono para cada DR con estadística",
+      "ok": true,
+      "detalle": "014, 018, 037, 038, 041, 051, 084"
+    },
+    {
+      "chequeo": "Indicadores: archivos, campos y fuentes existen",
+      "ok": true,
+      "detalle": "12 publicados, 3 planeados"
+    },
+    {
+      "chequeo": "Manifiesto: sha256 de cada archivo",
+      "ok": true,
+      "detalle": ""
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+---
+import '../styles/global.css';
+
+interface Props { titulo: string; descripcion?: string; pagina?: string }
+const { titulo, descripcion = 'Datos abiertos y análisis del uso del agua en la agricultura de Sonora: superficie, producción, valor y riego por municipio, cultivo y Distrito de Riego.', pagina = '' } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const u = (ruta: string) => `${base}${ruta}`;
+const menu = [
+  ['', 'Inicio'],
+  ['explorador/', 'Explorador'],
+  ['distritos/', 'Distritos de Riego'],
+  ['metodologia/', 'Metodología'],
+  ['documentos/', 'Documentos'],
+  ['datos/', 'Datos abiertos'],
+  ['acerca/', 'Acerca de'],
+];
+const nombre = 'Observatorio del Agua Agrícola de Sonora';
+---
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{titulo === nombre ? nombre : `${titulo} · ${nombre}`}</title>
+  <meta name="description" content={descripcion} />
+  <meta name="theme-color" content="#960E53" />
+  <link rel="icon" type="image/svg+xml" href={u('logos/dataaqua-gota.svg')} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <slot name="head" />
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+  <div class="barra-gob">
+    <div class="contenedor">
+      <span>Proyecto de la Universidad de Sonora para la Agencia de Transformación Digital y Telecomunicaciones del Estado de Sonora</span>
+      <a href="https://www.sonora.gob.mx" rel="noopener">sonora.gob.mx</a>
+    </div>
+  </div>
+  <header class="encabezado">
+    <div class="contenedor">
+      <a href="https://transformaciondigital.sonora.gob.mx" class="marca-sitio" rel="noopener" title="Agencia de Transformación Digital y Telecomunicaciones">
+        <img src={u('logos/atdt-sonora.svg')} alt="Gobierno de Sonora · Agencia de Transformación Digital y Telecomunicaciones" width="338" height="52" />
+      </a>
+      <div class="co-marca">
+        <a href="https://www.unison.mx" rel="noopener" title="Universidad de Sonora">
+          <img src={u('logos/unison-escudo.png')} alt="Universidad de Sonora" width="37" height="46" />
+        </a>
+        <span class="sep" aria-hidden="true"></span>
+        <a href={u('acerca/')} class="dataaqua" title="Proyecto DataAqua">
+          <img src={u('logos/dataaqua-gota.svg')} alt="" width="26" height="36" />
+          <span>Data<b>Aqua</b></span>
+        </a>
+      </div>
+    </div>
+  </header>
+  <nav class="nav" aria-label="Principal">
+    <div class="contenedor nav-fila">
+      <a href={u('')} class="nav-nombre">{nombre}</a>
+      <ul>
+        {menu.map(([ruta, etiqueta]) => (
+          <li><a href={u(ruta)} aria-current={pagina === ruta ? 'page' : undefined}>{etiqueta}</a></li>
+        ))}
+      </ul>
+    </div>
+  </nav>
+  <main id="contenido">
+    <div class="contenedor">
+      <slot />
+    </div>
+  </main>
+  <div class="pie-logos">
+    <div class="contenedor">
+      <img src={u('logos/unison-escudo.png')} alt="Universidad de Sonora" width="43" height="54" />
+      <img src={u('logos/atdt-sonora.svg')} alt="Agencia de Transformación Digital y Telecomunicaciones" width="350" height="54" />
+      <span class="dataaqua"><img src={u('logos/dataaqua-gota.svg')} alt="" width="30" height="42" /><span>Data<b>Aqua</b></span></span>
+    </div>
+  </div>
+  <footer class="pie">
+    <div class="contenedor">
+      <div>
+        <h4>{nombre}</h4>
+        <p>Departamento de Matemáticas, Universidad de Sonora<br />Proyecto DataAqua · Laboratorios Nacionales<br />Producto para la ATDT del Gobierno de Sonora</p>
+      </div>
+      <div>
+        <h4>Sitio</h4>
+        <ul>
+          <li><a href={u('datos/')}>Datos abiertos y fuentes</a></li>
+          <li><a href={u('metodologia/')}>Metodología</a></li>
+          <li><a href={u('privacidad/')}>Aviso de privacidad y política de uso</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Versión</h4>
+        <p>Versión 0.1 · datos generados el <span data-fecha-datos>—</span>.<br />Sitio en desarrollo: las cifras provienen de fuentes oficiales; la huella hídrica aún no se publica.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    import { cargaJSON } from '../scripts/comun.js';
+    cargaJSON('datos/manifiesto.json').then((m) => {
+      document.querySelectorAll('[data-fecha-datos]').forEach((e) => { e.textContent = m.generado; });
+    }).catch(() => {});
+  </script>
+</body>
+</html>

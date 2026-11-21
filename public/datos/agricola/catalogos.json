@@ -1,0 +1,1188 @@
+{
+  "anios": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "ciclos": [
+    {
+      "id": "OI",
+      "nombre": "Otoño-Invierno"
+    },
+    {
+      "id": "PV",
+      "nombre": "Primavera-Verano"
+    },
+    {
+      "id": "PER",
+      "nombre": "Perennes"
+    }
+  ],
+  "modalidades": [
+    {
+      "id": "R",
+      "nombre": "Riego"
+    },
+    {
+      "id": "T",
+      "nombre": "Temporal"
+    }
+  ],
+  "cultivos": [
+    {
+      "id": 5000000,
+      "nombre": "Aceituna",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 5010000,
+      "nombre": "Acelga",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 5050000,
+      "nombre": "Agave",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 5060000,
+      "nombre": "Aguacate",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 5070000,
+      "nombre": "Ajo",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 5080000,
+      "nombre": "Ajonjolí",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 5160000,
+      "nombre": "Alfalfa achicalada",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 5190000,
+      "nombre": "Algodón hueso",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 5370000,
+      "nombre": "Apio",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 5650000,
+      "nombre": "Arándano",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 5490000,
+      "nombre": "Avena forrajera en verde",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 5610000,
+      "nombre": "Berenjena",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 5640000,
+      "nombre": "Betabel",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 5670000,
+      "nombre": "Brócoli",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 5690000,
+      "nombre": "Cacahuate",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 5740000,
+      "nombre": "Calabacita",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 5760000,
+      "nombre": "Calabaza",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 5810000,
+      "nombre": "Canola",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 5822000,
+      "nombre": "Caña de azúcar piloncillo",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 5900000,
+      "nombre": "Cebada forrajera en verde",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 5920000,
+      "nombre": "Cebada grano",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 5940000,
+      "nombre": "Cebolla",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 6020000,
+      "nombre": "Chabacano",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 6120000,
+      "nombre": "Chile verde",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 6070000,
+      "nombre": "Chícharo",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 6190000,
+      "nombre": "Cilantro",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 6220000,
+      "nombre": "Ciruela",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 6310000,
+      "nombre": "Col (repollo)",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 6320000,
+      "nombre": "Col de bruselas",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 6330000,
+      "nombre": "Coliflor",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 5870000,
+      "nombre": "Cártamo",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 6530000,
+      "nombre": "Durazno",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 6490000,
+      "nombre": "Dátil",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 6600000,
+      "nombre": "Ejote",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 6610000,
+      "nombre": "Elote",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 6620000,
+      "nombre": "Eneldo",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 6670000,
+      "nombre": "Espinaca",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 6650000,
+      "nombre": "Espárrago",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 6840000,
+      "nombre": "Frijol",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 6900000,
+      "nombre": "Garbanzo grano",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 6940000,
+      "nombre": "Girasol",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 7010000,
+      "nombre": "Granada",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 7100000,
+      "nombre": "Haba grano",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 7110000,
+      "nombre": "Haba verde",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 7150000,
+      "nombre": "Higo",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 7160000,
+      "nombre": "Higuerilla",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 7170000,
+      "nombre": "Hortalizas",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 7270000,
+      "nombre": "Kale",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 7330000,
+      "nombre": "Lechuga",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 7390000,
+      "nombre": "Limón",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 7400000,
+      "nombre": "Limón real",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 7550000,
+      "nombre": "Mandarina",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 7560000,
+      "nombre": "Mango",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 7570000,
+      "nombre": "Mano de león",
+      "unidad": "Manojo"
+    },
+    {
+      "id": 7575000,
+      "nombre": "Mano de león (manojo)",
+      "unidad": "Manojo"
+    },
+    {
+      "id": 7580000,
+      "nombre": "Manzana",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 7470000,
+      "nombre": "Maíz forrajero en verde",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 7490000,
+      "nombre": "Maíz grano",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 7670000,
+      "nombre": "Melón",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 7690000,
+      "nombre": "Membrillo",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 7840000,
+      "nombre": "Napa",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 7850000,
+      "nombre": "Naranja",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 7920000,
+      "nombre": "Nopalitos",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 7960000,
+      "nombre": "Nuez",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 8100000,
+      "nombre": "Papa",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 15050000,
+      "nombre": "Pastos y praderas",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 8210000,
+      "nombre": "Pepino",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 8230000,
+      "nombre": "Pera",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 8240000,
+      "nombre": "Perejil",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 8260000,
+      "nombre": "Persimonio",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 8330000,
+      "nombre": "Pistache",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 8340000,
+      "nombre": "Pitahaya",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 8440000,
+      "nombre": "Poro (leek)",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 8460000,
+      "nombre": "Quelite",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 8490000,
+      "nombre": "Rábano",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 8710000,
+      "nombre": "Sandía",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 6200000,
+      "nombre": "Semilla de cilantro",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 6790000,
+      "nombre": "Semilla de flores",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 9990000,
+      "nombre": "Semilla de girasol",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 8110000,
+      "nombre": "Semilla de papa",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 8840000,
+      "nombre": "Semilla de soya",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 8960000,
+      "nombre": "Semilla de tomate rojo (jitomate)",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 9060000,
+      "nombre": "Semilla de trigo grano",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 8740000,
+      "nombre": "Shop suey",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 8780000,
+      "nombre": "Sorgo forrajero achicalado",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 8790000,
+      "nombre": "Sorgo forrajero en verde",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 8810000,
+      "nombre": "Sorgo grano",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 8830000,
+      "nombre": "Soya",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 9800000,
+      "nombre": "Stevia",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 8680000,
+      "nombre": "Sábila",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 8970000,
+      "nombre": "Tomate rojo (jitomate)",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 8980000,
+      "nombre": "Tomate verde",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 9000000,
+      "nombre": "Toronja (pomelo)",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 9040000,
+      "nombre": "Trigo forrajero verde",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 9050000,
+      "nombre": "Trigo grano",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 9110000,
+      "nombre": "Triticale grano",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 9130000,
+      "nombre": "Uva",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 9270000,
+      "nombre": "Zanahoria",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 9310000,
+      "nombre": "Zarzamora",
+      "unidad": "Tonelada"
+    },
+    {
+      "id": 9320000,
+      "nombre": "Zempoalxochitl",
+      "unidad": "Tonelada"
+    }
+  ],
+  "municipios_con_registro": [
+    "26001",
+    "26002",
+    "26003",
+    "26004",
+    "26005",
+    "26006",
+    "26007",
+    "26008",
+    "26009",
+    "26010",
+    "26011",
+    "26012",
+    "26013",
+    "26014",
+    "26015",
+    "26016",
+    "26017",
+    "26018",
+    "26019",
+    "26020",
+    "26021",
+    "26022",
+    "26023",
+    "26024",
+    "26025",
+    "26026",
+    "26027",
+    "26028",
+    "26029",
+    "26030",
+    "26031",
+    "26032",
+    "26033",
+    "26034",
+    "26035",
+    "26036",
+    "26037",
+    "26038",
+    "26039",
+    "26040",
+    "26042",
+    "26043",
+    "26044",
+    "26045",
+    "26046",
+    "26047",
+    "26048",
+    "26049",
+    "26050",
+    "26051",
+    "26052",
+    "26053",
+    "26054",
+    "26055",
+    "26056",
+    "26057",
+    "26058",
+    "26059",
+    "26060",
+    "26061",
+    "26062",
+    "26063",
+    "26064",
+    "26065",
+    "26066",
+    "26067",
+    "26068",
+    "26069",
+    "26070",
+    "26071",
+    "26072"
+  ],
+  "municipios": [
+    {
+      "cvegeo": "26001",
+      "nombre": "Aconchi",
+      "ddr": "Ures",
+      "cader": "Banámichi",
+      "pob_2020": 2563,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26002",
+      "nombre": "Agua Prieta",
+      "ddr": "Agua Prieta",
+      "cader": "Agua Prieta",
+      "pob_2020": 91929,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26003",
+      "nombre": "Álamos",
+      "ddr": "Navojoa",
+      "cader": "Álamos",
+      "pob_2020": 24976,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26004",
+      "nombre": "Altar",
+      "ddr": "Caborca",
+      "cader": "Atil",
+      "pob_2020": 9492,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26005",
+      "nombre": "Arivechi",
+      "ddr": "Sahuaripa",
+      "cader": "Arivechi",
+      "pob_2020": 1177,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26006",
+      "nombre": "Arizpe",
+      "ddr": "Ures",
+      "cader": "Banámichi",
+      "pob_2020": 2788,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26007",
+      "nombre": "Atil",
+      "ddr": "Caborca",
+      "cader": "Atil",
+      "pob_2020": 626,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26008",
+      "nombre": "Bacadéhuachi",
+      "ddr": "Moctezuma",
+      "cader": "Bacadéhuachi",
+      "pob_2020": 979,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26009",
+      "nombre": "Bacanora",
+      "ddr": "Sahuaripa",
+      "cader": "Bacanora",
+      "pob_2020": 759,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26010",
+      "nombre": "Bacerac",
+      "ddr": "Moctezuma",
+      "cader": "Bavispe",
+      "pob_2020": 1221,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26011",
+      "nombre": "Bacoachi",
+      "ddr": "Agua Prieta",
+      "cader": "Cananea",
+      "pob_2020": 1475,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26012",
+      "nombre": "Bácum",
+      "ddr": "Cajeme",
+      "cader": "Vicam",
+      "pob_2020": 23151,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26013",
+      "nombre": "Banámichi",
+      "ddr": "Ures",
+      "cader": "Banámichi",
+      "pob_2020": 1825,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26014",
+      "nombre": "Baviácora",
+      "ddr": "Ures",
+      "cader": "Banámichi",
+      "pob_2020": 3191,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26015",
+      "nombre": "Bavispe",
+      "ddr": "Moctezuma",
+      "cader": "Bavispe",
+      "pob_2020": 1169,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26016",
+      "nombre": "Benjamín Hill",
+      "ddr": "Magdalena",
+      "cader": "Santa Ana",
+      "pob_2020": 4988,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26017",
+      "nombre": "Caborca",
+      "ddr": "Caborca",
+      "cader": "Caborca",
+      "pob_2020": 89122,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26018",
+      "nombre": "Cajeme",
+      "ddr": "Cajeme",
+      "cader": "Vicam",
+      "pob_2020": 436484,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26019",
+      "nombre": "Cananea",
+      "ddr": "Agua Prieta",
+      "cader": "Cananea",
+      "pob_2020": 39451,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26020",
+      "nombre": "Carbó",
+      "ddr": "Hermosillo",
+      "cader": "Carbó",
+      "pob_2020": 4946,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26021",
+      "nombre": "La Colorada",
+      "ddr": "Mazatán",
+      "cader": "La Colorada",
+      "pob_2020": 1848,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26022",
+      "nombre": "Cucurpe",
+      "ddr": "Magdalena",
+      "cader": "Magdalena",
+      "pob_2020": 863,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26023",
+      "nombre": "Cumpas",
+      "ddr": "Moctezuma",
+      "cader": "Moctezuma",
+      "pob_2020": 5829,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26024",
+      "nombre": "Divisaderos",
+      "ddr": "Moctezuma",
+      "cader": "Moctezuma",
+      "pob_2020": 753,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26025",
+      "nombre": "Empalme",
+      "ddr": "Guaymas",
+      "cader": "Guaymas D.D.R.",
+      "pob_2020": 51431,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26026",
+      "nombre": "Etchojoa",
+      "ddr": "Navojoa",
+      "cader": "Etchojoa",
+      "pob_2020": 61309,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26027",
+      "nombre": "Fronteras",
+      "ddr": "Agua Prieta",
+      "cader": "Agua Prieta",
+      "pob_2020": 9041,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26028",
+      "nombre": "Granados",
+      "ddr": "Moctezuma",
+      "cader": "Huásabas",
+      "pob_2020": 1009,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26029",
+      "nombre": "Guaymas",
+      "ddr": "Cajeme",
+      "cader": "Vicam",
+      "pob_2020": 156863,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26030",
+      "nombre": "Hermosillo",
+      "ddr": "Hermosillo",
+      "cader": "Carbó",
+      "pob_2020": 936263,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26031",
+      "nombre": "Huachinera",
+      "ddr": "Moctezuma",
+      "cader": "Bavispe",
+      "pob_2020": 1186,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26032",
+      "nombre": "Huásabas",
+      "ddr": "Moctezuma",
+      "cader": "Huásabas",
+      "pob_2020": 888,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26033",
+      "nombre": "Huatabampo",
+      "ddr": "Navojoa",
+      "cader": "Huatabampo",
+      "pob_2020": 77682,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26034",
+      "nombre": "Huépac",
+      "ddr": "Ures",
+      "cader": "Banámichi",
+      "pob_2020": 943,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26035",
+      "nombre": "Imuris",
+      "ddr": "Magdalena",
+      "cader": "Magdalena",
+      "pob_2020": 12536,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26036",
+      "nombre": "Magdalena",
+      "ddr": "Magdalena",
+      "cader": "Magdalena",
+      "pob_2020": 33049,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26037",
+      "nombre": "Mazatán",
+      "ddr": "Mazatán",
+      "cader": "Villa Pesqueira",
+      "pob_2020": 1101,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26038",
+      "nombre": "Moctezuma",
+      "ddr": "Moctezuma",
+      "cader": "Moctezuma",
+      "pob_2020": 5173,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26039",
+      "nombre": "Naco",
+      "ddr": "Agua Prieta",
+      "cader": "Cananea",
+      "pob_2020": 5774,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26040",
+      "nombre": "Nácori Chico",
+      "ddr": "Moctezuma",
+      "cader": "Bacadéhuachi",
+      "pob_2020": 1531,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26041",
+      "nombre": "Nacozari de García",
+      "ddr": null,
+      "cader": null,
+      "pob_2020": 14369,
+      "con_registro_siap": false
+    },
+    {
+      "cvegeo": "26042",
+      "nombre": "Navojoa",
+      "ddr": "Navojoa",
+      "cader": "Navojoa",
+      "pob_2020": 164387,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26043",
+      "nombre": "Nogales",
+      "ddr": "Magdalena",
+      "cader": "Nogales",
+      "pob_2020": 264782,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26044",
+      "nombre": "Ónavas",
+      "ddr": "Mazatán",
+      "cader": "Soyopa",
+      "pob_2020": 365,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26045",
+      "nombre": "Opodepe",
+      "ddr": "Ures",
+      "cader": "Ures",
+      "pob_2020": 2438,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26046",
+      "nombre": "Oquitoa",
+      "ddr": "Caborca",
+      "cader": "Atil",
+      "pob_2020": 496,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26047",
+      "nombre": "Pitiquito",
+      "ddr": "Caborca",
+      "cader": "Caborca",
+      "pob_2020": 9122,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26048",
+      "nombre": "Puerto Peñasco",
+      "ddr": "Caborca",
+      "cader": "Sonoyta",
+      "pob_2020": 62689,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26049",
+      "nombre": "Quiriego",
+      "ddr": "Cajeme",
+      "cader": "Rosario",
+      "pob_2020": 3090,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26050",
+      "nombre": "Rayón",
+      "ddr": "Ures",
+      "cader": "Ures",
+      "pob_2020": 1496,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26051",
+      "nombre": "Rosario",
+      "ddr": "Cajeme",
+      "cader": "Rosario",
+      "pob_2020": 4830,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26052",
+      "nombre": "Sahuaripa",
+      "ddr": "Sahuaripa",
+      "cader": "Arivechi",
+      "pob_2020": 5257,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26053",
+      "nombre": "San Felipe de Jesús",
+      "ddr": "Ures",
+      "cader": "Banámichi",
+      "pob_2020": 369,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26054",
+      "nombre": "San Javier",
+      "ddr": "Mazatán",
+      "cader": "La Colorada",
+      "pob_2020": 537,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26055",
+      "nombre": "San Luis Río Colorado",
+      "ddr": "San Luis Río Colorado",
+      "cader": "San Luis Río Colorado",
+      "pob_2020": 199021,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26056",
+      "nombre": "San Miguel de Horcasitas",
+      "ddr": "Hermosillo",
+      "cader": "Carbó",
+      "pob_2020": 10729,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26057",
+      "nombre": "San Pedro de la Cueva",
+      "ddr": "Mazatán",
+      "cader": "Villa Pesqueira",
+      "pob_2020": 1458,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26058",
+      "nombre": "Santa Ana",
+      "ddr": "Magdalena",
+      "cader": "Santa Ana",
+      "pob_2020": 16203,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26059",
+      "nombre": "Santa Cruz",
+      "ddr": "Magdalena",
+      "cader": "Nogales",
+      "pob_2020": 1835,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26060",
+      "nombre": "Sáric",
+      "ddr": "Caborca",
+      "cader": "Atil",
+      "pob_2020": 2058,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26061",
+      "nombre": "Soyopa",
+      "ddr": "Mazatán",
+      "cader": "Soyopa",
+      "pob_2020": 1368,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26062",
+      "nombre": "Suaqui Grande",
+      "ddr": "Mazatán",
+      "cader": "La Colorada",
+      "pob_2020": 1114,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26063",
+      "nombre": "Tepache",
+      "ddr": "Moctezuma",
+      "cader": "Moctezuma",
+      "pob_2020": 1178,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26064",
+      "nombre": "Trincheras",
+      "ddr": "Magdalena",
+      "cader": "Santa Ana",
+      "pob_2020": 1381,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26065",
+      "nombre": "Tubutama",
+      "ddr": "Caborca",
+      "cader": "Atil",
+      "pob_2020": 1473,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26066",
+      "nombre": "Ures",
+      "ddr": "Ures",
+      "cader": "Ures",
+      "pob_2020": 8548,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26067",
+      "nombre": "Villa Hidalgo",
+      "ddr": "Moctezuma",
+      "cader": "Huásabas",
+      "pob_2020": 1429,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26068",
+      "nombre": "Villa Pesqueira",
+      "ddr": "Mazatán",
+      "cader": "Villa Pesqueira",
+      "pob_2020": 1043,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26069",
+      "nombre": "Yécora",
+      "ddr": "Sahuaripa",
+      "cader": "Yécora",
+      "pob_2020": 4793,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26070",
+      "nombre": "General Plutarco Elías Calles",
+      "ddr": "Caborca",
+      "cader": "Sonoyta",
+      "pob_2020": 13627,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26071",
+      "nombre": "Benito Juárez",
+      "ddr": "Cajeme",
+      "cader": "Villa Juárez",
+      "pob_2020": 21692,
+      "con_registro_siap": true
+    },
+    {
+      "cvegeo": "26072",
+      "nombre": "San Ignacio Río Muerto",
+      "ddr": "Cajeme",
+      "cader": "Pueblo Yaqui",
+      "pob_2020": 14279,
+      "con_registro_siap": true
+    }
+  ]
+}

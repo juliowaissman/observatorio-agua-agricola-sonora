@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Base titulo="Acerca de" pagina="acerca/" descripcion="Quién hace el Observatorio del Agua Agrícola de Sonora.">
+  <h1>Acerca del Observatorio</h1>
+  <p class="intro">El Observatorio del Agua Agrícola de Sonora es un proyecto del Departamento de Matemáticas de la Universidad de Sonora,
+    dentro del proyecto DataAqua de Laboratorios Nacionales, desarrollado para la Agencia de Transformación Digital y
+    Telecomunicaciones (ATDT) del Gobierno de Sonora.</p>
+
+  <div class="tarjetas">
+    <div class="tarjeta">
+      <img src={`${base}logos/unison-escudo.png`} alt="" width="58" height="72" />
+      <h3>Universidad de Sonora</h3>
+      <p>Departamento de Matemáticas. Desarrollo de la metodología, el cálculo y el sitio.</p>
+      <a href="https://www.unison.mx" rel="noopener">unison.mx</a>
+    </div>
+    <div class="tarjeta">
+      <img src={`${base}logos/dataaqua-gota.svg`} alt="" width="52" height="72" />
+      <h3>DataAqua</h3>
+      <p>Proyecto de Laboratorios Nacionales sobre datos y modelos para la gestión del agua.</p>
+    </div>
+    <div class="tarjeta">
+      <img src={`${base}logos/atdt-sonora.svg`} alt="" width="300" height="46" style="height:46px" />
+      <h3>ATDT Sonora</h3>
+      <p>Agencia de Transformación Digital y Telecomunicaciones del Gobierno del Estado de Sonora, destinataria del proyecto.</p>
+      <a href="https://transformaciondigital.sonora.gob.mx" rel="noopener">transformaciondigital.sonora.gob.mx</a>
+    </div>
+  </div>
+
+  <h2>Objetivo</h2>
+  <p>Ofrecer información abierta, verificable y actualizada sobre el uso del agua en la agricultura de Sonora, para apoyar la planeación
+    hídrica y agrícola: primero con datos de producción y riego, después con la huella hídrica de los cultivos, la evaluación del impacto
+    sobre cuencas y acuíferos y, más adelante, escenarios de sustitución de cultivos.</p>
+
+  <h2>Principios</h2>
+  <ul>
+    <li><strong>Fuentes oficiales y citadas.</strong> Cada cifra indica su fuente y su fecha de consulta.</li>
+    <li><strong>Nada inventado.</strong> Lo que no se sabe o no es público se declara como limitación.</li>
+    <li><strong>Reproducible.</strong> Los datos se generan y verifican con programas; los documentos tienen versiones.</li>
+    <li><strong>Abierto.</strong> Los datos del sitio se pueden descargar en CSV y JSON.</li>
+  </ul>
+</Base>

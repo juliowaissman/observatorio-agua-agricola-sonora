@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" role="img" aria-label="DataAqua">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#7FD0F2"/>
+      <stop offset="0.55" stop-color="#2A7BC4"/>
+      <stop offset="1" stop-color="#24398A"/>
+    </linearGradient>
+  </defs>
+  <path d="M60 6C60 6 18 62 18 96C18 122 37 142 60 142C83 142 102 122 102 96C102 62 60 6 60 6Z" fill="url(#g)"/>
+  <path d="M66 52C66 52 44 84 44 103C44 118 54 127 66 127C78 127 88 118 88 103C88 84 66 52 66 52Z" fill="#fff" fill-opacity=".16"/>
+  <path d="M52 32C35 60 28 80 30 100C32 120 46 133 64 134C48 126 40 112 41 96C42 78 47 58 52 32Z" fill="#fff" fill-opacity=".88"/>
+  <circle cx="74" cy="104" r="5" fill="#fff" fill-opacity=".85"/>
+  <circle cx="80" cy="88" r="3.6" fill="#fff" fill-opacity=".7"/>
+  <circle cx="83" cy="75" r="2.4" fill="#fff" fill-opacity=".55"/>
+</svg>

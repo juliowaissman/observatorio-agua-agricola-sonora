@@ -1,0 +1,982 @@
+[
+  {
+    "anio": 2019,
+    "totales": {
+      "sembrada_ha": 603469.65,
+      "cosechada_ha": 591006.06,
+      "siniestrada_ha": 6339.5,
+      "valor_pesos": 48119075067.14,
+      "sembrada_riego_ha": 573682.11,
+      "sembrada_oi_ha": 421230.71,
+      "sembrada_per_ha": 102979.05,
+      "sembrada_pv_ha": 79259.89,
+      "sembrada_temporal_ha": 29787.54
+    },
+    "municipios_con_registro": 71,
+    "cultivos_con_registro": 84,
+    "top_valor": [
+      {
+        "cultivo": 9130000,
+        "nombre": "Uva",
+        "valor_pesos": 9853045169.74,
+        "sembrada_ha": 23706.5
+      },
+      {
+        "cultivo": 9050000,
+        "nombre": "Trigo grano",
+        "valor_pesos": 7039493364.84,
+        "sembrada_ha": 260319.67
+      },
+      {
+        "cultivo": 6650000,
+        "nombre": "Espárrago",
+        "valor_pesos": 6435837257.25,
+        "sembrada_ha": 18715.8
+      },
+      {
+        "cultivo": 8100000,
+        "nombre": "Papa",
+        "valor_pesos": 3520299850.67,
+        "sembrada_ha": 14193.07
+      },
+      {
+        "cultivo": 7960000,
+        "nombre": "Nuez",
+        "valor_pesos": 2631114484.18,
+        "sembrada_ha": 16912.23
+      },
+      {
+        "cultivo": 7490000,
+        "nombre": "Maíz grano",
+        "valor_pesos": 2501842547.1,
+        "sembrada_ha": 63400.66
+      },
+      {
+        "cultivo": 8710000,
+        "nombre": "Sandía",
+        "valor_pesos": 2049381211.65,
+        "sembrada_ha": 11007.38
+      },
+      {
+        "cultivo": 6120000,
+        "nombre": "Chile verde",
+        "valor_pesos": 1831750554.21,
+        "sembrada_ha": 4523.45
+      },
+      {
+        "cultivo": 8210000,
+        "nombre": "Pepino",
+        "valor_pesos": 1442896917.77,
+        "sembrada_ha": 1719.4
+      },
+      {
+        "cultivo": 5740000,
+        "nombre": "Calabacita",
+        "valor_pesos": 1319397499.54,
+        "sembrada_ha": 6396.54
+      }
+    ],
+    "top_superficie": [
+      {
+        "cultivo": 9050000,
+        "nombre": "Trigo grano",
+        "sembrada_ha": 260319.67,
+        "valor_pesos": 7039493364.84
+      },
+      {
+        "cultivo": 7490000,
+        "nombre": "Maíz grano",
+        "sembrada_ha": 63400.66,
+        "valor_pesos": 2501842547.1
+      },
+      {
+        "cultivo": 5160000,
+        "nombre": "Alfalfa achicalada",
+        "sembrada_ha": 27281.78,
+        "valor_pesos": 1199503728.99
+      },
+      {
+        "cultivo": 9130000,
+        "nombre": "Uva",
+        "sembrada_ha": 23706.5,
+        "valor_pesos": 9853045169.74
+      },
+      {
+        "cultivo": 6900000,
+        "nombre": "Garbanzo grano",
+        "sembrada_ha": 22357.1,
+        "valor_pesos": 687078503.84
+      },
+      {
+        "cultivo": 6650000,
+        "nombre": "Espárrago",
+        "sembrada_ha": 18715.8,
+        "valor_pesos": 6435837257.25
+      },
+      {
+        "cultivo": 8810000,
+        "nombre": "Sorgo grano",
+        "sembrada_ha": 18552.44,
+        "valor_pesos": 107108960.68
+      },
+      {
+        "cultivo": 7960000,
+        "nombre": "Nuez",
+        "sembrada_ha": 16912.23,
+        "valor_pesos": 2631114484.18
+      },
+      {
+        "cultivo": 8790000,
+        "nombre": "Sorgo forrajero en verde",
+        "sembrada_ha": 15712.85,
+        "valor_pesos": 221472930.74
+      },
+      {
+        "cultivo": 8100000,
+        "nombre": "Papa",
+        "sembrada_ha": 14193.07,
+        "valor_pesos": 3520299850.67
+      }
+    ]
+  },
+  {
+    "anio": 2020,
+    "totales": {
+      "sembrada_ha": 513114.62,
+      "cosechada_ha": 496209.73,
+      "siniestrada_ha": 9293.0,
+      "valor_pesos": 46077033937.04,
+      "sembrada_riego_ha": 499640.16,
+      "sembrada_oi_ha": 359540.41,
+      "sembrada_per_ha": 97921.11,
+      "sembrada_pv_ha": 55653.1,
+      "sembrada_temporal_ha": 13474.46
+    },
+    "municipios_con_registro": 71,
+    "cultivos_con_registro": 45,
+    "top_valor": [
+      {
+        "cultivo": 9130000,
+        "nombre": "Uva",
+        "valor_pesos": 9586956685.99,
+        "sembrada_ha": 24102.0
+      },
+      {
+        "cultivo": 6650000,
+        "nombre": "Espárrago",
+        "valor_pesos": 7383984680.13,
+        "sembrada_ha": 18892.8
+      },
+      {
+        "cultivo": 9050000,
+        "nombre": "Trigo grano",
+        "valor_pesos": 7377948217.12,
+        "sembrada_ha": 230087.29
+      },
+      {
+        "cultivo": 8100000,
+        "nombre": "Papa",
+        "valor_pesos": 3735334549.24,
+        "sembrada_ha": 14158.21
+      },
+      {
+        "cultivo": 7490000,
+        "nombre": "Maíz grano",
+        "valor_pesos": 2375494864.97,
+        "sembrada_ha": 55714.49
+      },
+      {
+        "cultivo": 6120000,
+        "nombre": "Chile verde",
+        "valor_pesos": 2065101374.17,
+        "sembrada_ha": 4952.27
+      },
+      {
+        "cultivo": 8710000,
+        "nombre": "Sandía",
+        "valor_pesos": 2042837140.2,
+        "sembrada_ha": 10543.0
+      },
+      {
+        "cultivo": 7960000,
+        "nombre": "Nuez",
+        "valor_pesos": 2036928654.18,
+        "sembrada_ha": 18571.03
+      },
+      {
+        "cultivo": 8210000,
+        "nombre": "Pepino",
+        "valor_pesos": 1630773756.65,
+        "sembrada_ha": 1969.09
+      },
+      {
+        "cultivo": 5160000,
+        "nombre": "Alfalfa achicalada",
+        "valor_pesos": 1216595936.56,
+        "sembrada_ha": 26961.04
+      }
+    ],
+    "top_superficie": [
+      {
+        "cultivo": 9050000,
+        "nombre": "Trigo grano",
+        "sembrada_ha": 230087.29,
+        "valor_pesos": 7377948217.12
+      },
+      {
+        "cultivo": 7490000,
+        "nombre": "Maíz grano",
+        "sembrada_ha": 55714.49,
+        "valor_pesos": 2375494864.97
+      },
+      {
+        "cultivo": 5160000,
+        "nombre": "Alfalfa achicalada",
+        "sembrada_ha": 26961.04,
+        "valor_pesos": 1216595936.56
+      },
+      {
+        "cultivo": 9130000,
+        "nombre": "Uva",
+        "sembrada_ha": 24102.0,
+        "valor_pesos": 9586956685.99
+      },
+      {
+        "cultivo": 5870000,
+        "nombre": "Cártamo",
+        "sembrada_ha": 21630.64,
+        "valor_pesos": 402256154.32
+      },
+      {
+        "cultivo": 6650000,
+        "nombre": "Espárrago",
+        "sembrada_ha": 18892.8,
+        "valor_pesos": 7383984680.13
+      },
+      {
+        "cultivo": 7960000,
+        "nombre": "Nuez",
+        "sembrada_ha": 18571.03,
+        "valor_pesos": 2036928654.18
+      },
+      {
+        "cultivo": 8100000,
+        "nombre": "Papa",
+        "sembrada_ha": 14158.21,
+        "valor_pesos": 3735334549.24
+      },
+      {
+        "cultivo": 8790000,
+        "nombre": "Sorgo forrajero en verde",
+        "sembrada_ha": 13327.5,
+        "valor_pesos": 181744131.91
+      },
+      {
+        "cultivo": 8710000,
+        "nombre": "Sandía",
+        "sembrada_ha": 10543.0,
+        "valor_pesos": 2042837140.2
+      }
+    ]
+  },
+  {
+    "anio": 2021,
+    "totales": {
+      "sembrada_ha": 521238.15,
+      "cosechada_ha": 513351.16,
+      "siniestrada_ha": 95.0,
+      "valor_pesos": 48814147630.16,
+      "sembrada_riego_ha": 499671.49,
+      "sembrada_oi_ha": 367119.08,
+      "sembrada_per_ha": 95449.97,
+      "sembrada_pv_ha": 58669.1,
+      "sembrada_temporal_ha": 21566.66
+    },
+    "municipios_con_registro": 71,
+    "cultivos_con_registro": 45,
+    "top_valor": [
+      {
+        "cultivo": 9050000,
+        "nombre": "Trigo grano",
+        "valor_pesos": 9220372273.05,
+        "sembrada_ha": 236472.08
+      },
+      {
+        "cultivo": 9130000,
+        "nombre": "Uva",
+        "valor_pesos": 8960334506.75,
+        "sembrada_ha": 20581.0
+      },
+      {
+        "cultivo": 6650000,
+        "nombre": "Espárrago",
+        "valor_pesos": 7904250473.91,
+        "sembrada_ha": 19477.8
+      },
+      {
+        "cultivo": 8100000,
+        "nombre": "Papa",
+        "valor_pesos": 4088854730.26,
+        "sembrada_ha": 14812.0
+      },
+      {
+        "cultivo": 7490000,
+        "nombre": "Maíz grano",
+        "valor_pesos": 3972514574.54,
+        "sembrada_ha": 69828.5
+      },
+      {
+        "cultivo": 6120000,
+        "nombre": "Chile verde",
+        "valor_pesos": 2022719330.47,
+        "sembrada_ha": 5069.5
+      },
+      {
+        "cultivo": 7960000,
+        "nombre": "Nuez",
+        "valor_pesos": 1715305147.22,
+        "sembrada_ha": 19536.33
+      },
+      {
+        "cultivo": 8710000,
+        "nombre": "Sandía",
+        "valor_pesos": 1676795044.1,
+        "sembrada_ha": 8500.0
+      },
+      {
+        "cultivo": 5160000,
+        "nombre": "Alfalfa achicalada",
+        "valor_pesos": 1307553004.99,
+        "sembrada_ha": 26562.0
+      },
+      {
+        "cultivo": 8210000,
+        "nombre": "Pepino",
+        "valor_pesos": 1296060063.65,
+        "sembrada_ha": 1995.0
+      }
+    ],
+    "top_superficie": [
+      {
+        "cultivo": 9050000,
+        "nombre": "Trigo grano",
+        "sembrada_ha": 236472.08,
+        "valor_pesos": 9220372273.05
+      },
+      {
+        "cultivo": 7490000,
+        "nombre": "Maíz grano",
+        "sembrada_ha": 69828.5,
+        "valor_pesos": 3972514574.54
+      },
+      {
+        "cultivo": 5160000,
+        "nombre": "Alfalfa achicalada",
+        "sembrada_ha": 26562.0,
+        "valor_pesos": 1307553004.99
+      },
+      {
+        "cultivo": 9130000,
+        "nombre": "Uva",
+        "sembrada_ha": 20581.0,
+        "valor_pesos": 8960334506.75
+      },
+      {
+        "cultivo": 7960000,
+        "nombre": "Nuez",
+        "sembrada_ha": 19536.33,
+        "valor_pesos": 1715305147.22
+      },
+      {
+        "cultivo": 6650000,
+        "nombre": "Espárrago",
+        "sembrada_ha": 19477.8,
+        "valor_pesos": 7904250473.91
+      },
+      {
+        "cultivo": 8790000,
+        "nombre": "Sorgo forrajero en verde",
+        "sembrada_ha": 18860.0,
+        "valor_pesos": 293025804.11
+      },
+      {
+        "cultivo": 8100000,
+        "nombre": "Papa",
+        "sembrada_ha": 14812.0,
+        "valor_pesos": 4088854730.26
+      },
+      {
+        "cultivo": 6840000,
+        "nombre": "Frijol",
+        "sembrada_ha": 11780.0,
+        "valor_pesos": 461736257.98
+      },
+      {
+        "cultivo": 5870000,
+        "nombre": "Cártamo",
+        "sembrada_ha": 10093.0,
+        "valor_pesos": 187971777.87
+      }
+    ]
+  },
+  {
+    "anio": 2022,
+    "totales": {
+      "sembrada_ha": 558064.23,
+      "cosechada_ha": 549561.52,
+      "siniestrada_ha": 50.5,
+      "valor_pesos": 62594949666.33,
+      "sembrada_riego_ha": 532046.57,
+      "sembrada_oi_ha": 387640.18,
+      "sembrada_per_ha": 104967.12,
+      "sembrada_pv_ha": 65456.93,
+      "sembrada_temporal_ha": 26017.66
+    },
+    "municipios_con_registro": 71,
+    "cultivos_con_registro": 91,
+    "top_valor": [
+      {
+        "cultivo": 9050000,
+        "nombre": "Trigo grano",
+        "valor_pesos": 17014219709.25,
+        "sembrada_ha": 284587.0
+      },
+      {
+        "cultivo": 9130000,
+        "nombre": "Uva",
+        "valor_pesos": 10026186116.62,
+        "sembrada_ha": 20662.0
+      },
+      {
+        "cultivo": 6650000,
+        "nombre": "Espárrago",
+        "valor_pesos": 8304605120.99,
+        "sembrada_ha": 19740.8
+      },
+      {
+        "cultivo": 8100000,
+        "nombre": "Papa",
+        "valor_pesos": 4317464284.09,
+        "sembrada_ha": 14825.0
+      },
+      {
+        "cultivo": 5160000,
+        "nombre": "Alfalfa achicalada",
+        "valor_pesos": 4204748203.53,
+        "sembrada_ha": 26555.0
+      },
+      {
+        "cultivo": 7960000,
+        "nombre": "Nuez",
+        "valor_pesos": 2676533609.4,
+        "sembrada_ha": 20443.83
+      },
+      {
+        "cultivo": 6120000,
+        "nombre": "Chile verde",
+        "valor_pesos": 1816569751.78,
+        "sembrada_ha": 4506.33
+      },
+      {
+        "cultivo": 8710000,
+        "nombre": "Sandía",
+        "valor_pesos": 1346548905.56,
+        "sembrada_ha": 6675.0
+      },
+      {
+        "cultivo": 8210000,
+        "nombre": "Pepino",
+        "valor_pesos": 1284394813.75,
+        "sembrada_ha": 1907.5
+      },
+      {
+        "cultivo": 7490000,
+        "nombre": "Maíz grano",
+        "valor_pesos": 1236917420.27,
+        "sembrada_ha": 18202.0
+      }
+    ],
+    "top_superficie": [
+      {
+        "cultivo": 9050000,
+        "nombre": "Trigo grano",
+        "sembrada_ha": 284587.0,
+        "valor_pesos": 17014219709.25
+      },
+      {
+        "cultivo": 5160000,
+        "nombre": "Alfalfa achicalada",
+        "sembrada_ha": 26555.0,
+        "valor_pesos": 4204748203.53
+      },
+      {
+        "cultivo": 9130000,
+        "nombre": "Uva",
+        "sembrada_ha": 20662.0,
+        "valor_pesos": 10026186116.62
+      },
+      {
+        "cultivo": 7960000,
+        "nombre": "Nuez",
+        "sembrada_ha": 20443.83,
+        "valor_pesos": 2676533609.4
+      },
+      {
+        "cultivo": 6650000,
+        "nombre": "Espárrago",
+        "sembrada_ha": 19740.8,
+        "valor_pesos": 8304605120.99
+      },
+      {
+        "cultivo": 8790000,
+        "nombre": "Sorgo forrajero en verde",
+        "sembrada_ha": 18207.0,
+        "valor_pesos": 313915116.83
+      },
+      {
+        "cultivo": 7490000,
+        "nombre": "Maíz grano",
+        "sembrada_ha": 18202.0,
+        "valor_pesos": 1236917420.27
+      },
+      {
+        "cultivo": 5870000,
+        "nombre": "Cártamo",
+        "sembrada_ha": 17754.0,
+        "valor_pesos": 514901903.04
+      },
+      {
+        "cultivo": 8100000,
+        "nombre": "Papa",
+        "sembrada_ha": 14825.0,
+        "valor_pesos": 4317464284.09
+      },
+      {
+        "cultivo": 8810000,
+        "nombre": "Sorgo grano",
+        "sembrada_ha": 13563.0,
+        "valor_pesos": 180517841.45
+      }
+    ]
+  },
+  {
+    "anio": 2023,
+    "totales": {
+      "sembrada_ha": 562795.14,
+      "cosechada_ha": 544206.18,
+      "siniestrada_ha": 6296.0,
+      "valor_pesos": 68167934905.41,
+      "sembrada_riego_ha": 545971.48,
+      "sembrada_oi_ha": 398466.3,
+      "sembrada_per_ha": 109519.67,
+      "sembrada_pv_ha": 54809.17,
+      "sembrada_temporal_ha": 16823.66
+    },
+    "municipios_con_registro": 71,
+    "cultivos_con_registro": 93,
+    "top_valor": [
+      {
+        "cultivo": 9050000,
+        "nombre": "Trigo grano",
+        "valor_pesos": 17056674255.04,
+        "sembrada_ha": 268056.7
+      },
+      {
+        "cultivo": 9130000,
+        "nombre": "Uva",
+        "valor_pesos": 10410018828.35,
+        "sembrada_ha": 20492.0
+      },
+      {
+        "cultivo": 6650000,
+        "nombre": "Espárrago",
+        "valor_pesos": 8259583363.41,
+        "sembrada_ha": 20270.2
+      },
+      {
+        "cultivo": 8100000,
+        "nombre": "Papa",
+        "valor_pesos": 5053499260.78,
+        "sembrada_ha": 16657.54
+      },
+      {
+        "cultivo": 5160000,
+        "nombre": "Alfalfa achicalada",
+        "valor_pesos": 4598298519.16,
+        "sembrada_ha": 26866.0
+      },
+      {
+        "cultivo": 7490000,
+        "nombre": "Maíz grano",
+        "valor_pesos": 3008759587.28,
+        "sembrada_ha": 45195.5
+      },
+      {
+        "cultivo": 8710000,
+        "nombre": "Sandía",
+        "valor_pesos": 2394631856.07,
+        "sembrada_ha": 8278.0
+      },
+      {
+        "cultivo": 7960000,
+        "nombre": "Nuez",
+        "valor_pesos": 2153277725.81,
+        "sembrada_ha": 21742.68
+      },
+      {
+        "cultivo": 6120000,
+        "nombre": "Chile verde",
+        "valor_pesos": 2063378753.91,
+        "sembrada_ha": 4491.83
+      },
+      {
+        "cultivo": 8210000,
+        "nombre": "Pepino",
+        "valor_pesos": 1664424823.71,
+        "sembrada_ha": 2102.2
+      }
+    ],
+    "top_superficie": [
+      {
+        "cultivo": 9050000,
+        "nombre": "Trigo grano",
+        "sembrada_ha": 268056.7,
+        "valor_pesos": 17056674255.04
+      },
+      {
+        "cultivo": 7490000,
+        "nombre": "Maíz grano",
+        "sembrada_ha": 45195.5,
+        "valor_pesos": 3008759587.28
+      },
+      {
+        "cultivo": 5160000,
+        "nombre": "Alfalfa achicalada",
+        "sembrada_ha": 26866.0,
+        "valor_pesos": 4598298519.16
+      },
+      {
+        "cultivo": 7960000,
+        "nombre": "Nuez",
+        "sembrada_ha": 21742.68,
+        "valor_pesos": 2153277725.81
+      },
+      {
+        "cultivo": 9130000,
+        "nombre": "Uva",
+        "sembrada_ha": 20492.0,
+        "valor_pesos": 10410018828.35
+      },
+      {
+        "cultivo": 6650000,
+        "nombre": "Espárrago",
+        "sembrada_ha": 20270.2,
+        "valor_pesos": 8259583363.41
+      },
+      {
+        "cultivo": 8100000,
+        "nombre": "Papa",
+        "sembrada_ha": 16657.54,
+        "valor_pesos": 5053499260.78
+      },
+      {
+        "cultivo": 8790000,
+        "nombre": "Sorgo forrajero en verde",
+        "sembrada_ha": 15893.0,
+        "valor_pesos": 258728417.24
+      },
+      {
+        "cultivo": 5870000,
+        "nombre": "Cártamo",
+        "sembrada_ha": 12330.0,
+        "valor_pesos": 392659229.37
+      },
+      {
+        "cultivo": 15050000,
+        "nombre": "Pastos y praderas",
+        "sembrada_ha": 11785.55,
+        "valor_pesos": 347279082.43
+      }
+    ]
+  },
+  {
+    "anio": 2024,
+    "totales": {
+      "sembrada_ha": 489720.61,
+      "cosechada_ha": 470264.11,
+      "siniestrada_ha": 9302.0,
+      "valor_pesos": 53862079605.54,
+      "sembrada_riego_ha": 477478.95,
+      "sembrada_oi_ha": 341957.4,
+      "sembrada_per_ha": 105414.16,
+      "sembrada_pv_ha": 42349.05,
+      "sembrada_temporal_ha": 12241.66
+    },
+    "municipios_con_registro": 71,
+    "cultivos_con_registro": 81,
+    "top_valor": [
+      {
+        "cultivo": 9130000,
+        "nombre": "Uva",
+        "valor_pesos": 10620568119.86,
+        "sembrada_ha": 20478.0
+      },
+      {
+        "cultivo": 9050000,
+        "nombre": "Trigo grano",
+        "valor_pesos": 10451443207.71,
+        "sembrada_ha": 250069.0
+      },
+      {
+        "cultivo": 6650000,
+        "nombre": "Espárrago",
+        "valor_pesos": 8463758560.04,
+        "sembrada_ha": 19713.3
+      },
+      {
+        "cultivo": 8100000,
+        "nombre": "Papa",
+        "valor_pesos": 5680095699.5,
+        "sembrada_ha": 18153.0
+      },
+      {
+        "cultivo": 7960000,
+        "nombre": "Nuez",
+        "valor_pesos": 2074787658.02,
+        "sembrada_ha": 21097.32
+      },
+      {
+        "cultivo": 5160000,
+        "nombre": "Alfalfa achicalada",
+        "valor_pesos": 1792683038.86,
+        "sembrada_ha": 24352.0
+      },
+      {
+        "cultivo": 8710000,
+        "nombre": "Sandía",
+        "valor_pesos": 1668453391.97,
+        "sembrada_ha": 5725.0
+      },
+      {
+        "cultivo": 6120000,
+        "nombre": "Chile verde",
+        "valor_pesos": 1412227055.08,
+        "sembrada_ha": 3198.85
+      },
+      {
+        "cultivo": 8970000,
+        "nombre": "Tomate rojo (jitomate)",
+        "valor_pesos": 1199402549.19,
+        "sembrada_ha": 2448.1
+      },
+      {
+        "cultivo": 8210000,
+        "nombre": "Pepino",
+        "valor_pesos": 1076437846.42,
+        "sembrada_ha": 1346.7
+      }
+    ],
+    "top_superficie": [
+      {
+        "cultivo": 9050000,
+        "nombre": "Trigo grano",
+        "sembrada_ha": 250069.0,
+        "valor_pesos": 10451443207.71
+      },
+      {
+        "cultivo": 5160000,
+        "nombre": "Alfalfa achicalada",
+        "sembrada_ha": 24352.0,
+        "valor_pesos": 1792683038.86
+      },
+      {
+        "cultivo": 7960000,
+        "nombre": "Nuez",
+        "sembrada_ha": 21097.32,
+        "valor_pesos": 2074787658.02
+      },
+      {
+        "cultivo": 9130000,
+        "nombre": "Uva",
+        "sembrada_ha": 20478.0,
+        "valor_pesos": 10620568119.86
+      },
+      {
+        "cultivo": 6650000,
+        "nombre": "Espárrago",
+        "sembrada_ha": 19713.3,
+        "valor_pesos": 8463758560.04
+      },
+      {
+        "cultivo": 8100000,
+        "nombre": "Papa",
+        "sembrada_ha": 18153.0,
+        "valor_pesos": 5680095699.5
+      },
+      {
+        "cultivo": 8790000,
+        "nombre": "Sorgo forrajero en verde",
+        "sembrada_ha": 16110.0,
+        "valor_pesos": 205600709.53
+      },
+      {
+        "cultivo": 7490000,
+        "nombre": "Maíz grano",
+        "sembrada_ha": 15664.0,
+        "valor_pesos": 922029796.84
+      },
+      {
+        "cultivo": 5870000,
+        "nombre": "Cártamo",
+        "sembrada_ha": 12259.0,
+        "valor_pesos": 238493178.18
+      },
+      {
+        "cultivo": 15050000,
+        "nombre": "Pastos y praderas",
+        "sembrada_ha": 10309.25,
+        "valor_pesos": 324836776.38
+      }
+    ]
+  },
+  {
+    "anio": 2025,
+    "totales": {
+      "sembrada_ha": 284607.26,
+      "cosechada_ha": 272984.81,
+      "siniestrada_ha": 861.58,
+      "valor_pesos": 43981864928.61,
+      "sembrada_riego_ha": 273900.3,
+      "sembrada_oi_ha": 142076.21,
+      "sembrada_per_ha": 102946.54,
+      "sembrada_pv_ha": 39584.51,
+      "sembrada_temporal_ha": 10706.96
+    },
+    "municipios_con_registro": 69,
+    "cultivos_con_registro": 85,
+    "top_valor": [
+      {
+        "cultivo": 9130000,
+        "nombre": "Uva",
+        "valor_pesos": 11034401712.45,
+        "sembrada_ha": 20388.0
+      },
+      {
+        "cultivo": 6650000,
+        "nombre": "Espárrago",
+        "valor_pesos": 7200467488.4,
+        "sembrada_ha": 17365.75
+      },
+      {
+        "cultivo": 8100000,
+        "nombre": "Papa",
+        "valor_pesos": 5692847634.06,
+        "sembrada_ha": 19161.06
+      },
+      {
+        "cultivo": 9050000,
+        "nombre": "Trigo grano",
+        "valor_pesos": 2188828938.21,
+        "sembrada_ha": 59554.94
+      },
+      {
+        "cultivo": 7960000,
+        "nombre": "Nuez",
+        "valor_pesos": 2175510895.31,
+        "sembrada_ha": 21097.67
+      },
+      {
+        "cultivo": 8970000,
+        "nombre": "Tomate rojo (jitomate)",
+        "valor_pesos": 1823960870.67,
+        "sembrada_ha": 2543.0
+      },
+      {
+        "cultivo": 6120000,
+        "nombre": "Chile verde",
+        "valor_pesos": 1725149204.41,
+        "sembrada_ha": 3013.3
+      },
+      {
+        "cultivo": 8710000,
+        "nombre": "Sandía",
+        "valor_pesos": 1598895436.26,
+        "sembrada_ha": 4722.0
+      },
+      {
+        "cultivo": 7850000,
+        "nombre": "Naranja",
+        "valor_pesos": 1195985423.73,
+        "sembrada_ha": 8734.5
+      },
+      {
+        "cultivo": 5160000,
+        "nombre": "Alfalfa achicalada",
+        "valor_pesos": 1188054866.75,
+        "sembrada_ha": 22926.0
+      }
+    ],
+    "top_superficie": [
+      {
+        "cultivo": 9050000,
+        "nombre": "Trigo grano",
+        "sembrada_ha": 59554.94,
+        "valor_pesos": 2188828938.21
+      },
+      {
+        "cultivo": 5160000,
+        "nombre": "Alfalfa achicalada",
+        "sembrada_ha": 22926.0,
+        "valor_pesos": 1188054866.75
+      },
+      {
+        "cultivo": 7960000,
+        "nombre": "Nuez",
+        "sembrada_ha": 21097.67,
+        "valor_pesos": 2175510895.31
+      },
+      {
+        "cultivo": 9130000,
+        "nombre": "Uva",
+        "sembrada_ha": 20388.0,
+        "valor_pesos": 11034401712.45
+      },
+      {
+        "cultivo": 8100000,
+        "nombre": "Papa",
+        "sembrada_ha": 19161.06,
+        "valor_pesos": 5692847634.06
+      },
+      {
+        "cultivo": 6650000,
+        "nombre": "Espárrago",
+        "sembrada_ha": 17365.75,
+        "valor_pesos": 7200467488.4
+      },
+      {
+        "cultivo": 5870000,
+        "nombre": "Cártamo",
+        "sembrada_ha": 14842.45,
+        "valor_pesos": 285930295.9
+      },
+      {
+        "cultivo": 7490000,
+        "nombre": "Maíz grano",
+        "sembrada_ha": 11987.05,
+        "valor_pesos": 601284090.82
+      },
+      {
+        "cultivo": 8790000,
+        "nombre": "Sorgo forrajero en verde",
+        "sembrada_ha": 11835.78,
+        "valor_pesos": 205277642.0
+      },
+      {
+        "cultivo": 6900000,
+        "nombre": "Garbanzo grano",
+        "sembrada_ha": 10326.0,
+        "valor_pesos": 401043064.67
+      }
+    ]
+  }
+]

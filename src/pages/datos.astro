@@ -1,0 +1,77 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+import Base from '../layouts/Base.astro';
+const base = import.meta.env.BASE_URL;
+const lee = (r: string) => JSON.parse(fs.readFileSync(path.join(process.cwd(), 'public/datos', r), 'utf-8'));
+const manifiesto = lee('manifiesto.json');
+const fuentes = lee('fuentes.json');
+const verificacion = lee('verificacion.json');
+const indicadores = lee('indicadores.json');
+const desc: Record<string, string> = {
+  'agricola/cierre_municipal.csv': 'SIAP, cierre agrícola 2019–2025 por año, municipio, ciclo, modalidad y cultivo',
+  'agricola/cierre_municipal.json': 'Lo mismo, en formato columnar para programas',
+  'agricola/catalogos.json': 'Catálogos: años, ciclos, modalidades, cultivos y municipios',
+  'distritos/volumenes.csv': 'CONAGUA 1998–2025: usuarios, superficie regada, volumen y lámina por Distrito, año y tipo de fuente',
+  'distritos/volumenes.json': 'Lo mismo, en formato columnar',
+  'distritos/cultivos.csv': 'CONAGUA 1998–2025: superficie, producción y valor por Distrito y cultivo',
+  'distritos/cultivos.json': 'Lo mismo, en formato columnar',
+  'distritos/catalogo.json': 'Ficha de cada Distrito de Riego',
+  'geo/municipios.geojson': 'Límites municipales (INEGI), simplificados para web',
+  'geo/distritos_riego.geojson': 'Polígonos de los Distritos de Riego (SIAP), simplificados para web',
+  'resumen/estatal_anual.json': 'Totales estatales por año y cultivos principales',
+  'indicadores.json': 'Registro de indicadores (capas del mapa)',
+  'fuentes.json': 'Fuentes, licencias y nivel de verificación',
+};
+const kb = (b: number) => (b > 1e6 ? `${(b / 1e6).toFixed(1)} MB` : `${Math.round(b / 1e3)} kB`);
+const ok = verificacion.chequeos.filter((c: any) => c.ok).length;
+---
+<Base titulo="Datos abiertos" pagina="datos/" descripcion="Descarga de los datos del Observatorio del Agua Agrícola de Sonora, fuentes y verificación.">
+  <h1>Datos abiertos</h1>
+  <p class="intro">Todos los datos que usa el sitio se pueden descargar. Versión de datos {manifiesto.version_datos}, generada el {manifiesto.generado}.
+    Diccionario de datos y advertencias: <a href={`${base}datos/LEEME.md`}>LEEME.md</a>.</p>
+
+  <h2>Archivos</h2>
+  <div class="tabla-scroll"><table class="tabla">
+    <thead><tr><th>Archivo</th><th>Contenido</th><th class="num">Tamaño</th></tr></thead>
+    <tbody>
+      {manifiesto.archivos.filter((a: any) => desc[a.archivo]).map((a: any) => (
+        <tr><td><a href={`${base}datos/${a.archivo}`} download>{a.archivo}</a></td><td>{desc[a.archivo]}</td><td class="num">{kb(a.bytes)}</td></tr>
+      ))}
+    </tbody>
+  </table></div>
+  <p class="nota">Las sumas SHA-256 de cada archivo están en <a href={`${base}datos/manifiesto.json`}>manifiesto.json</a>.</p>
+
+  <h2>Fuentes</h2>
+  <div class="tabla-scroll"><table class="tabla">
+    <thead><tr><th>Fuente</th><th>Institución</th><th>Consulta</th><th>Verificación</th><th>Notas</th></tr></thead>
+    <tbody>
+      {fuentes.map((f: any) => (
+        <tr>
+          <td>{f.url ? <a href={f.url} rel="noopener">{f.nombre}</a> : f.nombre}</td>
+          <td>{f.institucion}</td><td>{f.consulta}</td>
+          <td><span class={f.verificacion === 'V' ? 'etiqueta v' : 'etiqueta'}>{f.verificacion === 'V' ? 'Verificado' : f.verificacion}</span></td>
+          <td class="nota">{f.notas}{f.licencia ? ` Licencia: ${f.licencia}.` : ''}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table></div>
+
+  <h2>Verificación automática</h2>
+  <p>{ok} de {verificacion.chequeos.length} chequeos correctos ({verificacion.fecha}). Se comprueba, entre otras cosas, que los totales por año, municipio y cultivo
+    sean idénticos a los de la fuente y que los mapas simplificados no tengan huecos.</p>
+  <details><summary>Ver chequeos</summary>
+    <ul class="nota">{verificacion.chequeos.map((c: any) => <li>{c.ok ? '✔' : '✘'} {c.chequeo}{c.detalle ? ` — ${c.detalle}` : ''}</li>)}</ul>
+  </details>
+
+  <h2>Indicadores</h2>
+  <div class="tabla-scroll"><table class="tabla">
+    <thead><tr><th>Indicador</th><th>Unidad</th><th>Escala</th><th>Estado</th><th>Descripción</th></tr></thead>
+    <tbody>
+      {indicadores.map((i: any) => (
+        <tr><td>{i.nombre}</td><td>{i.unidad}</td><td>{i.escala === 'municipio' ? 'Municipio' : 'Distrito de Riego'}</td>
+          <td><span class={i.estado === 'publicado' ? 'etiqueta v' : 'etiqueta pronto'}>{i.estado}</span></td><td class="nota">{i.descripcion}</td></tr>
+      ))}
+    </tbody>
+  </table></div>
+</Base>

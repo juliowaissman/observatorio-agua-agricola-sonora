@@ -1,0 +1,61 @@
+[
+  {
+    "id": "siap_cierre",
+    "nombre": "Cierre de la producción agrícola por municipio",
+    "institucion": "Servicio de Información Agroalimentaria y Pesquera (SIAP), SADER",
+    "url": "https://nube.agricultura.gob.mx/datosAbiertos/Agricola.php",
+    "cobertura": "Sonora, años agrícolas 2019-2025, municipio × ciclo × modalidad × cultivo",
+    "consulta": "2026-11-19",
+    "verificacion": "V",
+    "licencia": "Uso y reuso libre con reconocimiento (Términos de Libre Uso MX); licencia no verificada en la página de descarga",
+    "notas": "El año agrícola N incluye el ciclo otoño-invierno sembrado a partir de octubre de N-1. La superficie de otoño-invierno 2025 es mucho menor que la de años anteriores (142 mil ha de riego contra 342 mil en 2024); coincide con la estadística de CONAGUA (DR 041 Río Yaqui: 181 553 ha sembradas en OI 2024 y 22 198 ha en OI 2025). Valores en pesos corrientes (sin deflactar). El rendimiento y el precio medio rural se calculan como cocientes de los totales; no se promedian rendimientos de la fuente."
+  },
+  {
+    "id": "conagua_dr",
+    "nombre": "Estadísticas agrícolas de los Distritos de Riego, 1998-2025",
+    "institucion": "Comisión Nacional del Agua (CONAGUA)",
+    "url": "https://www.gob.mx/conagua/documentos/estadisticas-agricolas-de-los-distritos-de-riego",
+    "cobertura": "DR 014, 018, 037, 038, 041, 051 y 084; años agrícolas que terminan en 1998-2025",
+    "consulta": "2026-11-19",
+    "verificacion": "V",
+    "licencia": "No declarada en la página de descarga",
+    "archivos": [
+      "https://www.gob.mx/cms/uploads/attachment/file/1098724/ESTAD_STICA_AGRICOLA_POR_DISTRITO_1998-2025.xlsx",
+      "https://www.gob.mx/cms/uploads/attachment/file/1098723/SUPERFICIES_REGADAS_Y_VOLUMENES_1998-2025.xlsx"
+    ],
+    "notas": "Año agrícola del 1 de octubre al 30 de septiembre; se identifica por el año en que termina. Volumen bruto entregado en la fuente (incluye pérdidas de conducción), no consumo de los cultivos. El DR 014 Río Colorado incluye Baja California y Sonora: CONAGUA no desglosa la parte sonorense. Algunas cifras de la fuente son atípicas (p. ej. láminas mayores a 190 cm); se publican tal cual."
+  },
+  {
+    "id": "inegi_mg",
+    "nombre": "Marco Geoestadístico (municipios) y Censo de Población y Vivienda 2020",
+    "institucion": "Instituto Nacional de Estadística y Geografía (INEGI)",
+    "url": "https://gaia.inegi.org.mx/wscatgeo/v2/geo/mgem/26",
+    "cobertura": "72 municipios de Sonora, Marco Geoestadístico diciembre 2025; población del Censo 2020",
+    "consulta": "2026-11-21",
+    "verificacion": "V",
+    "licencia": "Términos de uso de la información del INEGI: https://www.inegi.org.mx/inegi/terminos.html",
+    "notas": "Polígonos simplificados para el sitio web (tolerancia ≈ 400 m); no usar para cálculos de área."
+  },
+  {
+    "id": "siap_dr_poligonos",
+    "nombre": "Polígonos de los Distritos de Riego",
+    "institucion": "SIAP, SADER (servicio ArcGIS DGSIAP)",
+    "url": "https://portalsig.agricultura.gob.mx/server/rest/services/DGSIAP/Distritos_de_riego/MapServer/0",
+    "cobertura": "85 Distritos de Riego nacionales; se publican los 7 con estadística de Sonora",
+    "consulta": "2026-11-20",
+    "verificacion": "V",
+    "licencia": "No declarada en el servicio",
+    "notas": "La capa no declara la fecha de los datos. Polígonos simplificados (tolerancia ≈ 100 m). El DR 076 Valle del Carrizo (Sinaloa) no se incluye: no hay estadística de su parte sonorense."
+  },
+  {
+    "id": "ficha_dr",
+    "nombre": "Ficha de Distritos de Riego de Sonora",
+    "institucion": "Plan Hídrico de Sonora 2023-2053 y CONAGUA (compilación del proyecto)",
+    "url": null,
+    "cobertura": "Superficie, fuente de abastecimiento y eficiencia de cada DR",
+    "consulta": "2026-11-19",
+    "verificacion": "parcial",
+    "licencia": null,
+    "notas": "Los municipios de cada DR son probables (no verificados); se marcan como NV."
+  }
+]

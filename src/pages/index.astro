@@ -1,0 +1,83 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base titulo="Observatorio del Agua Agrícola de Sonora" pagina="">
+  <h1>Agua y agricultura en Sonora</h1>
+  <p class="intro">El Observatorio reúne datos oficiales sobre la agricultura y el riego de Sonora y, en sus próximas etapas,
+    publicará la <strong>huella hídrica</strong> verde, azul y gris de los principales cultivos de cada municipio:
+    cuánta agua de lluvia, de riego y de dilución de contaminantes requiere producir una tonelada.</p>
+
+  <div class="tarjetas" id="cifras" aria-live="polite">
+    <div class="tarjeta"><div class="cifra" data-c="sembrada">—</div><div class="cifra-etq">hectáreas sembradas en <span data-c="anio">—</span></div></div>
+    <div class="tarjeta"><div class="cifra" data-c="riego">—</div><div class="cifra-etq">de la superficie sembrada es de riego</div></div>
+    <div class="tarjeta"><div class="cifra" data-c="valor">—</div><div class="cifra-etq">millones de pesos de valor de la producción</div></div>
+    <div class="tarjeta"><div class="cifra" data-c="volumen">—</div><div class="cifra-etq">hm³ entregados para riego en los Distritos de Riego (año agrícola <span data-c="anio-dr">—</span>)</div></div>
+  </div>
+  <p class="nota">Fuentes: SIAP, cierre agrícola municipal; CONAGUA, estadísticas de los Distritos de Riego. Ver <a href="datos/">Datos abiertos</a>.</p>
+
+  <h2>Superficie sembrada por año</h2>
+  <div class="caja">
+    <div id="g-anual" class="grafica" style="height:300px"></div>
+    <p class="nota" id="nota-anual"></p>
+  </div>
+
+  <div class="tarjetas">
+    <div class="tarjeta">
+      <h3>Explorador agrícola</h3>
+      <p>Mapa por municipio con filtros de año, ciclo, modalidad y cultivo, y series de tiempo comparativas.</p>
+      <a class="boton" href="explorador/">Abrir el explorador</a>
+    </div>
+    <div class="tarjeta">
+      <h3>Distritos de Riego</h3>
+      <p>Volumen entregado, superficie regada y lámina de riego de los siete Distritos con estadística en Sonora, 1998–2025.</p>
+      <a class="boton sec" href="distritos/">Ver Distritos</a>
+    </div>
+    <div class="tarjeta">
+      <h3>Huella hídrica <span class="etiqueta pronto">próximamente</span></h3>
+      <p>Cálculo con balance hídrico diario para 275 combinaciones de municipio, cultivo, ciclo y modalidad.</p>
+      <a class="boton sec" href="metodologia/">Cómo se calculará</a>
+    </div>
+  </div>
+
+  <h2>Hacia dónde va el Observatorio</h2>
+  <ol>
+    <li><strong>Datos agrícolas y de riego</strong> (esta versión).</li>
+    <li><strong>Huella hídrica verde, azul y gris</strong> por municipio y cultivo, con su incertidumbre.</li>
+    <li><strong>Evaluación de impacto:</strong> escasez y calidad del agua por cuenca y acuífero.</li>
+    <li><strong>Pronósticos y escenarios</strong> para explorar posibles sustituciones de cultivos.</li>
+  </ol>
+
+  <script>
+    import { cargaJSON, fmt, baseGrafica, EJE } from '../scripts/comun.js';
+    import { creaGrafica } from '../scripts/graficas.js';
+    const [res, vol] = await Promise.all([cargaJSON('datos/resumen/estatal_anual.json'), cargaJSON('datos/distritos/volumenes.json')]);
+    const ult = res[res.length - 1];
+    const t = ult.totales;
+    const pon = (k, v) => document.querySelectorAll(`[data-c="${k}"]`).forEach((e) => { e.textContent = v; });
+    pon('anio', ult.anio);
+    pon('sembrada', fmt(t.sembrada_ha, 0));
+    pon('riego', `${fmt((100 * t.sembrada_riego_ha) / t.sembrada_ha, 0)} %`);
+    pon('valor', fmt(t.valor_pesos / 1e6, 0));
+    const d = vol.datos;
+    const porAnio = {};
+    for (let i = 0; i < vol.n; i++) if (d.variable[i] === 'volumen_bruto_hm3') porAnio[d.anio[i]] = (porAnio[d.anio[i]] || 0) + (d.total[i] || 0);
+    const aDr = Math.max(...Object.keys(porAnio).map(Number));
+    pon('anio-dr', `${aDr - 1}–${aDr}`);
+    pon('volumen', fmt(porAnio[aDr], 0));
+
+    const g = creaGrafica(document.getElementById('g-anual'));
+    const ciclos = [['sembrada_oi_ha', 'Otoño-invierno', '#2a6fc4'], ['sembrada_pv_ha', 'Primavera-verano', '#e0662e'], ['sembrada_per_ha', 'Perennes', '#1a9e74']];
+    g.setOption({
+      ...baseGrafica(),
+      legend: { top: 0, left: 0, icon: 'roundRect', itemWidth: 12, textStyle: { color: '#333' } },
+      tooltip: { trigger: 'axis', confine: true, valueFormatter: (v) => `${fmt(v, 0)} ha` },
+      xAxis: { type: 'category', data: res.map((r) => String(r.anio)), ...EJE, splitLine: { show: false } },
+      yAxis: { type: 'value', ...EJE, axisLabel: { ...EJE.axisLabel, formatter: (v) => `${fmt(v / 1000, 0)} mil` } },
+      series: ciclos.map(([k, n, c], i) => ({
+        name: n, type: 'bar', stack: 'sup', data: res.map((r) => r.totales[k] || 0), barMaxWidth: 46,
+        itemStyle: { color: c, borderColor: '#fff', borderWidth: 1, borderRadius: i === ciclos.length - 1 ? [4, 4, 0, 0] : 0 },
+      })),
+    });
+    document.getElementById('nota-anual').textContent = `Hectáreas sembradas en Sonora por ciclo (SIAP). En ${ult.anio} el otoño-invierno cayó a ${fmt(ult.totales.sembrada_oi_ha, 0)} ha; CONAGUA registra la misma caída en el Distrito de Riego del Río Yaqui.`;
+  </script>
+</Base>

@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import documentos from '../data/documentos.json';
+const base = import.meta.env.BASE_URL;
+const fecha = (f: string) => new Date(f + 'T12:00:00').toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+<Base titulo="Documentos" pagina="documentos/" descripcion="Documentos metodológicos, reportes y estudios del Observatorio del Agua Agrícola de Sonora.">
+  <h1>Documentos</h1>
+  <p class="intro">Documentos metodológicos, reportes y estudios del Observatorio, en PDF. Son documentos vivos:
+    cuando cambie un cálculo, porque haya nuevos datos o nuevas referencias, se publica una nueva versión con su historial de cambios.</p>
+  <div class="tarjetas" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+    {documentos.map((d) => (
+      <article class="tarjeta">
+        <p class="nota" style="margin:0 0 4px">{d.tipo} · {d.estado === 'publicado'
+          ? <span class="etiqueta v">versión {d.version}</span>
+          : <span class="etiqueta pronto">{d.estado}</span>}</p>
+        <h3 style="margin-top:0">{d.titulo}</h3>
+        <p>{d.resumen}</p>
+        {d.estado === 'publicado' && (
+          <>
+            <p class="nota">{fecha(d.fecha)} · {d.paginas} páginas · Departamento de Matemáticas, Universidad de Sonora</p>
+            <a class="boton" href={`${base}${d.archivo}`}>Descargar PDF</a>
+            <details style="margin-top:10px"><summary class="nota">Historial de versiones</summary>
+              <ul class="nota">{d.historial.map((h) => <li><strong>{h.version}</strong> ({fecha(h.fecha)}): {h.cambios}</li>)}</ul>
+            </details>
+          </>
+        )}
+      </article>
+    ))}
+  </div>
+</Base>

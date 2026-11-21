@@ -1,0 +1,89 @@
+{
+  "nombre": "Observatorio del Agua Agrícola de Sonora — datos del sitio",
+  "version_datos": "0.1.0",
+  "generado": "2026-11-21",
+  "generador": "pipeline/exporta_web.py",
+  "geometria": {
+    "municipios": {
+      "vertices_original": 96948,
+      "vertices_simplificado": 6786,
+      "caja": [
+        -115.053,
+        26.297,
+        -108.4243,
+        32.4937
+      ]
+    },
+    "distritos_riego": {
+      "vertices_original": 4367,
+      "vertices_simplificado": 2293
+    }
+  },
+  "archivos": [
+    {
+      "archivo": "agricola/catalogos.json",
+      "bytes": 23284,
+      "sha256": "61003db920830f0ef1cd31570ee519fbd317e5f8a286494b5b8fae2ce235378a"
+    },
+    {
+      "archivo": "agricola/cierre_municipal.csv",
+      "bytes": 769508,
+      "sha256": "bc6e426288625beca0a51540c5ff9a088982b201c27740212f06937ce71c47f7"
+    },
+    {
+      "archivo": "agricola/cierre_municipal.json",
+      "bytes": 513877,
+      "sha256": "0f532b4967910bc4cec6348fec934979b51fdbd38e4071559f8e78afcf66dbea"
+    },
+    {
+      "archivo": "distritos/catalogo.json",
+      "bytes": 4139,
+      "sha256": "fabc934de93838e3e66654f51d1cedbf32d6e2b52c112316f911afa7c740eec0"
+    },
+    {
+      "archivo": "distritos/cultivos.csv",
+      "bytes": 481511,
+      "sha256": "551fcbb02290f9f19c5a9de05482ef9899dabe382320c59faf91ca13f8be2ace"
+    },
+    {
+      "archivo": "distritos/cultivos.json",
+      "bytes": 534238,
+      "sha256": "f92cbcc2fe0f97af9ef4bd8e57c8740e8115b5326955d8698d68da190a113c25"
+    },
+    {
+      "archivo": "distritos/volumenes.csv",
+      "bytes": 54503,
+      "sha256": "61e1202fe23e6c13da333daaf5c38b491a5b4f00e74b01ac6d31efd51e26c0ad"
+    },
+    {
+      "archivo": "distritos/volumenes.json",
+      "bytes": 66376,
+      "sha256": "66331742f11ac786eb9452028d760dd158c671e999f95e67148297ba825041f5"
+    },
+    {
+      "archivo": "fuentes.json",
+      "bytes": 3987,
+      "sha256": "4bb8d710c060a5606c868401d81f4908bb8421952e028fe754ee26eab810ec19"
+    },
+    {
+      "archivo": "geo/distritos_riego.geojson",
+      "bytes": 47123,
+      "sha256": "8b7983e07ade7f1419be94c7eb364a99fa46ccb280f994389b1d251712c0b7ef"
+    },
+    {
+      "archivo": "geo/municipios.geojson",
+      "bytes": 148782,
+      "sha256": "d83be2f79ab019518ecf72478f31460ff3d9127d76df922ad6bc4f830a287875"
+    },
+    {
+      "archivo": "indicadores.json",
+      "bytes": 12330,
+      "sha256": "321c84d45910e0f68c279acba76cfd90ced896b119d67a4741cd0fb5818597d2"
+    },
+    {
+      "archivo": "resumen/estatal_anual.json",
+      "bytes": 23831,
+      "sha256": "bfe15a95725277685140c5f2b99da04f31e6fc60426a6acedec083aff47f2cf0"
+    }
+  ]
+}

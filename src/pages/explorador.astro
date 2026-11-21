@@ -1,0 +1,68 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base titulo="Explorador" pagina="explorador/" descripcion="Mapa histórico de la agricultura de Sonora por municipio, año, ciclo, modalidad y cultivo, con series de tiempo comparativas.">
+  <h1>Explorador agrícola</h1>
+  <p class="intro">Superficie, producción y valor de la agricultura de Sonora por municipio (SIAP, 2019–2025).
+    Filtra por año, ciclo, modalidad y cultivo; haz clic en los municipios para comparar sus series.</p>
+
+  <form class="filtros" onsubmit="return false" aria-label="Filtros del mapa">
+    <label>Indicador <select id="f-ind"></select></label>
+    <label style="flex:0 1 110px">Año <select id="f-anio"></select></label>
+    <label>Ciclo
+      <select id="f-ciclo">
+        <option value="todos">Todos</option>
+        <option value="OI">Otoño-invierno</option>
+        <option value="PV">Primavera-verano</option>
+        <option value="PER">Perennes</option>
+      </select>
+    </label>
+    <label>Modalidad
+      <select id="f-mod">
+        <option value="todas">Riego y temporal</option>
+        <option value="R">Riego</option>
+        <option value="T">Temporal</option>
+      </select>
+    </label>
+    <label style="flex:1 1 200px">Cultivo <select id="f-cultivo"></select></label>
+  </form>
+  <p id="cargando" class="nota" role="status">Cargando datos…</p>
+
+  <div class="panel-mapa">
+    <div>
+      <div id="mapa" class="mapa" role="region" aria-label="Mapa de municipios de Sonora"></div>
+      <div class="leyenda-titulo" id="leyenda-titulo"></div>
+      <div class="leyenda" id="leyenda"></div>
+      <p class="fuente-graf" id="fuente"></p>
+    </div>
+    <div>
+      <div class="caja">
+        <h3 id="titulo-serie">Serie de tiempo</h3>
+        <div class="chips" id="chips"></div>
+        <div id="aviso-sel" class="nota" role="status"></div>
+        <div id="g-serie" class="grafica" style="height:290px"></div>
+        <button type="button" class="boton sec" id="b-limpiar">Limpiar selección</button>
+      </div>
+      <div class="caja">
+        <h3 id="titulo-cultivos">Cultivos principales</h3>
+        <p class="nota" id="nota-cultivos"></p>
+        <div id="g-cultivos" class="grafica" style="height:300px"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Municipios</h2>
+  <p class="nota"><span id="tabla-cuenta"></span> · <label><input type="checkbox" id="tabla-todos" /> mostrar todos</label></p>
+  <div class="tabla-scroll"><table class="tabla" id="tabla-mun"></table></div>
+  <p style="margin-top:16px"><button type="button" class="boton" id="b-csv">Descargar registros del filtro (CSV)</button>
+    <span class="nota">Todos los años, con el ciclo, modalidad y cultivo elegidos (y sólo los municipios seleccionados, si hay).</span></p>
+
+  <div class="aviso"><strong>Cómo leer el mapa.</strong> Los colores agrupan a los municipios con registro en siete clases
+    con el mismo número de municipios (cuantiles). Los valores en pesos son corrientes, sin ajustar por inflación.
+    En 2025 la siembra de otoño-invierno de riego fue mucho menor que en años anteriores; CONAGUA registra la misma caída
+    en el Distrito de Riego del Río Yaqui.</div>
+
+  <script>
+    import '../scripts/explorador.js';
+  </script>
+</Base>

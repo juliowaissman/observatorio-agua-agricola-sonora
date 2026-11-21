@@ -1,0 +1,37 @@
+[
+  {
+    "id": "metodologia-hh",
+    "titulo": "Procedimiento de cálculo de la huella hídrica de los cultivos de Sonora",
+    "tipo": "Documento metodológico",
+    "estado": "publicado",
+    "version": "0.1",
+    "fecha": "2026-11-21",
+    "archivo": "documentos/metodologia_huella_hidrica.pdf",
+    "paginas": 8,
+    "resumen": "Qué se calcula, con qué datos y cómo: balance hídrico diario FAO-56 con dos escenarios, huella gris con nitrógeno, alcance del estudio (33 municipios, 38 cultivos), validación con los Distritos de Riego y estado actual del cálculo.",
+    "historial": [
+      { "version": "0.1", "fecha": "2026-11-21", "cambios": "Primera versión pública; sin resultados de huella hídrica." }
+    ]
+  },
+  {
+    "id": "exploratorio",
+    "titulo": "Análisis exploratorio de los datos agrícolas y de agua de Sonora",
+    "tipo": "Reporte de análisis",
+    "estado": "en preparación",
+    "resumen": "Tendencias de superficie, producción, valor y volúmenes de riego 2019–2025 por municipio, cultivo y Distrito de Riego."
+  },
+  {
+    "id": "inventario",
+    "titulo": "Estudio del inventario de la huella hídrica de los cultivos de Sonora",
+    "tipo": "Estudio",
+    "estado": "planeado",
+    "resumen": "Resultados de huella hídrica verde, azul y gris por municipio, cultivo, ciclo y modalidad, con validación e incertidumbre."
+  },
+  {
+    "id": "impacto",
+    "titulo": "Método de evaluación de impacto: escasez y calidad del agua",
+    "tipo": "Documento metodológico",
+    "estado": "planeado",
+    "resumen": "Cómo se evaluará la presión sobre cuencas y acuíferos y el efecto del nitrógeno en la calidad del agua."
+  }
+]

@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base titulo="Distritos de Riego" pagina="distritos/" descripcion="Volumen de riego entregado, superficie regada, lámina y usuarios de los Distritos de Riego de Sonora, 1998-2025.">
+  <h1>Distritos de Riego</h1>
+  <p class="intro">CONAGUA publica para cada Distrito de Riego el volumen de agua entregado, la superficie regada y los usuarios,
+    desde el año agrícola 1997–1998. Estos datos servirán para validar el agua azul de la huella hídrica.</p>
+  <div class="aviso">El volumen es <strong>bruto</strong>: se mide en la presa, el río o el pozo e incluye las pérdidas en canales y parcelas.
+    No es el agua que consumen los cultivos. El DR 014 Río Colorado incluye Baja California, porque CONAGUA no separa la parte sonorense.</div>
+
+  <form class="filtros" onsubmit="return false" aria-label="Filtros">
+    <label>Indicador <select id="f-ind"></select></label>
+    <label style="flex:0 1 150px">Año agrícola <select id="f-anio"></select></label>
+    <label>Distrito <select id="f-dr"></select></label>
+  </form>
+  <p id="cargando" class="nota" role="status">Cargando datos…</p>
+
+  <div class="panel-mapa">
+    <div>
+      <div id="mapa" class="mapa" style="height:480px" role="region" aria-label="Mapa de Distritos de Riego"></div>
+      <div class="leyenda-titulo" id="leyenda-titulo"></div>
+      <div class="leyenda" id="leyenda"></div>
+      <p class="fuente-graf" id="fuente"></p>
+    </div>
+    <div>
+      <div class="caja">
+        <h3 id="titulo-comp">Comparación</h3>
+        <div id="g-comp" class="grafica" style="height:260px"></div>
+      </div>
+      <div class="caja" id="ficha"></div>
+    </div>
+  </div>
+  <div class="caja">
+    <h3 id="titulo-serie">Serie 1998–2025</h3>
+    <div id="g-serie" class="grafica" style="height:340px"></div>
+    <p class="nota">Años agrícolas (1 de octubre a 30 de septiembre), identificados por el año en que terminan.
+      Algunas cifras de la fuente son atípicas y se muestran tal cual.</p>
+  </div>
+  <p><button type="button" class="boton" id="b-csv">Descargar datos de CONAGUA (CSV)</button></p>
+
+  <script>
+    import '../scripts/distritos.js';
+  </script>
+</Base>
