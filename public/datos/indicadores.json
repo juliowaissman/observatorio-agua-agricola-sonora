@@ -554,7 +554,8 @@
       "anio",
       "ciclo",
       "modalidad",
-      "cultivo"
+      "cultivo",
+      "rotacion"
     ],
     "escala_color": [
       "#EEF6F4",
@@ -565,7 +566,13 @@
       "#1A574F",
       "#113A35"
     ],
-    "descripcion": "Agua de lluvia consumida por tonelada.",
+    "valores_rotacion": {
+      "primero": "Primer cultivo o único del año agrícola en esa tierra",
+      "segundo": "Segundo cultivo, sembrado tras cosechar el primero (CONAGUA, 'Segundos cultivos', sólo en DR)",
+      "perenne": "Perenne: ocupa la tierra todo el año",
+      "no_identificado": "La fuente no permite saberlo (SIAP fuera de DR, sin supuesto)"
+    },
+    "descripcion": "Agua de lluvia consumida por tonelada. Una huella por cultivo y periodo de crecimiento: donde la misma tierra se siembra dos veces en el año hay dos huellas, distinguidas por la posición en la rotación.",
     "fuente": null,
     "verificacion": null,
     "anios": [],
@@ -583,7 +590,8 @@
       "anio",
       "ciclo",
       "modalidad",
-      "cultivo"
+      "cultivo",
+      "rotacion"
     ],
     "escala_color": [
       "#F1F5FB",
@@ -594,7 +602,13 @@
       "#24398A",
       "#20305A"
     ],
-    "descripcion": "Agua de riego consumida por tonelada.",
+    "valores_rotacion": {
+      "primero": "Primer cultivo o único del año agrícola en esa tierra",
+      "segundo": "Segundo cultivo, sembrado tras cosechar el primero (CONAGUA, 'Segundos cultivos', sólo en DR)",
+      "perenne": "Perenne: ocupa la tierra todo el año",
+      "no_identificado": "La fuente no permite saberlo (SIAP fuera de DR, sin supuesto)"
+    },
+    "descripcion": "Agua de riego consumida por tonelada. Una huella por cultivo y periodo de crecimiento: donde la misma tierra se siembra dos veces en el año hay dos huellas, distinguidas por la posición en la rotación.",
     "fuente": null,
     "verificacion": null,
     "anios": [],
@@ -612,7 +626,8 @@
       "anio",
       "ciclo",
       "modalidad",
-      "cultivo"
+      "cultivo",
+      "rotacion"
     ],
     "escala_color": [
       "#F5F5F5",
@@ -623,7 +638,13 @@
       "#555555",
       "#333333"
     ],
-    "descripcion": "Agua necesaria para asimilar el nitrógeno lixiviado, por tonelada.",
+    "valores_rotacion": {
+      "primero": "Primer cultivo o único del año agrícola en esa tierra",
+      "segundo": "Segundo cultivo, sembrado tras cosechar el primero (CONAGUA, 'Segundos cultivos', sólo en DR)",
+      "perenne": "Perenne: ocupa la tierra todo el año",
+      "no_identificado": "La fuente no permite saberlo (SIAP fuera de DR, sin supuesto)"
+    },
+    "descripcion": "Agua necesaria para asimilar el nitrógeno lixiviado, por tonelada. Una huella por cultivo y periodo de crecimiento: donde la misma tierra se siembra dos veces en el año hay dos huellas, distinguidas por la posición en la rotación.",
     "fuente": null,
     "verificacion": null,
     "anios": [],

@@ -60,3 +60,8 @@ Cada entrada describe una capa: `id`, `nombre`, `unidad`, `escala` (`municipio` 
 `escala_color` (7 clases), `fuente`, `verificacion`, `archivo` y `estado` (`publicado` o `planeado`).
 Las capas de huella hídrica están registradas como `planeado` (paso 8 del plan); para publicarlas
 basta agregar su archivo de datos y cambiar el estado.
+
+Las capas de HH llevan además la dimensión `rotacion` (`valores_rotacion`: `primero`, `segundo`,
+`perenne`, `no_identificado`): hay una huella por cultivo y periodo de crecimiento, así que donde la
+misma tierra se siembra dos veces en el año aparecen dos huellas. Al agregar, los volúmenes se suman
+pero las superficies de primer y segundo cultivo no (es la misma tierra).

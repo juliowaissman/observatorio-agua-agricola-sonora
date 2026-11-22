@@ -77,8 +77,8 @@
     },
     {
       "archivo": "indicadores.json",
-      "bytes": 12330,
-      "sha256": "321c84d45910e0f68c279acba76cfd90ced896b119d67a4741cd0fb5818597d2"
+      "bytes": 14001,
+      "sha256": "b2116358552eb7a952ea3f1642f752dd1c2c240032eb76ab9c27102524d5ffe4"
     },
     {
       "archivo": "resumen/estatal_anual.json",
