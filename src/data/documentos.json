@@ -4,10 +4,10 @@
     "titulo": "Procedimiento de cálculo de la huella hídrica de los cultivos de Sonora",
     "tipo": "Documento metodológico",
     "estado": "publicado",
-    "version": "0.4",
+    "version": "0.5",
     "fecha": "2026-11-22",
     "archivo": "documentos/metodologia_huella_hidrica.pdf",
-    "paginas": 10,
+    "paginas": 11,
     "resumen": "Qué se calcula, con qué datos y cómo: balance hídrico diario FAO-56 con dos escenarios, huella gris con nitrógeno, una huella por cultivo cuando la misma tierra se siembra dos veces al año, alcance del estudio (33 municipios, 38 cultivos), validación con los Distritos de Riego y estado actual del cálculo.",
     "historial": [
       {
@@ -29,6 +29,11 @@
         "version": "0.4",
         "fecha": "2026-11-22",
         "cambios": "Clima (AgERA5), suelo (SoilGrids) y tierra agrícola (SIAP Serie IV); supuestos de la primera corrida del balance diario. Sin cifras de huella: se publicarán después de la validación."
+      },
+      {
+        "version": "0.5",
+        "fecha": "2026-11-22",
+        "cambios": "Primera parte de la validación (Distritos de Riego). Cambia el método central: corrección de aridez de la evapotranspiración de referencia (FAO-56 anexo 6) y coeficientes medidos en Sonora para la vid y el nogal. Se corrige el número de versión de la portada."
       }
     ]
   },
