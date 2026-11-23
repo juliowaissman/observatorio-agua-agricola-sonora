@@ -4,11 +4,11 @@
     "titulo": "Procedimiento de cálculo de la huella hídrica de los cultivos de Sonora",
     "tipo": "Documento metodológico",
     "estado": "publicado",
-    "version": "0.5",
+    "version": "0.6",
     "fecha": "2026-11-22",
     "archivo": "documentos/metodologia_huella_hidrica.pdf",
-    "paginas": 11,
-    "resumen": "Qué se calcula, con qué datos y cómo: balance hídrico diario FAO-56 con dos escenarios, huella gris con nitrógeno, una huella por cultivo cuando la misma tierra se siembra dos veces al año, alcance del estudio (33 municipios, 38 cultivos), validación con los Distritos de Riego y estado actual del cálculo.",
+    "paginas": 13,
+    "resumen": "Qué se calcula, con qué datos y cómo: balance hídrico diario FAO-56 con dos escenarios, huella gris con nitrógeno (fracción α de Franke nivel 1), una huella por cultivo cuando la misma tierra se siembra dos veces al año, alcance del estudio (33 municipios, 38 cultivos), validación con los Distritos de Riego y con estaciones del SMN, sensibilidad y estado actual del cálculo.",
     "historial": [
       {
         "version": "0.1",
@@ -34,6 +34,11 @@
         "version": "0.5",
         "fecha": "2026-11-22",
         "cambios": "Primera parte de la validación (Distritos de Riego). Cambia el método central: corrección de aridez de la evapotranspiración de referencia (FAO-56 anexo 6) y coeficientes medidos en Sonora para la vid y el nogal. Se corrige el número de versión de la portada."
+      },
+      {
+        "version": "0.6",
+        "fecha": "2026-11-22",
+        "cambios": "Cambia el método central de la huella gris: la fracción de nitrógeno que llega al agua (α) se estima por unidad con el nivel 1 de Franke et al. (2013) en lugar del valor fijo 0.10. Se agregan el contraste del clima con estaciones del SMN, NASA POWER y CHIRPS, la convención de fechas del Avance del SIAP y el análisis de sensibilidad. Sin cifras de huella."
       }
     ]
   },
