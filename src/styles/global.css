@@ -81,7 +81,7 @@ p { margin: 0 0 1em; }
 
 /* --- Contenido -------------------------------------------------------- */
 main { padding: 28px 0 48px; min-height: 60vh; }
-.intro { color: var(--texto-2); font-size: 1.05rem; max-width: 70ch; }
+.intro { color: var(--texto-2); font-size: 1.05rem; }
 .tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 20px 0; }
 .tarjeta { background: #fff; border: 1px solid var(--borde); border-radius: var(--radio); padding: 18px; box-shadow: var(--sombra); }
 .tarjeta h3 { margin-top: 0; }
