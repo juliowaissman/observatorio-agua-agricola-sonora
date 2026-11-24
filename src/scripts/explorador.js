@@ -43,7 +43,7 @@ for (const r of registros) supCul[r.cultivo] = (supCul[r.cultivo] || 0) + (r.sem
 // ---------------------------------------------------------------- estado
 const estado = {
   ind: 'sembrada_ha', anio: anios[anios.length - 1], ciclo: 'todos', mod: 'todas', cultivo: 'todos',
-  sel: [], foco: null,
+  rot: 'todas', sel: [], foco: null,
 };
 const colorSel = {}; // cvegeo → color; se conserva mientras siga seleccionado
 function leeHash() {
@@ -53,6 +53,7 @@ function leeHash() {
   if (['OI', 'PV', 'PER'].includes(p.get('ciclo'))) estado.ciclo = p.get('ciclo');
   if (['R', 'T'].includes(p.get('mod'))) estado.mod = p.get('mod');
   if (nomCul[p.get('cultivo')]) estado.cultivo = +p.get('cultivo');
+  if (['primero', 'segundo', 'perenne', 'no_identificado'].includes(p.get('rot'))) estado.rot = p.get('rot');
   const sel = (p.get('mun') || '').split(',').filter((c) => nomMun[c]).slice(0, MAX_SEL);
   estado.sel = sel;
   estado.foco = sel[sel.length - 1] || null;
@@ -64,6 +65,7 @@ function escribeHash() {
   if (estado.ciclo !== 'todos') p.set('ciclo', estado.ciclo);
   if (estado.mod !== 'todas') p.set('mod', estado.mod);
   if (estado.cultivo !== 'todos') p.set('cultivo', estado.cultivo);
+  if (estado.rot !== 'todas' && conRotacion()) p.set('rot', estado.rot);
   if (estado.sel.length) p.set('mun', estado.sel.join(','));
   history.replaceState(null, '', '#' + p.toString());
 }
@@ -79,8 +81,10 @@ function pasa(r, { anio = estado.anio, cultivo = estado.cultivo } = {}) {
   return (anio === null || r.anio === anio)
     && (estado.ciclo === 'todos' || r.ciclo === estado.ciclo)
     && (estado.mod === 'todas' || r.modalidad === estado.mod)
-    && (cultivo === 'todos' || r.cultivo === cultivo);
+    && (cultivo === 'todos' || r.cultivo === cultivo)
+    && (estado.rot === 'todas' || r.rotacion === undefined || r.rotacion === estado.rot);
 }
+const conRotacion = () => (indPorId[estado.ind].dimensiones || []).includes('rotacion');
 function suma(acc, r) {
   for (const c in r) if (typeof r[c] === 'number' && !DIMS.has(c)) acc[c] = (acc[c] || 0) + r[c];
   acc._n = (acc._n || 0) + 1;
@@ -121,7 +125,7 @@ function llenaControles() {
     + '<optgroup label="Por superficie sembrada (2019–2025)">'
     + culOrden.map((c) => `<option value="${c.id}">${c.nombre}</option>`).join('') + '</optgroup>';
   sincronizaControles();
-  for (const [id, k, conv] of [['f-ind', 'ind', String], ['f-anio', 'anio', Number], ['f-ciclo', 'ciclo', String], ['f-mod', 'mod', String], ['f-cultivo', 'cultivo', (v) => (v === 'todos' ? v : +v)]]) {
+  for (const [id, k, conv] of [['f-ind', 'ind', String], ['f-anio', 'anio', Number], ['f-ciclo', 'ciclo', String], ['f-mod', 'mod', String], ['f-cultivo', 'cultivo', (v) => (v === 'todos' ? v : +v)], ['f-rot', 'rot', String]]) {
     $(id).addEventListener('change', (e) => { estado[k] = conv(e.target.value); actualiza(); });
   }
   $('b-limpiar').addEventListener('click', () => { estado.sel = []; estado.foco = null; asignaColores(); actualiza(); });
@@ -130,6 +134,8 @@ function llenaControles() {
 function sincronizaControles() {
   $('f-ind').value = estado.ind; $('f-anio').value = estado.anio; $('f-ciclo').value = estado.ciclo;
   $('f-mod').value = estado.mod; $('f-cultivo').value = estado.cultivo;
+  $('f-rot').value = estado.rot; $('f-rot').disabled = !conRotacion();
+  $('f-rot').title = conRotacion() ? '' : 'Sólo para las capas de huella hídrica';
 }
 
 // ---------------------------------------------------------------- mapa

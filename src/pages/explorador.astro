@@ -26,6 +26,15 @@ import Base from '../layouts/Base.astro';
       </select>
     </label>
     <label style="flex:1 1 200px">Cultivo <select id="f-cultivo"></select></label>
+    <label>Rotación
+      <select id="f-rot">
+        <option value="todas">Todas las posiciones</option>
+        <option value="primero">Primer cultivo o único</option>
+        <option value="segundo">Segundo cultivo</option>
+        <option value="perenne">Perenne</option>
+        <option value="no_identificado">No identificada</option>
+      </select>
+    </label>
   </form>
   <p id="cargando" class="nota" role="status">Cargando datos…</p>
 

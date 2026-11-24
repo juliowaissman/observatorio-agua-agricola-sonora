@@ -568,9 +568,9 @@
     "estado": "publicado",
     "valores_rotacion": {
       "primero": "Primer cultivo o único del año agrícola en esa tierra",
-      "segundo": "Segundo cultivo, sembrado tras cosechar el primero (CONAGUA, 'Segundos cultivos', sólo en DR)",
+      "segundo": "Segundo cultivo, sembrado tras cosechar el primero: en los municipios de los DR, cuando CONAGUA ('Segundos cultivos') registra como segundo cultivo al menos la mitad de la siembra de riego del cultivo en el SIAP",
       "perenne": "Perenne: ocupa la tierra todo el año",
-      "no_identificado": "La fuente no permite saberlo (SIAP fuera de DR, sin supuesto)"
+      "no_identificado": "Riego fuera de los municipios con Distrito de Riego: la fuente no permite saberlo"
     },
     "grupo": "Huella hídrica (preliminar)",
     "nota_mapa": "Sólo municipios y cultivos de la selección del inventario (275 combinaciones); los demás aparecen sin registro.",
@@ -622,9 +622,9 @@
     "estado": "publicado",
     "valores_rotacion": {
       "primero": "Primer cultivo o único del año agrícola en esa tierra",
-      "segundo": "Segundo cultivo, sembrado tras cosechar el primero (CONAGUA, 'Segundos cultivos', sólo en DR)",
+      "segundo": "Segundo cultivo, sembrado tras cosechar el primero: en los municipios de los DR, cuando CONAGUA ('Segundos cultivos') registra como segundo cultivo al menos la mitad de la siembra de riego del cultivo en el SIAP",
       "perenne": "Perenne: ocupa la tierra todo el año",
-      "no_identificado": "La fuente no permite saberlo (SIAP fuera de DR, sin supuesto)"
+      "no_identificado": "Riego fuera de los municipios con Distrito de Riego: la fuente no permite saberlo"
     },
     "grupo": "Huella hídrica (preliminar)",
     "nota_mapa": "Sólo municipios y cultivos de la selección del inventario (275 combinaciones); los demás aparecen sin registro.",
@@ -676,9 +676,9 @@
     "estado": "publicado",
     "valores_rotacion": {
       "primero": "Primer cultivo o único del año agrícola en esa tierra",
-      "segundo": "Segundo cultivo, sembrado tras cosechar el primero (CONAGUA, 'Segundos cultivos', sólo en DR)",
+      "segundo": "Segundo cultivo, sembrado tras cosechar el primero: en los municipios de los DR, cuando CONAGUA ('Segundos cultivos') registra como segundo cultivo al menos la mitad de la siembra de riego del cultivo en el SIAP",
       "perenne": "Perenne: ocupa la tierra todo el año",
-      "no_identificado": "La fuente no permite saberlo (SIAP fuera de DR, sin supuesto)"
+      "no_identificado": "Riego fuera de los municipios con Distrito de Riego: la fuente no permite saberlo"
     },
     "grupo": "Huella hídrica (preliminar)",
     "nota_mapa": "Sólo municipios y cultivos de la selección del inventario (275 combinaciones); los demás aparecen sin registro.",
@@ -730,9 +730,9 @@
     "estado": "publicado",
     "valores_rotacion": {
       "primero": "Primer cultivo o único del año agrícola en esa tierra",
-      "segundo": "Segundo cultivo, sembrado tras cosechar el primero (CONAGUA, 'Segundos cultivos', sólo en DR)",
+      "segundo": "Segundo cultivo, sembrado tras cosechar el primero: en los municipios de los DR, cuando CONAGUA ('Segundos cultivos') registra como segundo cultivo al menos la mitad de la siembra de riego del cultivo en el SIAP",
       "perenne": "Perenne: ocupa la tierra todo el año",
-      "no_identificado": "La fuente no permite saberlo (SIAP fuera de DR, sin supuesto)"
+      "no_identificado": "Riego fuera de los municipios con Distrito de Riego: la fuente no permite saberlo"
     },
     "grupo": "Huella hídrica (preliminar)",
     "nota_mapa": "Sólo municipios y cultivos de la selección del inventario (275 combinaciones); los demás aparecen sin registro.",
@@ -782,9 +782,9 @@
     "estado": "publicado",
     "valores_rotacion": {
       "primero": "Primer cultivo o único del año agrícola en esa tierra",
-      "segundo": "Segundo cultivo, sembrado tras cosechar el primero (CONAGUA, 'Segundos cultivos', sólo en DR)",
+      "segundo": "Segundo cultivo, sembrado tras cosechar el primero: en los municipios de los DR, cuando CONAGUA ('Segundos cultivos') registra como segundo cultivo al menos la mitad de la siembra de riego del cultivo en el SIAP",
       "perenne": "Perenne: ocupa la tierra todo el año",
-      "no_identificado": "La fuente no permite saberlo (SIAP fuera de DR, sin supuesto)"
+      "no_identificado": "Riego fuera de los municipios con Distrito de Riego: la fuente no permite saberlo"
     },
     "grupo": "Huella hídrica (preliminar)",
     "nota_mapa": "Sólo municipios y cultivos de la selección del inventario (275 combinaciones); los demás aparecen sin registro.",
@@ -834,9 +834,9 @@
     "estado": "publicado",
     "valores_rotacion": {
       "primero": "Primer cultivo o único del año agrícola en esa tierra",
-      "segundo": "Segundo cultivo, sembrado tras cosechar el primero (CONAGUA, 'Segundos cultivos', sólo en DR)",
+      "segundo": "Segundo cultivo, sembrado tras cosechar el primero: en los municipios de los DR, cuando CONAGUA ('Segundos cultivos') registra como segundo cultivo al menos la mitad de la siembra de riego del cultivo en el SIAP",
       "perenne": "Perenne: ocupa la tierra todo el año",
-      "no_identificado": "La fuente no permite saberlo (SIAP fuera de DR, sin supuesto)"
+      "no_identificado": "Riego fuera de los municipios con Distrito de Riego: la fuente no permite saberlo"
     },
     "grupo": "Huella hídrica (preliminar)",
     "nota_mapa": "Sólo municipios y cultivos de la selección del inventario (275 combinaciones); los demás aparecen sin registro.",
@@ -885,9 +885,9 @@
     "estado": "publicado",
     "valores_rotacion": {
       "primero": "Primer cultivo o único del año agrícola en esa tierra",
-      "segundo": "Segundo cultivo, sembrado tras cosechar el primero (CONAGUA, 'Segundos cultivos', sólo en DR)",
+      "segundo": "Segundo cultivo, sembrado tras cosechar el primero: en los municipios de los DR, cuando CONAGUA ('Segundos cultivos') registra como segundo cultivo al menos la mitad de la siembra de riego del cultivo en el SIAP",
       "perenne": "Perenne: ocupa la tierra todo el año",
-      "no_identificado": "La fuente no permite saberlo (SIAP fuera de DR, sin supuesto)"
+      "no_identificado": "Riego fuera de los municipios con Distrito de Riego: la fuente no permite saberlo"
     },
     "grupo": "Huella hídrica (preliminar)",
     "nota_mapa": "Sólo municipios y cultivos de la selección del inventario (275 combinaciones); los demás aparecen sin registro.",
@@ -936,9 +936,9 @@
     "estado": "publicado",
     "valores_rotacion": {
       "primero": "Primer cultivo o único del año agrícola en esa tierra",
-      "segundo": "Segundo cultivo, sembrado tras cosechar el primero (CONAGUA, 'Segundos cultivos', sólo en DR)",
+      "segundo": "Segundo cultivo, sembrado tras cosechar el primero: en los municipios de los DR, cuando CONAGUA ('Segundos cultivos') registra como segundo cultivo al menos la mitad de la siembra de riego del cultivo en el SIAP",
       "perenne": "Perenne: ocupa la tierra todo el año",
-      "no_identificado": "La fuente no permite saberlo (SIAP fuera de DR, sin supuesto)"
+      "no_identificado": "Riego fuera de los municipios con Distrito de Riego: la fuente no permite saberlo"
     },
     "grupo": "Huella hídrica (preliminar)",
     "nota_mapa": "Sólo municipios y cultivos de la selección del inventario (275 combinaciones); los demás aparecen sin registro.",

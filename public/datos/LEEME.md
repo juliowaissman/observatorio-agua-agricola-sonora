@@ -78,5 +78,8 @@ pero las superficies de primer y segundo cultivo no (es la misma tierra).
   `hh.corrida`; gris: α 0.01 con cmax 11 mg N/L y α 0.25 con cmax 2.9). Al sumar unidades se obtiene una envolvente más amplia
   que la de cualquier variante única. No son intervalos de confianza.
 - `vol_gris_m3` vacío: dátil (sin dosis de nitrógeno publicada).
-- `rotacion`: hoy sólo `perenne` y `no_identificado` (los segundos cultivos de CONAGUA aún no se asignan).
+- `rotacion`: `perenne`; `primero` (temporal, o riego en municipios de un Distrito de Riego); `segundo` (riego en municipios de
+  los DR del Yaqui o del Mayo donde CONAGUA registra como segundo cultivo al menos la mitad de la siembra del cultivo en el SIAP;
+  hoy sólo soya 2019–2020 en Bácum y San Ignacio Río Muerto); `no_identificado` (riego fuera de municipios con DR).
+  Tabla de fracciones: `data/tablas/rotacion_segundos_cultivos_dr.csv` del repositorio de cálculo.
 - Volúmenes azules = evapotranspiración del agua de riego, no agua entregada (sin pérdidas de conducción ni aplicación).

@@ -4,7 +4,7 @@
     "titulo": "Procedimiento de cálculo de la huella hídrica de los cultivos de Sonora",
     "tipo": "Documento metodológico",
     "estado": "publicado",
-    "version": "0.7",
+    "version": "0.8",
     "fecha": "2026-11-23",
     "archivo": "documentos/metodologia_huella_hidrica.pdf",
     "paginas": 16,
@@ -44,6 +44,11 @@
         "version": "0.7",
         "fecha": "2026-11-23",
         "cambios": "Primeras cifras de huella hídrica (preliminares, con intervalo) por cultivo y por año. Se agregan la comparación con evapotranspiración satelital (WaPOR y SSEBop), con Mekonnen y Hoekstra (2010) y con parcelas de trigo medidas por Jiménez-Jiménez et al. (2026). Cambia el método central: en trigo, cártamo y garbanzo el riego se limita al número de riegos de auxilio que recomienda INIFAP; el riego sin déficit queda como variante."
+      },
+      {
+        "version": "0.8",
+        "fecha": "2026-11-23",
+        "cambios": "Se asigna la posición en la rotación con los segundos cultivos de CONAGUA. La variante de lluvia CHIRPS incluye 2018, que faltaba. Se publica el primer estudio del inventario de la huella de agua. La estimación central no cambia."
       }
     ]
   },
@@ -56,10 +61,21 @@
   },
   {
     "id": "inventario",
-    "titulo": "Estudio del inventario de la huella hídrica de los cultivos de Sonora",
-    "tipo": "Estudio",
-    "estado": "planeado",
-    "resumen": "Resultados de huella hídrica verde, azul y gris por municipio, cultivo, ciclo y modalidad, con validación e incertidumbre."
+    "titulo": "Inventario de la huella de agua de los principales cultivos de Sonora, 2019–2025",
+    "tipo": "Estudio del inventario de la huella de agua",
+    "estado": "publicado",
+    "resumen": "Estudio del inventario organizado según ISO 14046: objetivo y alcance, inventario e interpretación. Agua de lluvia y de riego consumida por los cultivos (con el riego separado en superficial, subterránea y no determinada) y nitrógeno que llega al agua, por cultivo, zona y año. Preliminar y sin revisión crítica: no declara conformidad con la norma.",
+    "version": "0.1",
+    "fecha": "2026-11-23",
+    "archivo": "documentos/inventario_huella_agua.pdf",
+    "paginas": 12,
+    "historial": [
+      {
+        "version": "0.1",
+        "fecha": "2026-11-23",
+        "cambios": "Primera versión, preliminar y sin revisión crítica."
+      }
+    ]
   },
   {
     "id": "impacto",
