@@ -345,7 +345,21 @@ function pintaFuente() {
     ? '<span class="etiqueta v" title="Verificado en la fuente">Verificado</span>'
     : `<span class="etiqueta pronto" title="Resultado de un estudio en curso; puede cambiar">${ind.verificacion === 'preliminar' ? 'Preliminar' : ind.verificacion}</span>`;
   $('fuente').innerHTML = `Fuente: ${f.institucion}, <a href="${f.url}" rel="noopener" target="_blank">${f.nombre}</a> (${ind.verificacion === 'V' ? 'consulta' : 'versión'} ${f.consulta}). `
-    + `${etq} ${ind.descripcion}${ind.nota_mapa ? ` ${ind.nota_mapa}` : ''}`;
+    + `${etq} ${ind.descripcion}${ind.nota_mapa ? ` ${ind.nota_mapa}` : ''}`
+    + avisosDelFiltro(ind);
+}
+
+// Avisos de datos dudosos (campo aviso) en los registros del filtro, todos los años
+function avisosDelFiltro(ind) {
+  if (!camposNum[ind.archivo] || !tablas[ind.archivo].some((r) => r.aviso)) return '';
+  const avisos = new Map();
+  for (const r of regs(ind)) {
+    if (r.aviso && pasa(r, { anio: null }) && (!estado.sel.length || estado.sel.includes(r.cvegeo))) {
+      const k = `${nomCul[r.cultivo]}: ${r.aviso}`;
+      (avisos.get(k) || avisos.set(k, new Set()).get(k)).add(r.anio);
+    }
+  }
+  return [...avisos].map(([k, a]) => `<br><strong>† Dato dudoso</strong> (${[...a].sort().join(', ')}) — ${k}.`).join('');
 }
 
 function descarga() {

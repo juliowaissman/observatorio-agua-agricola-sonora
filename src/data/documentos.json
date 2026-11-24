@@ -1,11 +1,41 @@
 [
   {
+    "id": "inventario",
+    "titulo": "Inventario de la huella de agua de los principales cultivos de Sonora, 2019–2025",
+    "tipo": "Estudio del inventario de la huella de agua",
+    "estado": "publicado",
+    "resumen": "Estudio del inventario organizado según ISO 14046: objetivo y alcance, inventario e interpretación. Agua de lluvia y de riego consumida por los cultivos (con el riego separado en superficial, subterránea y no determinada) y nitrógeno que llega al agua, por cultivo, zona y año. Preliminar y sin revisión crítica: no declara conformidad con la norma.",
+    "version": "0.2",
+    "fecha": "2026-11-24",
+    "archivo": "documentos/inventario_huella_agua.pdf",
+    "paginas": 12,
+    "historial": [
+      {
+        "version": "0.1",
+        "fecha": "2026-11-23",
+        "cambios": "Primera versión, preliminar y sin revisión crítica."
+      },
+      {
+        "version": "0.2",
+        "fecha": "2026-11-24",
+        "cambios": "Se marca como dudoso el rendimiento de la alfalfa achicalada de 2022 y 2023 (SIAP) y se dan sus valores sin esos años."
+      }
+    ]
+  },
+  {
+    "id": "exploratorio",
+    "titulo": "Análisis exploratorio de los datos agrícolas y de agua de Sonora",
+    "tipo": "Reporte de análisis",
+    "estado": "en preparación",
+    "resumen": "Tendencias de superficie, producción, valor y volúmenes de riego 2019–2025 por municipio, cultivo y Distrito de Riego."
+  },
+  {
     "id": "metodologia-hh",
     "titulo": "Procedimiento de cálculo de la huella hídrica de los cultivos de Sonora",
     "tipo": "Documento metodológico",
     "estado": "publicado",
-    "version": "0.8",
-    "fecha": "2026-11-23",
+    "version": "0.9",
+    "fecha": "2026-11-24",
     "archivo": "documentos/metodologia_huella_hidrica.pdf",
     "paginas": 16,
     "resumen": "Qué se calcula, con qué datos y cómo: balance hídrico diario FAO-56 con dos escenarios (riego deficitario en trigo, cártamo y garbanzo), huella gris con nitrógeno (fracción α de Franke nivel 1), una huella por cultivo cuando la misma tierra se siembra dos veces al año, alcance del estudio (33 municipios, 38 cultivos), validación con los Distritos de Riego, estaciones del SMN, evapotranspiración satelital y estudios previos, sensibilidad, primeros resultados preliminares de huella hídrica 2019–2025 por cultivo y por año, y estado actual del cálculo.",
@@ -49,31 +79,11 @@
         "version": "0.8",
         "fecha": "2026-11-23",
         "cambios": "Se asigna la posición en la rotación con los segundos cultivos de CONAGUA. La variante de lluvia CHIRPS incluye 2018, que faltaba. Se publica el primer estudio del inventario de la huella de agua. La estimación central no cambia."
-      }
-    ]
-  },
-  {
-    "id": "exploratorio",
-    "titulo": "Análisis exploratorio de los datos agrícolas y de agua de Sonora",
-    "tipo": "Reporte de análisis",
-    "estado": "en preparación",
-    "resumen": "Tendencias de superficie, producción, valor y volúmenes de riego 2019–2025 por municipio, cultivo y Distrito de Riego."
-  },
-  {
-    "id": "inventario",
-    "titulo": "Inventario de la huella de agua de los principales cultivos de Sonora, 2019–2025",
-    "tipo": "Estudio del inventario de la huella de agua",
-    "estado": "publicado",
-    "resumen": "Estudio del inventario organizado según ISO 14046: objetivo y alcance, inventario e interpretación. Agua de lluvia y de riego consumida por los cultivos (con el riego separado en superficial, subterránea y no determinada) y nitrógeno que llega al agua, por cultivo, zona y año. Preliminar y sin revisión crítica: no declara conformidad con la norma.",
-    "version": "0.1",
-    "fecha": "2026-11-23",
-    "archivo": "documentos/inventario_huella_agua.pdf",
-    "paginas": 12,
-    "historial": [
+      },
       {
-        "version": "0.1",
-        "fecha": "2026-11-23",
-        "cambios": "Primera versión, preliminar y sin revisión crítica."
+        "version": "0.9",
+        "fecha": "2026-11-24",
+        "cambios": "Se marca como dudoso el rendimiento de la alfalfa achicalada de 2022 y 2023 en el SIAP (el doble que en los demás años) y se da la huella de la alfalfa sin esos años. Los valores se conservan en el cálculo."
       }
     ]
   },

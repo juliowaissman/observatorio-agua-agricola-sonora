@@ -21,7 +21,8 @@
       "mh2010_sonora_gris_m3_t": 184.2,
       "mh2010_producto_faostat": "Wheat",
       "bench2014_verde_azul_p25_m3_t": 1069.0,
-      "bench2014_verde_azul_p50_m3_t": 1391.0
+      "bench2014_verde_azul_p50_m3_t": 1391.0,
+      "aviso": null
     },
     {
       "cultivo": 7490000,
@@ -42,7 +43,8 @@
       "mh2010_sonora_gris_m3_t": 358.2,
       "mh2010_producto_faostat": "Maize",
       "bench2014_verde_azul_p25_m3_t": 562.0,
-      "bench2014_verde_azul_p50_m3_t": 754.0
+      "bench2014_verde_azul_p50_m3_t": 754.0,
+      "aviso": null
     },
     {
       "cultivo": 9130000,
@@ -63,7 +65,8 @@
       "mh2010_sonora_gris_m3_t": 92.7,
       "mh2010_producto_faostat": "Grapes",
       "bench2014_verde_azul_p25_m3_t": 356.0,
-      "bench2014_verde_azul_p50_m3_t": 443.0
+      "bench2014_verde_azul_p50_m3_t": 443.0,
+      "aviso": null
     },
     {
       "cultivo": 5160000,
@@ -84,7 +87,17 @@
       "mh2010_sonora_gris_m3_t": null,
       "mh2010_producto_faostat": null,
       "bench2014_verde_azul_p25_m3_t": null,
-      "bench2014_verde_azul_p50_m3_t": null
+      "bench2014_verde_azul_p50_m3_t": null,
+      "aviso": "Rendimiento dudoso: el SIAP reporta el doble que en los demás años, probablemente peso fresco; la huella por tonelada de esos años sale subestimada",
+      "sin_anios_dudosos": {
+        "anios_excluidos": [
+          2022,
+          2023
+        ],
+        "verde_m3_t": 125.8,
+        "azul_m3_t": 903.3,
+        "gris_m3_t": 63.4
+      }
     },
     {
       "cultivo": 6650000,
@@ -105,7 +118,8 @@
       "mh2010_sonora_gris_m3_t": 290.6,
       "mh2010_producto_faostat": "Asparagus",
       "bench2014_verde_azul_p25_m3_t": 1491.0,
-      "bench2014_verde_azul_p50_m3_t": 1661.0
+      "bench2014_verde_azul_p50_m3_t": 1661.0,
+      "aviso": null
     },
     {
       "cultivo": 8100000,
@@ -126,7 +140,8 @@
       "mh2010_sonora_gris_m3_t": 12.1,
       "mh2010_producto_faostat": "Potatoes",
       "bench2014_verde_azul_p25_m3_t": 154.0,
-      "bench2014_verde_azul_p50_m3_t": 216.0
+      "bench2014_verde_azul_p50_m3_t": 216.0,
+      "aviso": null
     },
     {
       "cultivo": 5870000,
@@ -147,7 +162,8 @@
       "mh2010_sonora_gris_m3_t": 40.1,
       "mh2010_producto_faostat": "Safflower seed",
       "bench2014_verde_azul_p25_m3_t": 3169.0,
-      "bench2014_verde_azul_p50_m3_t": 5183.0
+      "bench2014_verde_azul_p50_m3_t": 5183.0,
+      "aviso": null
     },
     {
       "cultivo": 7960000,
@@ -168,7 +184,8 @@
       "mh2010_sonora_gris_m3_t": null,
       "mh2010_producto_faostat": null,
       "bench2014_verde_azul_p25_m3_t": null,
-      "bench2014_verde_azul_p50_m3_t": null
+      "bench2014_verde_azul_p50_m3_t": null,
+      "aviso": null
     },
     {
       "cultivo": 6900000,
@@ -189,7 +206,8 @@
       "mh2010_sonora_gris_m3_t": 225.7,
       "mh2010_producto_faostat": "Chick peas",
       "bench2014_verde_azul_p25_m3_t": 2410.0,
-      "bench2014_verde_azul_p50_m3_t": 2979.0
+      "bench2014_verde_azul_p50_m3_t": 2979.0,
+      "aviso": null
     },
     {
       "cultivo": 8710000,
@@ -210,7 +228,8 @@
       "mh2010_sonora_gris_m3_t": 44.3,
       "mh2010_producto_faostat": "Watermelons",
       "bench2014_verde_azul_p25_m3_t": 129.0,
-      "bench2014_verde_azul_p50_m3_t": 144.0
+      "bench2014_verde_azul_p50_m3_t": 144.0,
+      "aviso": null
     },
     {
       "cultivo": 8790000,
@@ -231,7 +250,8 @@
       "mh2010_sonora_gris_m3_t": null,
       "mh2010_producto_faostat": null,
       "bench2014_verde_azul_p25_m3_t": null,
-      "bench2014_verde_azul_p50_m3_t": null
+      "bench2014_verde_azul_p50_m3_t": null,
+      "aviso": null
     },
     {
       "cultivo": 7850000,
@@ -252,7 +272,8 @@
       "mh2010_sonora_gris_m3_t": 78.3,
       "mh2010_producto_faostat": "Oranges",
       "bench2014_verde_azul_p25_m3_t": 343.0,
-      "bench2014_verde_azul_p50_m3_t": 383.0
+      "bench2014_verde_azul_p50_m3_t": 383.0,
+      "aviso": null
     },
     {
       "cultivo": 8810000,
@@ -273,7 +294,8 @@
       "mh2010_sonora_gris_m3_t": 25.6,
       "mh2010_producto_faostat": "Sorghum",
       "bench2014_verde_azul_p25_m3_t": 1122.0,
-      "bench2014_verde_azul_p50_m3_t": 1835.0
+      "bench2014_verde_azul_p50_m3_t": 1835.0,
+      "aviso": null
     },
     {
       "cultivo": 5740000,
@@ -294,7 +316,8 @@
       "mh2010_sonora_gris_m3_t": 65.2,
       "mh2010_producto_faostat": "Pumpkins, squash and gourds",
       "bench2014_verde_azul_p25_m3_t": 164.0,
-      "bench2014_verde_azul_p50_m3_t": 207.0
+      "bench2014_verde_azul_p50_m3_t": 207.0,
+      "aviso": null
     },
     {
       "cultivo": 6120000,
@@ -315,7 +338,8 @@
       "mh2010_sonora_gris_m3_t": 62.4,
       "mh2010_producto_faostat": "Chillies and peppers, green",
       "bench2014_verde_azul_p25_m3_t": 180.0,
-      "bench2014_verde_azul_p50_m3_t": 221.0
+      "bench2014_verde_azul_p50_m3_t": 221.0,
+      "aviso": null
     },
     {
       "cultivo": 6840000,
@@ -336,7 +360,8 @@
       "mh2010_sonora_gris_m3_t": 497.1,
       "mh2010_producto_faostat": "Beans, dry",
       "bench2014_verde_azul_p25_m3_t": 1865.0,
-      "bench2014_verde_azul_p50_m3_t": 3205.0
+      "bench2014_verde_azul_p50_m3_t": 3205.0,
+      "aviso": null
     },
     {
       "cultivo": 15050000,
@@ -357,7 +382,8 @@
       "mh2010_sonora_gris_m3_t": null,
       "mh2010_producto_faostat": null,
       "bench2014_verde_azul_p25_m3_t": null,
-      "bench2014_verde_azul_p50_m3_t": null
+      "bench2014_verde_azul_p50_m3_t": null,
+      "aviso": null
     },
     {
       "cultivo": 5190000,
@@ -378,7 +404,8 @@
       "mh2010_sonora_gris_m3_t": 131.2,
       "mh2010_producto_faostat": "Seed cotton",
       "bench2014_verde_azul_p25_m3_t": 1898.0,
-      "bench2014_verde_azul_p50_m3_t": 2880.0
+      "bench2014_verde_azul_p50_m3_t": 2880.0,
+      "aviso": null
     },
     {
       "cultivo": 5490000,
@@ -399,7 +426,8 @@
       "mh2010_sonora_gris_m3_t": null,
       "mh2010_producto_faostat": null,
       "bench2014_verde_azul_p25_m3_t": null,
-      "bench2014_verde_azul_p50_m3_t": null
+      "bench2014_verde_azul_p50_m3_t": null,
+      "aviso": null
     },
     {
       "cultivo": 5760000,
@@ -420,7 +448,8 @@
       "mh2010_sonora_gris_m3_t": 65.2,
       "mh2010_producto_faostat": "Pumpkins, squash and gourds",
       "bench2014_verde_azul_p25_m3_t": 164.0,
-      "bench2014_verde_azul_p50_m3_t": 207.0
+      "bench2014_verde_azul_p50_m3_t": 207.0,
+      "aviso": null
     },
     {
       "cultivo": 5940000,
@@ -441,7 +470,8 @@
       "mh2010_sonora_gris_m3_t": 31.0,
       "mh2010_producto_faostat": "Onions, dry",
       "bench2014_verde_azul_p25_m3_t": 187.0,
-      "bench2014_verde_azul_p50_m3_t": 229.0
+      "bench2014_verde_azul_p50_m3_t": 229.0,
+      "aviso": null
     },
     {
       "cultivo": 7670000,
@@ -462,7 +492,8 @@
       "mh2010_sonora_gris_m3_t": 46.1,
       "mh2010_producto_faostat": "Other melons (inc.cantaloupes)",
       "bench2014_verde_azul_p25_m3_t": 116.0,
-      "bench2014_verde_azul_p50_m3_t": 136.0
+      "bench2014_verde_azul_p50_m3_t": 136.0,
+      "aviso": null
     },
     {
       "cultivo": 8970000,
@@ -483,7 +514,8 @@
       "mh2010_sonora_gris_m3_t": 35.3,
       "mh2010_producto_faostat": "Tomatoes",
       "bench2014_verde_azul_p25_m3_t": 98.0,
-      "bench2014_verde_azul_p50_m3_t": 156.0
+      "bench2014_verde_azul_p50_m3_t": 156.0,
+      "aviso": null
     },
     {
       "cultivo": 8210000,
@@ -504,7 +536,8 @@
       "mh2010_sonora_gris_m3_t": 34.3,
       "mh2010_producto_faostat": "Cucumbers and gherkins",
       "bench2014_verde_azul_p25_m3_t": 198.0,
-      "bench2014_verde_azul_p50_m3_t": 243.0
+      "bench2014_verde_azul_p50_m3_t": 243.0,
+      "aviso": null
     },
     {
       "cultivo": 5000000,
@@ -525,7 +558,8 @@
       "mh2010_sonora_gris_m3_t": 24.0,
       "mh2010_producto_faostat": "Olives",
       "bench2014_verde_azul_p25_m3_t": 1866.0,
-      "bench2014_verde_azul_p50_m3_t": 2515.0
+      "bench2014_verde_azul_p50_m3_t": 2515.0,
+      "aviso": null
     },
     {
       "cultivo": 5670000,
@@ -546,7 +580,8 @@
       "mh2010_sonora_gris_m3_t": 73.6,
       "mh2010_producto_faostat": "Cauliflowers and broccoli",
       "bench2014_verde_azul_p25_m3_t": 178.0,
-      "bench2014_verde_azul_p50_m3_t": 202.0
+      "bench2014_verde_azul_p50_m3_t": 202.0,
+      "aviso": null
     },
     {
       "cultivo": 5080000,
@@ -567,7 +602,8 @@
       "mh2010_sonora_gris_m3_t": 91.0,
       "mh2010_producto_faostat": "Sesame seed",
       "bench2014_verde_azul_p25_m3_t": 4686.0,
-      "bench2014_verde_azul_p50_m3_t": 8095.0
+      "bench2014_verde_azul_p50_m3_t": 8095.0,
+      "aviso": null
     },
     {
       "cultivo": 7330000,
@@ -588,7 +624,8 @@
       "mh2010_sonora_gris_m3_t": 45.3,
       "mh2010_producto_faostat": "Lettuce and chicory",
       "bench2014_verde_azul_p25_m3_t": 109.0,
-      "bench2014_verde_azul_p50_m3_t": 160.0
+      "bench2014_verde_azul_p50_m3_t": 160.0,
+      "aviso": null
     },
     {
       "cultivo": 6490000,
@@ -609,7 +646,8 @@
       "mh2010_sonora_gris_m3_t": 251.7,
       "mh2010_producto_faostat": "Dates",
       "bench2014_verde_azul_p25_m3_t": 474.0,
-      "bench2014_verde_azul_p50_m3_t": 2200.0
+      "bench2014_verde_azul_p50_m3_t": 2200.0,
+      "aviso": null
     },
     {
       "cultivo": 8980000,
@@ -630,7 +668,8 @@
       "mh2010_sonora_gris_m3_t": 35.3,
       "mh2010_producto_faostat": "Tomatoes",
       "bench2014_verde_azul_p25_m3_t": 98.0,
-      "bench2014_verde_azul_p50_m3_t": 156.0
+      "bench2014_verde_azul_p50_m3_t": 156.0,
+      "aviso": null
     },
     {
       "cultivo": 8830000,
@@ -651,7 +690,8 @@
       "mh2010_sonora_gris_m3_t": null,
       "mh2010_producto_faostat": "Soybeans",
       "bench2014_verde_azul_p25_m3_t": 1620.0,
-      "bench2014_verde_azul_p50_m3_t": 1931.0
+      "bench2014_verde_azul_p50_m3_t": 1931.0,
+      "aviso": null
     },
     {
       "cultivo": 5900000,
@@ -672,7 +712,8 @@
       "mh2010_sonora_gris_m3_t": null,
       "mh2010_producto_faostat": null,
       "bench2014_verde_azul_p25_m3_t": null,
-      "bench2014_verde_azul_p50_m3_t": null
+      "bench2014_verde_azul_p50_m3_t": null,
+      "aviso": null
     },
     {
       "cultivo": 5070000,
@@ -693,7 +734,8 @@
       "mh2010_sonora_gris_m3_t": 101.5,
       "mh2010_producto_faostat": "Garlic",
       "bench2014_verde_azul_p25_m3_t": 284.0,
-      "bench2014_verde_azul_p50_m3_t": 315.0
+      "bench2014_verde_azul_p50_m3_t": 315.0,
+      "aviso": null
     },
     {
       "cultivo": 6320000,
@@ -714,7 +756,8 @@
       "mh2010_sonora_gris_m3_t": 24.1,
       "mh2010_producto_faostat": "Cabbages and other brassicas",
       "bench2014_verde_azul_p25_m3_t": null,
-      "bench2014_verde_azul_p50_m3_t": null
+      "bench2014_verde_azul_p50_m3_t": null,
+      "aviso": null
     },
     {
       "cultivo": 5690000,
@@ -735,7 +778,8 @@
       "mh2010_sonora_gris_m3_t": 40.4,
       "mh2010_producto_faostat": "Groundnuts in shell",
       "bench2014_verde_azul_p25_m3_t": 1507.0,
-      "bench2014_verde_azul_p50_m3_t": 2269.0
+      "bench2014_verde_azul_p50_m3_t": 2269.0,
+      "aviso": null
     },
     {
       "cultivo": 7470000,
@@ -756,7 +800,8 @@
       "mh2010_sonora_gris_m3_t": null,
       "mh2010_producto_faostat": null,
       "bench2014_verde_azul_p25_m3_t": null,
-      "bench2014_verde_azul_p50_m3_t": null
+      "bench2014_verde_azul_p50_m3_t": null,
+      "aviso": null
     },
     {
       "cultivo": 6310000,
@@ -777,7 +822,8 @@
       "mh2010_sonora_gris_m3_t": 24.1,
       "mh2010_producto_faostat": "Cabbages and other brassicas",
       "bench2014_verde_azul_p25_m3_t": null,
-      "bench2014_verde_azul_p50_m3_t": null
+      "bench2014_verde_azul_p50_m3_t": null,
+      "aviso": null
     }
   ]
 }

@@ -10,8 +10,8 @@ const base = import.meta.env.BASE_URL;
 
   <div class="aviso"><strong>Resultados preliminares.</strong> Provienen de un estudio en curso y pueden cambiar cuando se obtengan mejores
     datos. Cada cifra se acompaña de un intervalo: el mínimo y el máximo de las variantes de cálculo, no un intervalo de confianza.
-    El método está en el <a href={`${base}documentos/metodologia_huella_hidrica.pdf`}>documento metodológico (versión 0.8)</a>; el
-    <a href={`${base}documentos/inventario_huella_agua.pdf`}>estudio del inventario (versión 0.1)</a> separa el agua de riego en superficial y
+    El método está en el <a href={`${base}documentos/metodologia_huella_hidrica.pdf`}>documento metodológico (versión 0.9)</a>; el
+    <a href={`${base}documentos/inventario_huella_agua.pdf`}>estudio del inventario (versión 0.2)</a> separa el agua de riego en superficial y
     subterránea y da el nitrógeno que llega al agua, por cultivo y por zona.</div>
 
   <div class="tarjetas" aria-live="polite">
@@ -128,7 +128,8 @@ const base = import.meta.env.BASE_URL;
         + `<th class="num">Mekonnen y Hoekstra 2010, Sonora (verde + azul)</th><th class="num">Mundo, percentiles 25 / 50 (verde + azul)</th></tr></thead><tbody>`
         + lista.map((c) => {
           const mh = c.mh2010_sonora_verde_m3_t === null || c.mh2010_sonora_azul_m3_t === null ? null : c.mh2010_sonora_verde_m3_t + c.mh2010_sonora_azul_m3_t;
-          const marca = DEFICIT.has(c.nombre) ? ' <span title="Riego deficitario: número de auxilios de INIFAP">*</span>' : '';
+          const marca = (DEFICIT.has(c.nombre) ? ' <span title="Riego deficitario: número de auxilios de INIFAP">*</span>' : '')
+            + (c.aviso ? ` <span title="${c.aviso}">†</span>` : '');
           return `<tr><td>${c.nombre}${marca}</td><td class="num">${fmt(c.cosechada_ha_anual / 1000, 1)}</td>`
             + `<td class="num">${f0(c.verde_m3_t)}</td><td class="num">${f0(c.azul_m3_t)}</td><td class="num">${f0(c.gris_m3_t)}</td>`
             + `<td class="num">${f0(c.consumo_min_m3_t)}–${f0(c.consumo_max_m3_t)}</td>`
@@ -142,6 +143,8 @@ const base = import.meta.env.BASE_URL;
     document.getElementById('nota-tabla').innerHTML = '* Trigo, cártamo y garbanzo: riego con el número de auxilios de INIFAP; con riego sin déficit el agua azul sería '
       + resumen.cultivos.filter((c) => DEFICIT.has(c.nombre)).map((c) => `${fmt(c.azul_riego_pleno_m3_t, 0)} en ${c.nombre.toLowerCase().replace(' grano', '')}`).join(', ') + ' m³/t. '
       + 'Forrajes y alfalfa en peso fresco, como los reporta el SIAP. —: sin dato (Mekonnen y Hoekstra no calcularon forrajes ni dan agua azul de uva, dátil y cacahuate en Sonora; '
-      + 'el dátil no tiene dosis de nitrógeno publicada). Las comparaciones con 1996–2005 reflejan también cambios de rendimiento y de método.';
+      + 'el dátil no tiene dosis de nitrógeno publicada). Las comparaciones con 1996–2005 reflejan también cambios de rendimiento y de método.'
+      + resumen.cultivos.filter((c) => c.aviso).map((c) => ` † ${c.nombre}: ${c.aviso}. Sin ${c.sin_anios_dudosos.anios_excluidos.join(' y ')}, `
+        + `su huella sería ${fmt(c.sin_anios_dudosos.verde_m3_t, 0)} verde, ${fmt(c.sin_anios_dudosos.azul_m3_t, 0)} azul y ${fmt(c.sin_anios_dudosos.gris_m3_t, 0)} gris (m³/t).`).join('');
   </script>
 </Base>

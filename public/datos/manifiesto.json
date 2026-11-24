@@ -62,8 +62,8 @@
     },
     {
       "archivo": "fuentes.json",
-      "bytes": 5354,
-      "sha256": "5b42dedbdeaaf4b172fa466e1d30843c656c3ca30552556caa695934526269a6"
+      "bytes": 5509,
+      "sha256": "01eef11e21576b16cf2872c11bc44bdc6c94b5149357284b25dcbd1ab36248ec"
     },
     {
       "archivo": "geo/distritos_riego.geojson",
@@ -77,18 +77,18 @@
     },
     {
       "archivo": "hh/hh_municipal.csv",
-      "bytes": 248403,
-      "sha256": "c202d02740fb206a0903161d5a95aa8654af63032fe3bceb049f2da59ca6ed7f"
+      "bytes": 258403,
+      "sha256": "156330a6f7eb494e8bacbb851f9beb4d30357380e792c2ad4aa743de113c4141"
     },
     {
       "archivo": "hh/hh_municipal.json",
-      "bytes": 211501,
-      "sha256": "2586886fd67e284ee13eb4c75fa2b4640d69d1e1491ad4c6241263ef3f363874"
+      "bytes": 228441,
+      "sha256": "b561770ece5d507e88a58b8620ba61ecfba57bedc847680732e96fcedbc78562"
     },
     {
       "archivo": "hh/resumen_cultivo.json",
-      "bytes": 25441,
-      "sha256": "db6129bd51b9fca390c648ea172dbdf97784a3fe2c8756e4366a754e9e1e6079"
+      "bytes": 26558,
+      "sha256": "cfb8c193414a3c8f0eed39fa6ceb6ae4d8fc176f564005bbf660d1c9f5507082"
     },
     {
       "archivo": "indicadores.json",

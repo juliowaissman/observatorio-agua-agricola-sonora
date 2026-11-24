@@ -118,6 +118,11 @@
       "detalle": ""
     },
     {
+      "chequeo": "HH: unidades marcadas como dudosas (aviso)",
+      "ok": true,
+      "detalle": "54 unidades-año"
+    },
+    {
       "chequeo": "HH: estimación central dentro de su intervalo en cada unidad",
       "ok": true,
       "detalle": "0 fuera"

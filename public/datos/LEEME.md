@@ -78,6 +78,7 @@ pero las superficies de primer y segundo cultivo no (es la misma tierra).
   `hh.corrida`; gris: α 0.01 con cmax 11 mg N/L y α 0.25 con cmax 2.9). Al sumar unidades se obtiene una envolvente más amplia
   que la de cualquier variante única. No son intervalos de confianza.
 - `vol_gris_m3` vacío: dátil (sin dosis de nitrógeno publicada).
+- `aviso`: texto cuando el dato de origen es dudoso (tabla `data/tablas/datos_dudosos.csv` del repositorio de cálculo). Hoy: alfalfa achicalada 2022–2023, rendimiento del SIAP del doble que en los demás años (probable peso fresco); la huella por tonelada de esos años sale subestimada. Los valores se conservan. `resumen_cultivo.json` trae además la huella del cultivo sin esos años (`sin_anios_dudosos`).
 - `rotacion`: `perenne`; `primero` (temporal, o riego en municipios de un Distrito de Riego); `segundo` (riego en municipios de
   los DR del Yaqui o del Mayo donde CONAGUA registra como segundo cultivo al menos la mitad de la siembra del cultivo en el SIAP;
   hoy sólo soya 2019–2020 en Bácum y San Ignacio Río Muerto); `no_identificado` (riego fuera de municipios con DR).
