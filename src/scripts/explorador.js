@@ -110,6 +110,21 @@ function unidadDe(ind, cultivo = estado.cultivo) {
   return ind.unidad.replace(/^t\b/, 'manojos').replace(/\/t$/, '/manojo');
 }
 const requiereCultivo = () => indPorId[estado.ind].requiere_cultivo && estado.cultivo === 'todos';
+// Los indicadores por tonelada piden un cultivo: al llegar a uno sin cultivo elegido se toma el de mayor
+// superficie cosechada con datos en el año y filtros actuales (o en cualquier año, si no hay).
+function eligeCultivoSiFalta() {
+  if (!requiereCultivo()) return;
+  const ind = indPorId[estado.ind];
+  const sup = (anio) => {
+    const t = {};
+    for (const r of regs(ind)) if (pasa(r, { anio, cultivo: 'todos' })) t[r.cultivo] = (t[r.cultivo] || 0) + (r.cosechada_ha || 0);
+    return Object.entries(t).filter(([, v]) => v > 0).sort((a, b) => b[1] - a[1]);
+  };
+  const orden = sup(estado.anio).length ? sup(estado.anio) : sup(null);
+  if (!orden.length) return;
+  estado.cultivo = +orden[0][0];
+  aviso(`Este indicador se calcula por cultivo: se eligió ${nomCul[estado.cultivo]}. Puedes cambiarlo en «Cultivo».`);
+}
 
 // ---------------------------------------------------------------- controles
 function llenaControles() {
@@ -126,7 +141,11 @@ function llenaControles() {
     + culOrden.map((c) => `<option value="${c.id}">${c.nombre}</option>`).join('') + '</optgroup>';
   sincronizaControles();
   for (const [id, k, conv] of [['f-ind', 'ind', String], ['f-anio', 'anio', Number], ['f-ciclo', 'ciclo', String], ['f-mod', 'mod', String], ['f-cultivo', 'cultivo', (v) => (v === 'todos' ? v : +v)], ['f-rot', 'rot', String]]) {
-    $(id).addEventListener('change', (e) => { estado[k] = conv(e.target.value); actualiza(); });
+    $(id).addEventListener('change', (e) => {
+      estado[k] = conv(e.target.value);
+      if (k === 'ind') eligeCultivoSiFalta();
+      actualiza();
+    });
   }
   $('b-limpiar').addEventListener('click', () => { estado.sel = []; estado.foco = null; asignaColores(); actualiza(); });
   $('b-csv').addEventListener('click', descarga);
@@ -389,6 +408,7 @@ function actualiza() {
 }
 
 leeHash();
+eligeCultivoSiFalta();
 llenaControles();
 gSerie = creaGrafica($('g-serie'));
 gCultivos = creaGrafica($('g-cultivos'));

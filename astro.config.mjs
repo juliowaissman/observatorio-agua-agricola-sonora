@@ -5,4 +5,5 @@ export default defineConfig({
   site: 'https://juliowaissman.github.io',
   base: '/observatorio-agua-agricola-sonora',
   trailingSlash: 'always',
+  redirects: { '/metodologia/': '/observatorio-agua-agricola-sonora/documentos/' },
 });
