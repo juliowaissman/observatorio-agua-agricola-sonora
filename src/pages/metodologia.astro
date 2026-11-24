@@ -5,7 +5,7 @@ const base = import.meta.env.BASE_URL;
 <Base titulo="Metodología" pagina="metodologia/" descripcion="Cómo se calculará la huella hídrica verde, azul y gris de los cultivos de Sonora.">
   <h1>Metodología</h1>
   <p class="intro">Resumen del procedimiento. El detalle, con ecuaciones y referencias, está en el
-    <a href={`${base}documentos/metodologia_huella_hidrica.pdf`}>documento metodológico (PDF, versión 0.1)</a>.</p>
+    <a href={`${base}documentos/metodologia_huella_hidrica.pdf`}>documento metodológico (PDF, versión 0.7)</a>.</p>
 
   <h2>¿Qué es la huella hídrica?</h2>
   <div class="tarjetas">
@@ -27,18 +27,32 @@ const base = import.meta.env.BASE_URL;
     <li><strong>Periodo de crecimiento:</strong> fechas de siembra y cosecha observadas en el Avance de Siembras y Cosechas del SIAP.</li>
     <li><strong>Clima:</strong> evapotranspiración de referencia diaria con Penman-Monteith (FAO-56), con datos de reanálisis corregidos con estaciones,
       promediados sobre la zona agrícola de cada municipio.</li>
-    <li><strong>Balance diario del agua en el suelo</strong> con dos escenarios: sin riego (da el agua verde) y con riego suficiente (la diferencia es el agua azul).</li>
+    <li><strong>Balance diario del agua en el suelo</strong> con dos escenarios: sin riego (da el agua verde) y con riego suficiente (la diferencia es el agua azul).
+      En trigo, cártamo y garbanzo, que en el sur se riegan con pocos riegos de auxilio, el segundo escenario sólo aplica el número
+      de riegos que recomienda INIFAP (riego deficitario), lo que coincide con mediciones en parcelas de trigo.</li>
     <li><strong>Huella gris:</strong> nitrógeno aplicado × fracción que se pierde hacia el agua, entre la diferencia de concentraciones máxima y natural.</li>
     <li><strong>Huella:</strong> agua consumida por hectárea entre el rendimiento (t/ha).</li>
-    <li><strong>Validación:</strong> el agua azul se compara con los volúmenes de los Distritos de Riego; la evapotranspiración, con estimaciones de satélite.</li>
+    <li><strong>Validación:</strong> el agua azul se compara con los volúmenes de los Distritos de Riego; la evapotranspiración, con estimaciones
+      de satélite (WaPOR y SSEBop) y con parcelas de trigo medidas en el sur de Sonora; las huellas, con estudios previos.</li>
   </ol>
 
   <h2>Alcance</h2>
   <p>33 municipios que siembran al menos 1 000 ha al año (96 % de la superficie y 98 % del valor agrícola del estado), sus cultivos principales
     (38 en total) y los años agrícolas 2019–2025: 275 combinaciones de municipio, cultivo, ciclo y modalidad.</p>
 
+  <h2>Primeros resultados (preliminares)</h2>
+  <p>La versión 0.7 del documento publica las primeras cifras de 2019–2025, con su intervalo de sensibilidad. Son resultados de un estudio
+    en curso y pueden cambiar. Por ejemplo, en la selección de municipios y cultivos:</p>
+  <ul>
+    <li>El agua de los cultivos es casi toda azul: unos 2.4 km³ al año (2.7 si todos los cultivos se regaran sin déficit) contra 0.35 km³ de agua verde.</li>
+    <li>El trigo, la mitad de la superficie cosechada, tiene una huella de 74 m³/t de agua verde, 583 de azul (734 con riego sin déficit)
+      y 675 de gris (intervalo de la gris: 33 a 3 209 m³/t, según los supuestos de lixiviación y de calidad del agua).</li>
+    <li>En 2025 la superficie cosechada y el agua azul de la selección cayeron a la mitad y a 1.6 km³ por la sequía en el sur.</li>
+  </ul>
+  <p>Las cifras por municipio se agregarán al explorador como una nueva capa.</p>
+
   <h2>Limitaciones</h2>
-  <p>Con datos públicos el riego se estima como si fuera suficiente (no se publica la lámina aplicada por cultivo), el clima proviene de modelos
+  <p>Con datos públicos el riego se estima como si fuera suficiente o, en trigo, cártamo y garbanzo, con el número de riegos recomendado (no se publica la lámina aplicada por cultivo), el clima proviene de modelos
     corregidos con pocas estaciones completas y la huella gris usa dosis de fertilizante recomendadas, no las aplicadas.
     Esta información existe en instituciones con las que se está gestionando acceso; cuando se obtenga se actualizarán el cálculo y el documento.</p>
 
