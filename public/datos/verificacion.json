@@ -103,9 +103,34 @@
       "detalle": "014, 018, 037, 038, 041, 051, 084"
     },
     {
+      "chequeo": "HH: número de registros (unidades con huella)",
+      "ok": true,
+      "detalle": "1786 resultados, 1786 web"
+    },
+    {
+      "chequeo": "HH: volúmenes verde y azul por año iguales al cálculo (±0.001 hm³)",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "chequeo": "HH: huella por cultivo (web) = sensibilidad_cultivo.csv, estimación central",
+      "ok": true,
+      "detalle": ""
+    },
+    {
+      "chequeo": "HH: estimación central dentro de su intervalo en cada unidad",
+      "ok": true,
+      "detalle": "0 fuera"
+    },
+    {
+      "chequeo": "HH: resumen por cultivo con un renglón por cultivo de la selección",
+      "ok": true,
+      "detalle": "37 cultivos"
+    },
+    {
       "chequeo": "Indicadores: archivos, campos y fuentes existen",
       "ok": true,
-      "detalle": "12 publicados, 3 planeados"
+      "detalle": "20 publicados, 0 planeados"
     },
     {
       "chequeo": "Manifiesto: sha256 de cada archivo",

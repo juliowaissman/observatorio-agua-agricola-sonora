@@ -57,5 +57,16 @@
     "verificacion": "parcial",
     "licencia": null,
     "notas": "Los municipios de cada DR son probables (no verificados); se marcan como NV."
+  },
+  {
+    "id": "hh_dataaqua",
+    "nombre": "Huella hídrica de los cultivos de Sonora (cálculo preliminar)",
+    "institucion": "Departamento de Matemáticas, Universidad de Sonora (proyecto DataAqua)",
+    "url": "https://juliowaissman.github.io/observatorio-agua-agricola-sonora/documentos/metodologia_huella_hidrica.pdf",
+    "cobertura": "275 combinaciones de municipio, cultivo, ciclo y modalidad (33 municipios, 38 cultivos), años agrícolas 2019-2025",
+    "consulta": "2026-11-23",
+    "verificacion": "preliminar",
+    "licencia": null,
+    "notas": "Cálculo propio con balance hídrico diario FAO-56 (AgERA5, SoilGrids, SIAP); método en la metodología v0.7. Resultados preliminares de un estudio en curso: pueden cambiar. Sólo cubre la selección del inventario (89 % de la superficie del estado); los demás municipios y cultivos aparecen sin registro. Los intervalos son el mínimo y máximo de las variantes de sensibilidad de cada unidad, no intervalos de confianza. La huella gris depende mucho de supuestos poco conocidos (fracción de nitrógeno que llega al agua y concentración máxima admisible). El dátil no tiene huella gris (sin dosis de nitrógeno publicada)."
   }
 ]

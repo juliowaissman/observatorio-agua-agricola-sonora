@@ -2,8 +2,9 @@
 import Base from '../layouts/Base.astro';
 ---
 <Base titulo="Explorador" pagina="explorador/" descripcion="Mapa histórico de la agricultura de Sonora por municipio, año, ciclo, modalidad y cultivo, con series de tiempo comparativas.">
-  <h1>Explorador agrícola</h1>
-  <p class="intro">Superficie, producción y valor de la agricultura de Sonora por municipio (SIAP, 2019–2025).
+  <h1>Explorador</h1>
+  <p class="intro">Superficie, producción y valor de la agricultura de Sonora por municipio (SIAP, 2019–2025) y, desde la versión 0.7
+    de la metodología, la <a href="../huella/">huella hídrica</a> preliminar de los cultivos de la selección del inventario.
     Filtra por año, ciclo, modalidad y cultivo; haz clic en los municipios para comparar sus series.</p>
 
   <form class="filtros" onsubmit="return false" aria-label="Filtros del mapa">
@@ -41,6 +42,7 @@ import Base from '../layouts/Base.astro';
         <div class="chips" id="chips"></div>
         <div id="aviso-sel" class="nota" role="status"></div>
         <div id="g-serie" class="grafica" style="height:290px"></div>
+        <p class="nota" id="nota-banda"></p>
         <button type="button" class="boton sec" id="b-limpiar">Limpiar selección</button>
       </div>
       <div class="caja">
@@ -55,7 +57,7 @@ import Base from '../layouts/Base.astro';
   <p class="nota"><span id="tabla-cuenta"></span> · <label><input type="checkbox" id="tabla-todos" /> mostrar todos</label></p>
   <div class="tabla-scroll"><table class="tabla" id="tabla-mun"></table></div>
   <p style="margin-top:16px"><button type="button" class="boton" id="b-csv">Descargar registros del filtro (CSV)</button>
-    <span class="nota">Todos los años, con el ciclo, modalidad y cultivo elegidos (y sólo los municipios seleccionados, si hay).</span></p>
+    <span class="nota">Todos los años, con el ciclo, modalidad y cultivo elegidos (y sólo los municipios seleccionados, si hay), del archivo del indicador elegido.</span></p>
 
   <div class="aviso"><strong>Cómo leer el mapa.</strong> Los colores agrupan a los municipios con registro en siete clases
     con el mismo número de municipios (cuantiles). Los valores en pesos son corrientes, sin ajustar por inflación.

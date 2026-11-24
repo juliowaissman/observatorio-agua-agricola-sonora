@@ -545,11 +545,18 @@
     "descripcion": "Número de usuarios del DR (renglón '1 cultivo', para no contarlos dos veces)."
   },
   {
-    "id": "hh_verde_m3_t",
-    "nombre": "Huella hídrica verde",
-    "unidad": "m³/t",
     "escala": "municipio",
-    "tipo": "valor",
+    "fuente": "hh_dataaqua",
+    "verificacion": "preliminar",
+    "anios": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
     "dimensiones": [
       "anio",
       "ciclo",
@@ -557,6 +564,25 @@
       "cultivo",
       "rotacion"
     ],
+    "archivo": "hh/hh_municipal.json",
+    "estado": "publicado",
+    "valores_rotacion": {
+      "primero": "Primer cultivo o único del año agrícola en esa tierra",
+      "segundo": "Segundo cultivo, sembrado tras cosechar el primero (CONAGUA, 'Segundos cultivos', sólo en DR)",
+      "perenne": "Perenne: ocupa la tierra todo el año",
+      "no_identificado": "La fuente no permite saberlo (SIAP fuera de DR, sin supuesto)"
+    },
+    "grupo": "Huella hídrica (preliminar)",
+    "nota_mapa": "Sólo municipios y cultivos de la selección del inventario (275 combinaciones); los demás aparecen sin registro.",
+    "id": "hh_verde_m3_t",
+    "nombre": "Huella hídrica verde",
+    "unidad": "m³/t",
+    "tipo": "cociente",
+    "numerador": "vol_verde_m3",
+    "denominador": "produccion_t",
+    "factor": 1,
+    "requiere_cultivo": true,
+    "compara_cultivos": true,
     "escala_color": [
       "#EEF6F4",
       "#C6E2DC",
@@ -566,26 +592,25 @@
       "#1A574F",
       "#113A35"
     ],
-    "valores_rotacion": {
-      "primero": "Primer cultivo o único del año agrícola en esa tierra",
-      "segundo": "Segundo cultivo, sembrado tras cosechar el primero (CONAGUA, 'Segundos cultivos', sólo en DR)",
-      "perenne": "Perenne: ocupa la tierra todo el año",
-      "no_identificado": "La fuente no permite saberlo (SIAP fuera de DR, sin supuesto)"
+    "banda": {
+      "min": "vol_verde_min_m3",
+      "max": "vol_verde_max_m3"
     },
-    "descripcion": "Agua de lluvia consumida por tonelada. Una huella por cultivo y periodo de crecimiento: donde la misma tierra se siembra dos veces en el año hay dos huellas, distinguidas por la posición en la rotación.",
-    "fuente": null,
-    "verificacion": null,
-    "anios": [],
-    "archivo": null,
-    "estado": "planeado",
-    "paso_plan": 8
+    "descripcion": "Agua de lluvia consumida por tonelada. Una huella por cultivo y periodo de crecimiento (media del filtro ponderada por la producción). Banda: mínimo y máximo de las variantes de sensibilidad."
   },
   {
-    "id": "hh_azul_m3_t",
-    "nombre": "Huella hídrica azul",
-    "unidad": "m³/t",
     "escala": "municipio",
-    "tipo": "valor",
+    "fuente": "hh_dataaqua",
+    "verificacion": "preliminar",
+    "anios": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
     "dimensiones": [
       "anio",
       "ciclo",
@@ -593,6 +618,25 @@
       "cultivo",
       "rotacion"
     ],
+    "archivo": "hh/hh_municipal.json",
+    "estado": "publicado",
+    "valores_rotacion": {
+      "primero": "Primer cultivo o único del año agrícola en esa tierra",
+      "segundo": "Segundo cultivo, sembrado tras cosechar el primero (CONAGUA, 'Segundos cultivos', sólo en DR)",
+      "perenne": "Perenne: ocupa la tierra todo el año",
+      "no_identificado": "La fuente no permite saberlo (SIAP fuera de DR, sin supuesto)"
+    },
+    "grupo": "Huella hídrica (preliminar)",
+    "nota_mapa": "Sólo municipios y cultivos de la selección del inventario (275 combinaciones); los demás aparecen sin registro.",
+    "id": "hh_azul_m3_t",
+    "nombre": "Huella hídrica azul",
+    "unidad": "m³/t",
+    "tipo": "cociente",
+    "numerador": "vol_azul_m3",
+    "denominador": "produccion_t",
+    "factor": 1,
+    "requiere_cultivo": true,
+    "compara_cultivos": true,
     "escala_color": [
       "#F1F5FB",
       "#C0CEE3",
@@ -602,26 +646,25 @@
       "#24398A",
       "#20305A"
     ],
-    "valores_rotacion": {
-      "primero": "Primer cultivo o único del año agrícola en esa tierra",
-      "segundo": "Segundo cultivo, sembrado tras cosechar el primero (CONAGUA, 'Segundos cultivos', sólo en DR)",
-      "perenne": "Perenne: ocupa la tierra todo el año",
-      "no_identificado": "La fuente no permite saberlo (SIAP fuera de DR, sin supuesto)"
+    "banda": {
+      "min": "vol_azul_min_m3",
+      "max": "vol_azul_max_m3"
     },
-    "descripcion": "Agua de riego consumida por tonelada. Una huella por cultivo y periodo de crecimiento: donde la misma tierra se siembra dos veces en el año hay dos huellas, distinguidas por la posición en la rotación.",
-    "fuente": null,
-    "verificacion": null,
-    "anios": [],
-    "archivo": null,
-    "estado": "planeado",
-    "paso_plan": 8
+    "descripcion": "Agua de riego consumida por tonelada. En trigo, cártamo y garbanzo, con el número de riegos de auxilio que recomienda INIFAP. Una huella por cultivo y periodo de crecimiento (media del filtro ponderada por la producción). Banda: mínimo y máximo de las variantes de sensibilidad."
   },
   {
-    "id": "hh_gris_m3_t",
-    "nombre": "Huella hídrica gris",
-    "unidad": "m³/t",
     "escala": "municipio",
-    "tipo": "valor",
+    "fuente": "hh_dataaqua",
+    "verificacion": "preliminar",
+    "anios": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
     "dimensiones": [
       "anio",
       "ciclo",
@@ -629,6 +672,25 @@
       "cultivo",
       "rotacion"
     ],
+    "archivo": "hh/hh_municipal.json",
+    "estado": "publicado",
+    "valores_rotacion": {
+      "primero": "Primer cultivo o único del año agrícola en esa tierra",
+      "segundo": "Segundo cultivo, sembrado tras cosechar el primero (CONAGUA, 'Segundos cultivos', sólo en DR)",
+      "perenne": "Perenne: ocupa la tierra todo el año",
+      "no_identificado": "La fuente no permite saberlo (SIAP fuera de DR, sin supuesto)"
+    },
+    "grupo": "Huella hídrica (preliminar)",
+    "nota_mapa": "Sólo municipios y cultivos de la selección del inventario (275 combinaciones); los demás aparecen sin registro.",
+    "id": "hh_gris_m3_t",
+    "nombre": "Huella hídrica gris",
+    "unidad": "m³/t",
+    "tipo": "cociente",
+    "numerador": "vol_gris_m3",
+    "denominador": "produccion_t",
+    "factor": 1,
+    "requiere_cultivo": true,
+    "compara_cultivos": true,
     "escala_color": [
       "#F5F5F5",
       "#E0E0E0",
@@ -638,18 +700,267 @@
       "#555555",
       "#333333"
     ],
+    "banda": {
+      "min": "vol_gris_min_m3",
+      "max": "vol_gris_max_m3"
+    },
+    "descripcion": "Agua necesaria para diluir el nitrógeno que llega al agua, por tonelada. Muy sensible a supuestos poco conocidos: la banda abarca hasta unas 100 veces. Una huella por cultivo y periodo de crecimiento (media del filtro ponderada por la producción). Banda: mínimo y máximo de las variantes de sensibilidad."
+  },
+  {
+    "escala": "municipio",
+    "fuente": "hh_dataaqua",
+    "verificacion": "preliminar",
+    "anios": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "dimensiones": [
+      "anio",
+      "ciclo",
+      "modalidad",
+      "cultivo",
+      "rotacion"
+    ],
+    "archivo": "hh/hh_municipal.json",
+    "estado": "publicado",
     "valores_rotacion": {
       "primero": "Primer cultivo o único del año agrícola en esa tierra",
       "segundo": "Segundo cultivo, sembrado tras cosechar el primero (CONAGUA, 'Segundos cultivos', sólo en DR)",
       "perenne": "Perenne: ocupa la tierra todo el año",
       "no_identificado": "La fuente no permite saberlo (SIAP fuera de DR, sin supuesto)"
     },
-    "descripcion": "Agua necesaria para asimilar el nitrógeno lixiviado, por tonelada. Una huella por cultivo y periodo de crecimiento: donde la misma tierra se siembra dos veces en el año hay dos huellas, distinguidas por la posición en la rotación.",
-    "fuente": null,
-    "verificacion": null,
-    "anios": [],
-    "archivo": null,
-    "estado": "planeado",
-    "paso_plan": 8
+    "grupo": "Huella hídrica (preliminar)",
+    "nota_mapa": "Sólo municipios y cultivos de la selección del inventario (275 combinaciones); los demás aparecen sin registro.",
+    "id": "agua_azul_m3_ha",
+    "nombre": "Agua azul por hectárea",
+    "unidad": "m³/ha",
+    "tipo": "cociente",
+    "numerador": "vol_azul_m3",
+    "denominador": "cosechada_ha",
+    "factor": 1,
+    "escala_color": [
+      "#F1F5FB",
+      "#C0CEE3",
+      "#8DA3C9",
+      "#496EA5",
+      "#2A7BC4",
+      "#24398A",
+      "#20305A"
+    ],
+    "banda": {
+      "min": "vol_azul_min_m3",
+      "max": "vol_azul_max_m3"
+    },
+    "descripcion": "Agua de riego consumida por hectárea cosechada (no es el agua entregada: no incluye pérdidas de conducción ni de aplicación). Banda: mínimo y máximo de las variantes de sensibilidad."
+  },
+  {
+    "escala": "municipio",
+    "fuente": "hh_dataaqua",
+    "verificacion": "preliminar",
+    "anios": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "dimensiones": [
+      "anio",
+      "ciclo",
+      "modalidad",
+      "cultivo",
+      "rotacion"
+    ],
+    "archivo": "hh/hh_municipal.json",
+    "estado": "publicado",
+    "valores_rotacion": {
+      "primero": "Primer cultivo o único del año agrícola en esa tierra",
+      "segundo": "Segundo cultivo, sembrado tras cosechar el primero (CONAGUA, 'Segundos cultivos', sólo en DR)",
+      "perenne": "Perenne: ocupa la tierra todo el año",
+      "no_identificado": "La fuente no permite saberlo (SIAP fuera de DR, sin supuesto)"
+    },
+    "grupo": "Huella hídrica (preliminar)",
+    "nota_mapa": "Sólo municipios y cultivos de la selección del inventario (275 combinaciones); los demás aparecen sin registro.",
+    "id": "agua_verde_m3_ha",
+    "nombre": "Agua verde por hectárea",
+    "unidad": "m³/ha",
+    "tipo": "cociente",
+    "numerador": "vol_verde_m3",
+    "denominador": "cosechada_ha",
+    "factor": 1,
+    "escala_color": [
+      "#EEF6F4",
+      "#C6E2DC",
+      "#92C7BB",
+      "#5BA897",
+      "#237469",
+      "#1A574F",
+      "#113A35"
+    ],
+    "banda": {
+      "min": "vol_verde_min_m3",
+      "max": "vol_verde_max_m3"
+    },
+    "descripcion": "Agua de lluvia consumida por hectárea cosechada. Banda: mínimo y máximo de las variantes de sensibilidad."
+  },
+  {
+    "escala": "municipio",
+    "fuente": "hh_dataaqua",
+    "verificacion": "preliminar",
+    "anios": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "dimensiones": [
+      "anio",
+      "ciclo",
+      "modalidad",
+      "cultivo",
+      "rotacion"
+    ],
+    "archivo": "hh/hh_municipal.json",
+    "estado": "publicado",
+    "valores_rotacion": {
+      "primero": "Primer cultivo o único del año agrícola en esa tierra",
+      "segundo": "Segundo cultivo, sembrado tras cosechar el primero (CONAGUA, 'Segundos cultivos', sólo en DR)",
+      "perenne": "Perenne: ocupa la tierra todo el año",
+      "no_identificado": "La fuente no permite saberlo (SIAP fuera de DR, sin supuesto)"
+    },
+    "grupo": "Huella hídrica (preliminar)",
+    "nota_mapa": "Sólo municipios y cultivos de la selección del inventario (275 combinaciones); los demás aparecen sin registro.",
+    "id": "vol_azul_hm3",
+    "nombre": "Volumen de agua azul",
+    "unidad": "hm³",
+    "tipo": "suma",
+    "campo": "vol_azul_m3",
+    "factor": 1e-06,
+    "escala_color": [
+      "#F1F5FB",
+      "#C0CEE3",
+      "#8DA3C9",
+      "#496EA5",
+      "#2A7BC4",
+      "#24398A",
+      "#20305A"
+    ],
+    "banda": {
+      "min": "vol_azul_min_m3",
+      "max": "vol_azul_max_m3"
+    },
+    "descripcion": "Volumen de agua de riego consumido por los cultivos (evapotranspiración). Suma de la selección del filtro. Banda: suma de los mínimos y máximos de cada unidad."
+  },
+  {
+    "escala": "municipio",
+    "fuente": "hh_dataaqua",
+    "verificacion": "preliminar",
+    "anios": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "dimensiones": [
+      "anio",
+      "ciclo",
+      "modalidad",
+      "cultivo",
+      "rotacion"
+    ],
+    "archivo": "hh/hh_municipal.json",
+    "estado": "publicado",
+    "valores_rotacion": {
+      "primero": "Primer cultivo o único del año agrícola en esa tierra",
+      "segundo": "Segundo cultivo, sembrado tras cosechar el primero (CONAGUA, 'Segundos cultivos', sólo en DR)",
+      "perenne": "Perenne: ocupa la tierra todo el año",
+      "no_identificado": "La fuente no permite saberlo (SIAP fuera de DR, sin supuesto)"
+    },
+    "grupo": "Huella hídrica (preliminar)",
+    "nota_mapa": "Sólo municipios y cultivos de la selección del inventario (275 combinaciones); los demás aparecen sin registro.",
+    "id": "vol_verde_hm3",
+    "nombre": "Volumen de agua verde",
+    "unidad": "hm³",
+    "tipo": "suma",
+    "campo": "vol_verde_m3",
+    "factor": 1e-06,
+    "escala_color": [
+      "#EEF6F4",
+      "#C6E2DC",
+      "#92C7BB",
+      "#5BA897",
+      "#237469",
+      "#1A574F",
+      "#113A35"
+    ],
+    "banda": {
+      "min": "vol_verde_min_m3",
+      "max": "vol_verde_max_m3"
+    },
+    "descripcion": "Volumen de agua de lluvia consumido por los cultivos. Suma de la selección del filtro. Banda: suma de los mínimos y máximos de cada unidad."
+  },
+  {
+    "escala": "municipio",
+    "fuente": "hh_dataaqua",
+    "verificacion": "preliminar",
+    "anios": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "dimensiones": [
+      "anio",
+      "ciclo",
+      "modalidad",
+      "cultivo",
+      "rotacion"
+    ],
+    "archivo": "hh/hh_municipal.json",
+    "estado": "publicado",
+    "valores_rotacion": {
+      "primero": "Primer cultivo o único del año agrícola en esa tierra",
+      "segundo": "Segundo cultivo, sembrado tras cosechar el primero (CONAGUA, 'Segundos cultivos', sólo en DR)",
+      "perenne": "Perenne: ocupa la tierra todo el año",
+      "no_identificado": "La fuente no permite saberlo (SIAP fuera de DR, sin supuesto)"
+    },
+    "grupo": "Huella hídrica (preliminar)",
+    "nota_mapa": "Sólo municipios y cultivos de la selección del inventario (275 combinaciones); los demás aparecen sin registro.",
+    "id": "vol_gris_hm3",
+    "nombre": "Volumen de agua gris",
+    "unidad": "hm³",
+    "tipo": "suma",
+    "campo": "vol_gris_m3",
+    "factor": 1e-06,
+    "escala_color": [
+      "#F5F5F5",
+      "#E0E0E0",
+      "#C2C2C2",
+      "#9E9E9E",
+      "#7A7A7A",
+      "#555555",
+      "#333333"
+    ],
+    "banda": {
+      "min": "vol_gris_min_m3",
+      "max": "vol_gris_max_m3"
+    },
+    "descripcion": "Volumen necesario para diluir el nitrógeno; no es un consumo. Suma de la selección del filtro. Banda: suma de los mínimos y máximos de cada unidad."
   }
 ]

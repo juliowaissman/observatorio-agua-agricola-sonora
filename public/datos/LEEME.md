@@ -1,4 +1,4 @@
-# Datos del Observatorio del Agua Agrícola de Sonora (v0)
+# Datos del Observatorio del Agua Agrícola de Sonora (v1)
 
 Departamento de Matemáticas, Universidad de Sonora · Proyecto DataAqua · Producto para la ATDT Sonora
 
@@ -22,6 +22,8 @@ No editar a mano.
 | `distritos/volumenes.json` / `.csv` | CONAGUA 1998–2025: usuarios, superficie física regada, volumen bruto y lámina por DR, año, número de cultivos y tipo de fuente |
 | `distritos/cultivos.json` / `.csv` | CONAGUA 1998–2025: superficie, producción y valor por DR × ciclo × modalidad × cultivo |
 | `distritos/catalogo.json` | Ficha de cada DR (fuente de abastecimiento, superficie, eficiencia, municipios probables) |
+| `hh/hh_municipal.json` / `.csv` | **Huella hídrica (preliminar)**, 2019–2025: año × municipio × ciclo × modalidad × cultivo × rotación; superficie cosechada, producción y volúmenes verde, azul y gris (m³) con su mínimo y máximo |
+| `hh/resumen_cultivo.json` | Huella por cultivo (m³/t, media 2019–2025 ponderada por la producción) con intervalos, azul con riego pleno y comparación con Mekonnen y Hoekstra 2010 (Sonora) y 2014 (percentiles mundiales) |
 
 ## Formato columnar (`*.json` de tablas)
 
@@ -65,3 +67,16 @@ Las capas de HH llevan además la dimensión `rotacion` (`valores_rotacion`: `pr
 `perenne`, `no_identificado`): hay una huella por cultivo y periodo de crecimiento, así que donde la
 misma tierra se siembra dos veces en el año aparecen dos huellas. Al agregar, los volúmenes se suman
 pero las superficies de primer y segundo cultivo no (es la misma tierra).
+
+## Huella hídrica (`hh/`, preliminar)
+
+- Cálculo propio (metodología v0.7): balance hídrico diario FAO-56; sólo las 275 combinaciones de la selección del inventario.
+  Fuera de ella (municipios con menos de 1 000 ha, cultivos menores) no hay registro.
+- Unidades con producción y huella calculada (1 786); no incluye unidades sin cosecha.
+- Huella por tonelada = Σ volumen / Σ producción del filtro (media ponderada por la producción); agua por hectárea = Σ volumen / Σ cosechada.
+- `*_min_m3` / `*_max_m3`: mínimo y máximo de la unidad entre las variantes de sensibilidad (verde y azul: 8 variantes de
+  `hh.corrida`; gris: α 0.01 con cmax 11 mg N/L y α 0.25 con cmax 2.9). Al sumar unidades se obtiene una envolvente más amplia
+  que la de cualquier variante única. No son intervalos de confianza.
+- `vol_gris_m3` vacío: dátil (sin dosis de nitrógeno publicada).
+- `rotacion`: hoy sólo `perenne` y `no_identificado` (los segundos cultivos de CONAGUA aún no se asignan).
+- Volúmenes azules = evapotranspiración del agua de riego, no agua entregada (sin pérdidas de conducción ni aplicación).

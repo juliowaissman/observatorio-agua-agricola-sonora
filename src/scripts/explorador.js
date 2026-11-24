@@ -10,15 +10,25 @@ const MAX_SEL = SERIES.length;
 const $ = (id) => document.getElementById(id);
 
 async function main() {
-const [cierre, cat, indicadores, geo, fuentes] = await Promise.all([
-  cargaJSON('datos/agricola/cierre_municipal.json'),
+const [cat, indicadores, geo, fuentes] = await Promise.all([
   cargaJSON('datos/agricola/catalogos.json'),
   cargaJSON('datos/indicadores.json'),
   cargaJSON('datos/geo/municipios.geojson'),
   cargaJSON('datos/fuentes.json'),
 ]);
-const registros = filas(cierre);
 const inds = indicadores.filter((i) => i.escala === 'municipio');
+// Cada indicador declara su archivo (registro de indicadores); se cargan todos los archivos de tablas municipales.
+const DIMS = new Set(['anio', 'cvegeo', 'ciclo', 'modalidad', 'cultivo', 'unidad', 'rotacion']);
+const tablas = {};
+const camposNum = {};
+await Promise.all([...new Set(inds.filter((i) => i.estado === 'publicado').map((i) => i.archivo))].map(async (a) => {
+  const t = await cargaJSON(`datos/${a}`);
+  tablas[a] = filas(t);
+  camposNum[a] = t.campos.filter((c) => !DIMS.has(c));
+}));
+const ARCH_SIAP = 'agricola/cierre_municipal.json';
+const registros = tablas[ARCH_SIAP];
+const regs = (ind) => tablas[ind.archivo];
 const indPorId = Object.fromEntries(inds.map((i) => [i.id, i]));
 const nomMun = Object.fromEntries(cat.municipios.map((m) => [m.cvegeo, m.nombre]));
 const nomCul = Object.fromEntries(cat.cultivos.map((c) => [c.id, c.nombre]));
@@ -65,7 +75,6 @@ function asignaColores() {
 }
 
 // ---------------------------------------------------------------- cálculo
-const CAMPOS = ['sembrada_ha', 'cosechada_ha', 'siniestrada_ha', 'produccion', 'valor_pesos'];
 function pasa(r, { anio = estado.anio, cultivo = estado.cultivo } = {}) {
   return (anio === null || r.anio === anio)
     && (estado.ciclo === 'todos' || r.ciclo === estado.ciclo)
@@ -73,18 +82,22 @@ function pasa(r, { anio = estado.anio, cultivo = estado.cultivo } = {}) {
     && (cultivo === 'todos' || r.cultivo === cultivo);
 }
 function suma(acc, r) {
-  for (const c of CAMPOS) acc[c] = (acc[c] || 0) + (r[c] || 0);
+  for (const c in r) if (typeof r[c] === 'number' && !DIMS.has(c)) acc[c] = (acc[c] || 0) + r[c];
+  acc._n = (acc._n || 0) + 1;
   return acc;
 }
-function valor(ind, s) {
+// extremo: null (estimación central), 'min' o 'max' (banda de sensibilidad del indicador)
+function valor(ind, s, extremo = null) {
   if (!s) return null;
-  if (ind.tipo === 'suma') return (s[ind.campo] || 0) * (ind.factor ?? 1);
+  const num = extremo ? ind.banda?.[extremo] : (ind.tipo === 'suma' ? ind.campo : ind.numerador);
+  if (!num) return null;
+  if (ind.tipo === 'suma') return (s[num] || 0) * (ind.factor ?? 1);
   const den = s[ind.denominador] || 0;
-  return den > 0 ? ((s[ind.numerador] || 0) / den) * (ind.factor ?? 1) : null;
+  return den > 0 ? ((s[num] || 0) / den) * (ind.factor ?? 1) : null;
 }
-function porMunicipio(opts) {
+function porMunicipio(ind, opts) {
   const m = {};
-  for (const r of registros) if (pasa(r, opts)) suma(m[r.cvegeo] ||= {}, r);
+  for (const r of regs(ind)) if (pasa(r, opts)) suma(m[r.cvegeo] ||= {}, r);
   return m;
 }
 // Producción, rendimiento y precio se expresan en la unidad del cultivo (casi siempre toneladas)
@@ -97,7 +110,11 @@ const requiereCultivo = () => indPorId[estado.ind].requiere_cultivo && estado.cu
 // ---------------------------------------------------------------- controles
 function llenaControles() {
   const sInd = $('f-ind');
-  sInd.innerHTML = inds.map((i) => `<option value="${i.id}" ${i.estado !== 'publicado' ? 'disabled' : ''}>${i.nombre} (${i.unidad})${i.estado !== 'publicado' ? ' — próximamente' : ''}</option>`).join('');
+  const grupos = {};
+  for (const i of inds) (grupos[i.grupo || 'Agricultura (SIAP)'] ||= []).push(i);
+  sInd.innerHTML = Object.entries(grupos).map(([g, lista]) => `<optgroup label="${g}">`
+    + lista.map((i) => `<option value="${i.id}" ${i.estado !== 'publicado' ? 'disabled' : ''}>${i.nombre} (${i.unidad})${i.estado !== 'publicado' ? ' — próximamente' : ''}</option>`).join('')
+    + '</optgroup>').join('');
   $('f-anio').innerHTML = anios.slice().reverse().map((a) => `<option value="${a}">${a}</option>`).join('');
   const culOrden = cat.cultivos.slice().sort((a, b) => (supCul[b.id] || 0) - (supCul[a.id] || 0));
   $('f-cultivo').innerHTML = '<option value="todos">Todos los cultivos</option>'
@@ -177,7 +194,7 @@ let cortes = [];
 let colores = [];
 function pintaMapa() {
   const ind = indPorId[estado.ind];
-  const porMun = porMunicipio();
+  const porMun = porMunicipio(ind);
   valoresMapa = {};
   for (const f of geo.features) {
     const cv = f.properties.cvegeo;
@@ -219,7 +236,7 @@ let gCultivos;
 function pintaSerie() {
   const ind = indPorId[estado.ind];
   const porAnio = {};
-  for (const r of registros) {
+  for (const r of regs(ind)) {
     if (!pasa(r, { anio: null })) continue;
     const k = estado.sel.length ? r.cvegeo : 'Sonora';
     if (estado.sel.length && !estado.sel.includes(k)) continue;
@@ -231,14 +248,37 @@ function pintaSerie() {
     type: 'line', smooth: false, symbol: 'circle', symbolSize: 8, showSymbol: true,
     lineStyle: { width: 2 }, itemStyle: { color: k === 'Sonora' ? '#960E53' : colorSel[k], borderColor: '#fff', borderWidth: 2 },
     data: anios.map((a) => (requiereCultivo() ? null : valor(ind, porAnio[k]?.[a]))),
-    connectNulls: false,
+    connectNulls: false, z: 3,
   }));
+  // Banda de sensibilidad (mínimo y máximo de las variantes) cuando hay una sola serie
+  const banda = {};
+  if (ind.banda && claves.length === 1 && !requiereCultivo()) {
+    const k = claves[0];
+    const color = k === 'Sonora' ? '#960E53' : colorSel[k];
+    for (const a of anios) banda[a] = [valor(ind, porAnio[k]?.[a], 'min'), valor(ind, porAnio[k]?.[a], 'max')];
+    const lo = anios.map((a) => banda[a][0]);
+    series.unshift(
+      { name: '_min', type: 'line', stack: 'banda', data: lo, symbol: 'none', lineStyle: { opacity: 0 }, silent: true, z: 1 },
+      { name: 'Intervalo de sensibilidad', type: 'line', stack: 'banda', symbol: 'none', lineStyle: { opacity: 0 }, silent: true, z: 1,
+        areaStyle: { color, opacity: 0.14 }, data: anios.map((a) => (banda[a][1] === null || banda[a][0] === null ? null : banda[a][1] - banda[a][0])) },
+    );
+  }
+  $('nota-banda').textContent = ind.banda
+    ? (claves.length === 1 ? 'Área sombreada: mínimo y máximo de las variantes de sensibilidad (no es un intervalo de confianza).'
+      : 'Con un solo municipio seleccionado se muestra el intervalo de sensibilidad.')
+    : '';
   $('titulo-serie').textContent = `${ind.nombre} por año (${unidadDe(ind)})`;
   gSerie.setOption({
     ...baseGrafica(),
     legend: { show: false }, // las fichas de arriba son la leyenda (con color y nombre)
     grid: { left: 8, right: 16, top: 16, bottom: 8, containLabel: true },
-    tooltip: { trigger: 'axis', confine: true, valueFormatter: (v) => (v === null || v === undefined ? 'sin registro' : `${fmt(v)} ${unidadDe(ind)}`) },
+    tooltip: { trigger: 'axis', confine: true, formatter: (ps) => {
+      const a = +ps[0].axisValue;
+      const lineas = ps.filter((p) => !p.seriesName.startsWith('_') && p.seriesName !== 'Intervalo de sensibilidad')
+        .map((p) => `${p.marker}${p.seriesName}: ${p.value === null || p.value === undefined ? 'sin registro' : `${fmt(p.value)} ${unidadDe(ind)}`}`);
+      if (banda[a] && banda[a][0] !== null) lineas.push(`<span style="color:#777">Intervalo: ${fmt(banda[a][0])} – ${fmt(banda[a][1])}</span>`);
+      return `${a}<br>${lineas.join('<br>')}`;
+    } },
     xAxis: { type: 'category', data: anios.map(String), boundaryGap: false, ...EJE, splitLine: { show: false } },
     yAxis: { type: 'value', ...EJE, axisLabel: { ...EJE.axisLabel, formatter: (v) => fmt(v) } },
     series,
@@ -252,9 +292,10 @@ function pintaSerie() {
 function pintaCultivos() {
   // Producción, rendimiento y precio no se comparan entre cultivos (productos y unidades distintos):
   // en ese caso se muestra la superficie sembrada de cada cultivo.
-  const ind = indPorId[estado.ind].requiere_cultivo ? indPorId.sembrada_ha : indPorId[estado.ind];
+  const sel = indPorId[estado.ind];
+  const ind = sel.requiere_cultivo && !sel.compara_cultivos ? indPorId.sembrada_ha : sel;
   const porCul = {};
-  for (const r of registros) {
+  for (const r of regs(ind)) {
     if (!pasa(r, { cultivo: 'todos' })) continue;
     if (estado.foco && r.cvegeo !== estado.foco) continue;
     suma((porCul[r.cultivo] ||= {}), r);
@@ -264,8 +305,8 @@ function pintaCultivos() {
     .sort((a, b) => b[1] - a[1]).slice(0, 10).reverse();
   const donde = estado.foco ? nomMun[estado.foco] : 'Sonora';
   $('titulo-cultivos').textContent = `Cultivos principales — ${donde}, ${estado.anio}`;
-  $('nota-cultivos').textContent = indPorId[estado.ind].requiere_cultivo
-    ? `${indPorId[estado.ind].nombre} no se compara entre cultivos; se muestra la superficie sembrada (ha). Ciclo y modalidad según el filtro.`
+  $('nota-cultivos').textContent = ind !== sel
+    ? `${sel.nombre} no se compara entre cultivos; se muestra la superficie sembrada (ha). Ciclo y modalidad según el filtro.`
     : `${ind.nombre} (${ind.unidad}); los 10 cultivos con mayor valor. Ciclo y modalidad según el filtro.`;
   gCultivos.setOption({
     ...baseGrafica(),
@@ -284,7 +325,7 @@ function pintaTabla() {
   const total = filasT.reduce((s, [, v]) => s + v, 0);
   const todos = $('tabla-todos').checked;
   const mostrar = todos ? filasT : filasT.slice(0, 12);
-  $('tabla-mun').innerHTML = `<thead><tr><th>#</th><th>Municipio</th><th class="num">${ind.nombre} (${unidadDe(ind)})</th>${ind.tipo === 'suma' ? '<th class="num">% del estado</th>' : ''}<th></th></tr></thead><tbody>`
+  $('tabla-mun').innerHTML = `<thead><tr><th>#</th><th>Municipio</th><th class="num">${ind.nombre} (${unidadDe(ind)})</th>${ind.tipo === 'suma' ? '<th class="num">% del total</th>' : ''}<th></th></tr></thead><tbody>`
     + (requiereCultivo() ? '<tr><td colspan="5" class="nota">Elige un cultivo.</td></tr>'
       : mostrar.map(([cv, v], i) => `<tr><td>${i + 1}</td><td>${nomMun[cv]}</td><td class="num">${fmt(v)}</td>${ind.tipo === 'suma' ? `<td class="num">${fmt((100 * v) / total, 1)}</td>` : ''}<td><button type="button" class="etiqueta" data-alterna="${cv}">${estado.sel.includes(cv) ? 'quitar' : 'comparar'}</button></td></tr>`).join(''))
     + '</tbody>';
@@ -294,11 +335,23 @@ function pintaTabla() {
 function pintaFuente() {
   const ind = indPorId[estado.ind];
   const f = fuentePorId[ind.fuente];
-  $('fuente').innerHTML = `Fuente: ${f.institucion}, <a href="${f.url}" rel="noopener" target="_blank">${f.nombre}</a> (consulta ${f.consulta}). `
-    + `<span class="etiqueta v" title="Verificado en la fuente">${ind.verificacion === 'V' ? 'Verificado' : ind.verificacion}</span> ${ind.descripcion}`;
+  const etq = ind.verificacion === 'V'
+    ? '<span class="etiqueta v" title="Verificado en la fuente">Verificado</span>'
+    : `<span class="etiqueta pronto" title="Resultado de un estudio en curso; puede cambiar">${ind.verificacion === 'preliminar' ? 'Preliminar' : ind.verificacion}</span>`;
+  $('fuente').innerHTML = `Fuente: ${f.institucion}, <a href="${f.url}" rel="noopener" target="_blank">${f.nombre}</a> (${ind.verificacion === 'V' ? 'consulta' : 'versión'} ${f.consulta}). `
+    + `${etq} ${ind.descripcion}${ind.nota_mapa ? ` ${ind.nota_mapa}` : ''}`;
 }
 
 function descarga() {
+  const ind = indPorId[estado.ind];
+  if (ind.archivo !== ARCH_SIAP) {
+    const t = regs(ind);
+    const campos = ['anio', 'cvegeo', 'ciclo', 'modalidad', 'cultivo', 'rotacion', ...camposNum[ind.archivo]];
+    const rs = t.filter((r) => pasa(r, { anio: null }) && (!estado.sel.length || estado.sel.includes(r.cvegeo)))
+      .map((r) => [r.anio, r.cvegeo, nomMun[r.cvegeo], r.ciclo, r.modalidad, r.cultivo, nomCul[r.cultivo], ...campos.slice(5).map((c) => r[c])]);
+    descargaCSV(`observatorio_${ind.archivo.split('/')[0]}_filtro.csv`, ['anio', 'cvegeo', 'municipio', 'ciclo', 'modalidad', 'id_cultivo', 'cultivo', ...campos.slice(5)], rs);
+    return;
+  }
   const enc = ['anio', 'cvegeo', 'municipio', 'ciclo', 'modalidad', 'id_cultivo', 'cultivo', 'unidad', 'sembrada_ha', 'cosechada_ha', 'siniestrada_ha', 'produccion', 'valor_pesos'];
   const rs = registros.filter((r) => pasa(r, { anio: null }) && (!estado.sel.length || estado.sel.includes(r.cvegeo)))
     .map((r) => [r.anio, r.cvegeo, nomMun[r.cvegeo], r.ciclo, r.modalidad, r.cultivo, nomCul[r.cultivo], r.unidad, r.sembrada_ha, r.cosechada_ha, r.siniestrada_ha, r.produccion, r.valor_pesos]);

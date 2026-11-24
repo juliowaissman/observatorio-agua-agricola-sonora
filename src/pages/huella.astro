@@ -1,0 +1,145 @@
+---
+import Base from '../layouts/Base.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Base titulo="Huella hídrica" pagina="huella/" descripcion="Huella hídrica verde, azul y gris preliminar de los principales cultivos de Sonora, 2019–2025.">
+  <h1>Huella hídrica de los cultivos</h1>
+  <p class="intro">Cuánta agua de lluvia (<strong>verde</strong>), de riego (<strong>azul</strong>) y de dilución de nitrógeno
+    (<strong>gris</strong>) requiere producir una tonelada de cada cultivo en Sonora, años agrícolas 2019–2025.
+    Cubre 275 combinaciones de municipio, cultivo, ciclo y modalidad (33 municipios y 38 cultivos, el 89 % de la superficie del estado).</p>
+
+  <div class="aviso"><strong>Resultados preliminares.</strong> Provienen de un estudio en curso y pueden cambiar cuando se obtengan mejores
+    datos. Cada cifra se acompaña de un intervalo: el mínimo y el máximo de las variantes de cálculo, no un intervalo de confianza.
+    El método está en el <a href={`${base}documentos/metodologia_huella_hidrica.pdf`}>documento metodológico (versión 0.7)</a>.</div>
+
+  <div class="tarjetas" aria-live="polite">
+    <div class="tarjeta" style="border-top:4px solid #2a6fc4"><div class="cifra" data-c="azul">—</div><div class="cifra-etq">hm³ al año de agua <strong>azul</strong> consumida (intervalo <span data-c="azul-int">—</span>)</div></div>
+    <div class="tarjeta" style="border-top:4px solid #1a9e74"><div class="cifra" data-c="verde">—</div><div class="cifra-etq">hm³ al año de agua <strong>verde</strong> consumida (intervalo <span data-c="verde-int">—</span>)</div></div>
+    <div class="tarjeta" style="border-top:4px solid #8a8a8a"><div class="cifra" data-c="gris">—</div><div class="cifra-etq">hm³ al año de agua <strong>gris</strong>: volumen de dilución, no consumo (intervalo <span data-c="gris-int">—</span>)</div></div>
+  </div>
+  <p class="nota">Promedio de los años agrícolas 2019–2025 de la selección. El agua azul es la que evapotranspiran los cultivos; el volumen entregado por los
+    Distritos de Riego es mayor porque incluye pérdidas de conducción y aplicación.</p>
+
+  <h2>Agua consumida por año</h2>
+  <div class="caja">
+    <div id="g-anual" class="grafica" style="height:300px" role="img" aria-label="Volumen de agua verde y azul consumida por año"></div>
+    <p class="nota" id="nota-anual"></p>
+  </div>
+
+  <h2>¿En qué cultivos se consume el agua azul?</h2>
+  <div class="caja">
+    <div id="g-cultivos" class="grafica" style="height:380px" role="img" aria-label="Volumen anual de agua azul por cultivo"></div>
+    <p class="nota">Promedio anual 2019–2025, en hm³. El volumen depende de la superficie sembrada y del agua por hectárea, no sólo de la huella por tonelada.</p>
+  </div>
+
+  <h2>Huella por tonelada, por cultivo</h2>
+  <p>Media 2019–2025 ponderada por la producción, en m³ por tonelada. Para comparar se muestran el cálculo de
+    Mekonnen y Hoekstra (2010) para Sonora en 1996–2005 y los percentiles 25 y 50 de la huella verde más azul en el mundo
+    (Mekonnen y Hoekstra, 2014): un valor por debajo del percentil 25 está entre la cuarta parte más eficiente de la producción mundial.</p>
+  <p class="nota"><label><input type="checkbox" id="tabla-todos" /> mostrar los 37 cultivos</label> · ordenados por superficie cosechada</p>
+  <div class="tabla-scroll"><table class="tabla" id="tabla-cultivos"></table></div>
+  <p class="nota" id="nota-tabla"></p>
+
+  <h2>Por municipio</h2>
+  <p>El <a href={`${base}explorador/#ind=hh_azul_m3_t&anio=2024&cultivo=9050000`}>explorador</a> muestra la huella por municipio, año, ciclo,
+    modalidad y cultivo, con su intervalo, y el volumen o el agua por hectárea de todos los cultivos juntos.
+    Los datos se pueden descargar en <a href={`${base}datos/hh/hh_municipal.csv`} download>hh_municipal.csv</a>
+    (diccionario en <a href={`${base}datos/`}>Datos abiertos</a>).</p>
+
+  <div class="aviso"><strong>Cómo leer estas cifras.</strong>
+    La huella por tonelada no basta para decidir qué sembrar: un cultivo con huella alta puede dar mucho valor por metro cúbico, y el mismo
+    volumen pesa distinto según la escasez de agua de cada cuenca. Esa evaluación de impacto es la siguiente etapa del Observatorio.
+    En trigo, cártamo y garbanzo el riego se calcula con el número de riegos de auxilio que recomienda INIFAP; en los demás cultivos, con riego
+    sin déficit. La huella gris depende de supuestos poco conocidos (cuánto nitrógeno llega al agua y qué concentración es admisible), por eso su
+    intervalo es muy amplio.</div>
+
+  <script>
+    import { cargaJSON, filas, fmt, baseGrafica, EJE } from '../scripts/comun.js';
+    import { creaGrafica } from '../scripts/graficas.js';
+    const C = { verde: '#1a9e74', azul: '#2a6fc4', gris: '#8a8a8a' };
+    const [tabla, resumen, cat] = await Promise.all([
+      cargaJSON('datos/hh/hh_municipal.json'), cargaJSON('datos/hh/resumen_cultivo.json'), cargaJSON('datos/agricola/catalogos.json'),
+    ]);
+    const rs = filas(tabla);
+    const anios = [...new Set(rs.map((r) => r.anio))].sort();
+    const porAnio = {};
+    for (const r of rs) {
+      const a = (porAnio[r.anio] ||= {});
+      for (const k in r) if (k.startsWith('vol_')) a[k] = (a[k] || 0) + (r[k] || 0);
+    }
+    const prom = (k) => anios.reduce((s, a) => s + porAnio[a][k], 0) / anios.length / 1e6;
+    const pon = (k, v) => document.querySelectorAll(`[data-c="${k}"]`).forEach((e) => { e.textContent = v; });
+    for (const c of ['azul', 'verde', 'gris']) {
+      pon(c, fmt(prom(`vol_${c}_m3`), 0));
+      pon(`${c}-int`, `${fmt(prom(`vol_${c}_min_m3`), 0)}–${fmt(prom(`vol_${c}_max_m3`), 0)}`);
+    }
+
+    // Volúmenes por año: barras apiladas verde + azul (consumo) y bigotes del intervalo del total
+    const hm3 = (a, k) => porAnio[a][k] / 1e6;
+    const gA = creaGrafica(document.getElementById('g-anual'));
+    gA.setOption({
+      ...baseGrafica(),
+      legend: { top: 0, left: 0, icon: 'roundRect', itemWidth: 12, textStyle: { color: '#333' }, data: ['Azul', 'Verde'] },
+      tooltip: { trigger: 'axis', confine: true, formatter: (ps) => {
+        const a = +ps[0].axisValue;
+        return `${a}<br>`
+          + ps.filter((p) => ['Azul', 'Verde'].includes(p.seriesName)).map((p) => `${p.marker}${p.seriesName}: ${fmt(p.value, 0)} hm³`).join('<br>')
+          + `<br><span style="color:#777">Azul, intervalo: ${fmt(hm3(a, 'vol_azul_min_m3'), 0)}–${fmt(hm3(a, 'vol_azul_max_m3'), 0)} hm³</span>`
+          + `<br><span style="color:#777">Verde, intervalo: ${fmt(hm3(a, 'vol_verde_min_m3'), 0)}–${fmt(hm3(a, 'vol_verde_max_m3'), 0)} hm³</span>`;
+      } },
+      xAxis: { type: 'category', data: anios.map(String), ...EJE, splitLine: { show: false } },
+      yAxis: { type: 'value', ...EJE, axisLabel: { ...EJE.axisLabel, formatter: (v) => fmt(v, 0) } },
+      series: [
+        { name: 'Azul', type: 'bar', stack: 'c', barMaxWidth: 46, data: anios.map((a) => hm3(a, 'vol_azul_m3')),
+          itemStyle: { color: C.azul, borderColor: '#fff', borderWidth: 1 } },
+        { name: 'Verde', type: 'bar', stack: 'c', barMaxWidth: 46, data: anios.map((a) => hm3(a, 'vol_verde_m3')),
+          itemStyle: { color: C.verde, borderColor: '#fff', borderWidth: 1, borderRadius: [4, 4, 0, 0] },
+          label: { show: true, position: 'top', color: '#5f5f5f', fontSize: 11,
+            formatter: (p) => fmt(hm3(anios[p.dataIndex], 'vol_azul_m3') + hm3(anios[p.dataIndex], 'vol_verde_m3'), 0) } },
+      ],
+    });
+    const ult = anios[anios.length - 1];
+    document.getElementById('nota-anual').textContent = `hm³ de agua evapotranspirada por los cultivos de la selección; la etiqueta es el total. `
+      + `En ${ult} la superficie cosechada cayó a la mitad por la sequía en el sur. El intervalo de cada año está en la ventana emergente.`;
+
+    // Agua azul por cultivo (promedio anual), 12 principales
+    const cul = resumen.cultivos.filter((c) => c.vol_azul_hm3_anual > 0).sort((a, b) => b.vol_azul_hm3_anual - a.vol_azul_hm3_anual).slice(0, 12).reverse();
+    const gC = creaGrafica(document.getElementById('g-cultivos'));
+    gC.setOption({
+      ...baseGrafica(),
+      grid: { left: 8, right: 48, top: 8, bottom: 8, containLabel: true },
+      tooltip: { trigger: 'item', confine: true, formatter: (p) => `${p.name}<br>${fmt(p.value, 0)} hm³ al año de agua azul` },
+      xAxis: { type: 'value', ...EJE, axisLabel: { ...EJE.axisLabel, formatter: (v) => fmt(v, 0) } },
+      yAxis: { type: 'category', data: cul.map((c) => c.nombre), ...EJE, axisLabel: { ...EJE.axisLabel, width: 160, overflow: 'truncate' } },
+      series: [{ type: 'bar', data: cul.map((c) => c.vol_azul_hm3_anual), barMaxWidth: 18, itemStyle: { color: C.azul, borderRadius: [0, 4, 4, 0] },
+        label: { show: true, position: 'right', color: '#5f5f5f', fontSize: 11, formatter: (p) => fmt(p.value, 0) } }],
+    });
+
+    // Tabla por cultivo
+    const DEFICIT = new Set(['Trigo grano', 'Cártamo', 'Garbanzo grano']);
+    const f0 = (x) => (x === null || x === undefined ? '—' : fmt(x, 0));
+    function pintaTabla() {
+      const todos = document.getElementById('tabla-todos').checked;
+      const lista = todos ? resumen.cultivos : resumen.cultivos.slice(0, 15);
+      document.getElementById('tabla-cultivos').innerHTML = `<thead><tr><th>Cultivo</th><th class="num">Mil ha al año</th>`
+        + `<th class="num">Verde</th><th class="num">Azul</th><th class="num">Gris</th><th class="num">Verde + azul, intervalo</th><th class="num">Gris, intervalo</th>`
+        + `<th class="num">Mekonnen y Hoekstra 2010, Sonora (verde + azul)</th><th class="num">Mundo, percentiles 25 / 50 (verde + azul)</th></tr></thead><tbody>`
+        + lista.map((c) => {
+          const mh = c.mh2010_sonora_verde_m3_t === null || c.mh2010_sonora_azul_m3_t === null ? null : c.mh2010_sonora_verde_m3_t + c.mh2010_sonora_azul_m3_t;
+          const marca = DEFICIT.has(c.nombre) ? ' <span title="Riego deficitario: número de auxilios de INIFAP">*</span>' : '';
+          return `<tr><td>${c.nombre}${marca}</td><td class="num">${fmt(c.cosechada_ha_anual / 1000, 1)}</td>`
+            + `<td class="num">${f0(c.verde_m3_t)}</td><td class="num">${f0(c.azul_m3_t)}</td><td class="num">${f0(c.gris_m3_t)}</td>`
+            + `<td class="num">${f0(c.consumo_min_m3_t)}–${f0(c.consumo_max_m3_t)}</td>`
+            + `<td class="num">${c.gris_min_m3_t === null ? '—' : `${f0(c.gris_min_m3_t)}–${f0(c.gris_max_m3_t)}`}</td>`
+            + `<td class="num">${mh === null ? '—' : f0(mh)}</td>`
+            + `<td class="num">${c.bench2014_verde_azul_p25_m3_t === null ? '—' : `${f0(c.bench2014_verde_azul_p25_m3_t)} / ${f0(c.bench2014_verde_azul_p50_m3_t)}`}</td></tr>`;
+        }).join('') + '</tbody>';
+    }
+    document.getElementById('tabla-todos').addEventListener('change', pintaTabla);
+    pintaTabla();
+    document.getElementById('nota-tabla').innerHTML = '* Trigo, cártamo y garbanzo: riego con el número de auxilios de INIFAP; con riego sin déficit el agua azul sería '
+      + resumen.cultivos.filter((c) => DEFICIT.has(c.nombre)).map((c) => `${fmt(c.azul_riego_pleno_m3_t, 0)} en ${c.nombre.toLowerCase().replace(' grano', '')}`).join(', ') + ' m³/t. '
+      + 'Forrajes y alfalfa en peso fresco, como los reporta el SIAP. —: sin dato (Mekonnen y Hoekstra no calcularon forrajes ni dan agua azul de uva, dátil y cacahuate en Sonora; '
+      + 'el dátil no tiene dosis de nitrógeno publicada). Las comparaciones con 1996–2005 reflejan también cambios de rendimiento y de método.';
+  </script>
+</Base>

@@ -1,7 +1,7 @@
 {
   "nombre": "Observatorio del Agua Agrícola de Sonora — datos del sitio",
   "version_datos": "0.1.0",
-  "generado": "2026-11-21",
+  "generado": "2026-11-23",
   "generador": "pipeline/exporta_web.py",
   "geometria": {
     "municipios": {
@@ -62,8 +62,8 @@
     },
     {
       "archivo": "fuentes.json",
-      "bytes": 3987,
-      "sha256": "4bb8d710c060a5606c868401d81f4908bb8421952e028fe754ee26eab810ec19"
+      "bytes": 5185,
+      "sha256": "35256180108e4e1714201c052cfad6c32e1ed057153e6c38d2340131ee6926fa"
     },
     {
       "archivo": "geo/distritos_riego.geojson",
@@ -76,9 +76,24 @@
       "sha256": "d83be2f79ab019518ecf72478f31460ff3d9127d76df922ad6bc4f830a287875"
     },
     {
+      "archivo": "hh/hh_municipal.csv",
+      "bytes": 254800,
+      "sha256": "2cc57e778b31a47a1b5417ba2ec75fea80d713a4bc86ebc53285be12970ea9c7"
+    },
+    {
+      "archivo": "hh/hh_municipal.json",
+      "bytes": 217898,
+      "sha256": "d87c3086a44be2f7865b3b79e9d6e9e5d034d51bd986246171dca4b8a362f5f7"
+    },
+    {
+      "archivo": "hh/resumen_cultivo.json",
+      "bytes": 25441,
+      "sha256": "579be6d5e2c6af1ea7b713a1f82703ff50ac31d25c92cf68e7bd09a2f36a2a87"
+    },
+    {
       "archivo": "indicadores.json",
-      "bytes": 14001,
-      "sha256": "b2116358552eb7a952ea3f1642f752dd1c2c240032eb76ab9c27102524d5ffe4"
+      "bytes": 23255,
+      "sha256": "e5312c9f8815e845f52acab9d8bf72c57b4ce0f033aa65e9454c7861bd02bab1"
     },
     {
       "archivo": "resumen/estatal_anual.json",

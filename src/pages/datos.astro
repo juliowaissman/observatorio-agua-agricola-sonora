@@ -20,6 +20,9 @@ const desc: Record<string, string> = {
   'geo/municipios.geojson': 'Límites municipales (INEGI), simplificados para web',
   'geo/distritos_riego.geojson': 'Polígonos de los Distritos de Riego (SIAP), simplificados para web',
   'resumen/estatal_anual.json': 'Totales estatales por año y cultivos principales',
+  'hh/hh_municipal.csv': 'Huella hídrica (preliminar): volúmenes verde, azul y gris con su intervalo por año, municipio, ciclo, modalidad y cultivo',
+  'hh/hh_municipal.json': 'Lo mismo, en formato columnar',
+  'hh/resumen_cultivo.json': 'Huella hídrica por cultivo 2019–2025 (m³/t) con intervalos y comparación con Mekonnen y Hoekstra',
   'indicadores.json': 'Registro de indicadores (capas del mapa)',
   'fuentes.json': 'Fuentes, licencias y nivel de verificación',
 };
@@ -50,7 +53,7 @@ const ok = verificacion.chequeos.filter((c: any) => c.ok).length;
         <tr>
           <td>{f.url ? <a href={f.url} rel="noopener">{f.nombre}</a> : f.nombre}</td>
           <td>{f.institucion}</td><td>{f.consulta}</td>
-          <td><span class={f.verificacion === 'V' ? 'etiqueta v' : 'etiqueta'}>{f.verificacion === 'V' ? 'Verificado' : f.verificacion}</span></td>
+          <td><span class={f.verificacion === 'V' ? 'etiqueta v' : f.verificacion === 'preliminar' ? 'etiqueta pronto' : 'etiqueta'}>{f.verificacion === 'V' ? 'Verificado' : f.verificacion}</span></td>
           <td class="nota">{f.notas}{f.licencia ? ` Licencia: ${f.licencia}.` : ''}</td>
         </tr>
       ))}
@@ -69,7 +72,7 @@ const ok = verificacion.chequeos.filter((c: any) => c.ok).length;
     <thead><tr><th>Indicador</th><th>Unidad</th><th>Escala</th><th>Estado</th><th>Descripción</th></tr></thead>
     <tbody>
       {indicadores.map((i: any) => (
-        <tr><td>{i.nombre}</td><td>{i.unidad}</td><td>{i.escala === 'municipio' ? 'Municipio' : 'Distrito de Riego'}</td>
+        <tr><td>{i.nombre}</td><td>{i.unidad}</td><td>{i.escala === 'municipio' ? 'Municipio' : 'Distrito de Riego'}{i.verificacion === 'preliminar' ? ' (preliminar)' : ''}</td>
           <td><span class={i.estado === 'publicado' ? 'etiqueta v' : 'etiqueta pronto'}>{i.estado}</span></td><td class="nota">{i.descripcion}</td></tr>
       ))}
     </tbody>
